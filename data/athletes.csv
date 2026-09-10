@@ -1,0 +1,187 @@
+name,team,weight_class,points_scored
+"Mcbryde, Zaynah",Life,138,24.5
+"Isaac, Savannah",Life,207,24.0
+"Mcbryde, Latifah",Life,160,23.0
+"Mcbryde, Jamilah",Life,145,22.5
+"Shotwell, Salyna",Life,117,22.0
+"Falcon, Anaya",Life,110,18.0
+"Mottley, Olivia",Life,131,15.0
+"Savidge, Sarah",Life,131,14.0
+"Busa, Reka",Life,180,12.0
+"Martinez, Ariana",Life,124,10.0
+"Hernandez, Katherine",Life,103,4.0
+"Krejsa, Anna",Life,124,3.0
+"Sandoval, Judy",Grand View,103,21.0
+"Colon, Mayangelie",Grand View,117,19.5
+"Campbell, Catharine",Grand View,124,19.0
+"Brown, Olivia",Grand View,207,17.5
+"Nitta, Tristan",Grand View,110,14.5
+"Davis, Maya",Grand View,124,11.5
+"Cruz, Lita",Grand View,110,6.0
+"Porcelli, Bella",Grand View,207,6.0
+"Warren, Krista",Grand View,145,4.0
+"Campbell, Cailin",Grand View,117,3.5
+"Moore, Devyn",Grand View,103,0.0
+"Spurgeon, Emmalee",Grand View,160,0.0
+"Miranda, Shammilka",Cumberlands,117,23.0
+"Gomez, Katie",Cumberlands,124,20.5
+"Fisher, Micah",Cumberlands,160,20.0
+"Casteneda, Angelina",Cumberlands,103,14.0
+"Ming, Alivia",Cumberlands,145,12.0
+"Bernabe, Maquoia",Cumberlands,207,11.0
+"Preciado-Meza, Saiheron",Cumberlands,180,6.0
+"King, Dutchess",Cumberlands,103,3.5
+"Porter, Mary Jane",Cumberlands,131,3.0
+"Duenas, Naomi",Cumberlands,207,2.5
+"Anderson, Presley",Cumberlands,124,1.0
+"Suto, Annabelle",Cumberlands,131,0.0
+"Kolawole, Esther",William Penn,145,26.0
+"Ogunsanya, Christianah",William Penn,117,23.0
+"Vanderwood, Joanna",William Penn,124,20.0
+"Hawley, Isabelle",William Penn,138,12.5
+"Lopez, America",William Penn,180,12.5
+"Patton, Devin",William Penn,131,9.5
+"Bostelman, Kendall",William Penn,138,5.5
+"Wolf, Alexa",William Penn,160,3.0
+"Steinkamp, Catherine",William Penn,124,2.0
+"Atkins, Olivia",William Penn,103,0.0
+"Zapata, Lillian",William Penn,103,0.0
+"Abdijanovic, Naida",William Penn,145,0.0
+"Mota-pettis, Xochitl",Missouri Valley,131,22.5
+"Corbett, Kelani",Missouri Valley,180,21.0
+"Aumua, Sevreign",Missouri Valley,145,19.0
+"De La Garza, Serenity",Missouri Valley,138,16.5
+"Immaeva, Jasmina",Missouri Valley,124,13.0
+"Holland, Hailey",Missouri Valley,110,5.0
+"Whetzal, Ashley",Missouri Valley,131,4.0
+"Acosta, Aniseta",Missouri Valley,145,2.5
+"Pineda, Sarah",Missouri Valley,110,0.0
+"Baeza, Isla",Missouri Valley,124,0.0
+"Hikiji, Erin",Providence,103,25.0
+"Estrella-Beauchamp, Waipuilani",Providence,138,19.5
+"Morales, Paige",Providence,110,18.5
+"Han, Esther",Providence,145,5.5
+"Dodge, Aspen",Providence,145,4.0
+"Randles, Alyssa",Providence,124,3.5
+"Shota, Kayla",Providence,110,2.5
+"Sutton, Hailey",Providence,160,2.5
+"Respicio, Paige",Providence,131,2.0
+"Rees, Kailey",Providence,138,2.0
+"Bocanegra, Isabella",Providence,103,0.0
+"Frank, Alicia",Providence,117,0.0
+"Moreno, Carolina",Southern Oregon,131,17.0
+"Howard, Jasmine",Southern Oregon,117,13.5
+"Hingano, Kathryn",Southern Oregon,207,12.5
+"Baertlein, Emma",Southern Oregon,110,11.5
+"Gradillas-Flores, Lillian",Southern Oregon,180,11.5
+"Welch, Malia",Southern Oregon,124,6.0
+"Miguel-Lapham, Quilaztli",Southern Oregon,160,5.5
+"Dennis, Bailey",Southern Oregon,180,2.0
+"Kurtz, Marissa",Southern Oregon,117,0.0
+"Annis, Kaylee",Southern Oregon,124,0.0
+"Wieber, Holland",Southern Oregon,145,0.0
+"Lekas, Ashley",Texas Wesleyan,180,26.0
+"Barragan, Samantha",Texas Wesleyan,138,19.0
+"Yauger, Aubrey",Texas Wesleyan,145,13.0
+"Fournier, Camille",Texas Wesleyan,117,11.0
+"Khamjoi, Taydem",Texas Wesleyan,160,4.5
+"Fonseca, Abigail",Texas Wesleyan,207,0.0
+"Rodriguez, Cristelle",Doane,124,27.0
+"Sotomayor, Bridgette",Doane,145,15.0
+"Vang, Karina",Doane,103,12.0
+"Barber, Aspen",Doane,160,8.5
+"Belk, Yazmin",Doane,180,3.0
+"Romero, Hailey",Doane,207,3.0
+"Palimo, Ashlee",Doane,131,2.0
+"Breeden, Jaden",Doane,110,0.0
+"Breeden, Julia",Doane,117,0.0
+"Peterson, Mora",Doane,117,0.0
+"Ciha, Aevri",Doane,145,0.0
+"Benn, Lamia",Doane,160,0.0
+"Young, Makayla",Indiana Tech,103,16.5
+"Dempewolf, Riley",Indiana Tech,207,16.0
+"Soares, Tehani",Indiana Tech,110,14.5
+"Kaplan, Rose",Indiana Tech,124,12.0
+"Hernandez, Andrea",Indiana Tech,131,7.5
+"Mcnulty, Catherine",Indiana Tech,180,3.5
+"Doering, Grace",Indiana Tech,180,2.5
+"Hancher, Allison",Indiana Tech,110,0.0
+"Seitzinger, Hannah",Indiana Tech,131,0.0
+"Weidl, Darby",Ottawa,160,21.0
+"Jackson, Hannah",Ottawa,207,18.0
+"Sebesta, Abigail",Ottawa,160,11.5
+"Swift, Livia",Ottawa,138,5.5
+"Arrington, Siara",Ottawa,180,3.0
+"Davis, Kaylee",Ottawa,180,3.0
+"Fink, Aynsley",Ottawa,110,2.5
+"Hand, Peyton",Ottawa,124,2.5
+"Leonard, Kena",Ottawa,207,1.0
+"Martin, Kendall",Ottawa,117,0.0
+"Truex, Emma",Ottawa,131,0.0
+"Vergara, Liliana",Campbellsville,180,14.0
+"Galumette, Icart",Campbellsville,117,8.0
+"Staebler, Brianna",Campbellsville,207,5.5
+"Perez, Gabriella",Campbellsville,138,4.0
+"Tait, Kylee",Campbellsville,160,3.0
+"Messerly, Olivia",Campbellsville,131,2.5
+"Ortiz, Cameron",Campbellsville,131,2.5
+"Messerly, Addison",Campbellsville,138,2.5
+"Adekuoroye, Mercy",Wayland Baptist,131,16.5
+"Suarez, Jordan",Wayland Baptist,138,16.0
+"Sanchez, Leilani",Wayland Baptist,207,3.0
+"Dominguez, Malarie",Wayland Baptist,103,1.0
+"Barnett, Tess",Wayland Baptist,124,0.5
+"Casel, Mohagany",Wayland Baptist,160,0.0
+"Miller, Alexis",Oklahoma City,103,22.0
+"Abramson, Sofia",Oklahoma City,103,6.5
+"Posada, Natalia",Oklahoma City,138,4.5
+"Campbell, Destiny",Oklahoma City,131,3.0
+"Garcia, Iby",Oklahoma City,110,0.0
+"White, Bryce",Oklahoma City,131,0.0
+"Munoz, Makayla",Oklahoma City,145,0.0
+"Lowe, Corin",Oklahoma City,160,0.0
+"Murphey, Ella",Oklahoma City,180,0.0
+"Jelacic, Stefana",Lourdes,110,23.0
+"Phillips, Alysse",Lourdes,207,9.5
+"Borrero, Flor Parker",Evergreen State,160,23.5
+"Tallman, Nizhoni",Evergreen State,110,6.5
+"Taylor, Ellabelle",Evergreen State,124,2.0
+"Adekoye, Jumoke",Dickinson State,131,25.0
+"Gerhardt, Jenna",Dickinson State,110,3.0
+"Whaley, Larhae",Dickinson State,117,2.5
+"Hubby, Kiley",Dickinson State,160,0.5
+"Page, India",Lindsey Wilson,180,18.5
+"Campbell, Kori",Lindsey Wilson,138,4.0
+"Payton, Callie",Lindsey Wilson,117,2.5
+"Thomas, Reagan",Lindsey Wilson,110,2.0
+"Campos, Josselinne",Lindsey Wilson,145,2.0
+"Costa, Hayeni",Lindsey Wilson,207,2.0
+"Adeduntan, Rodiat",Lindsey Wilson,110,0.0
+"Bridenstine, Sydney",Lindsey Wilson,124,0.0
+"Ritchie, Lexi",Lindsey Wilson,145,0.0
+"Gallaway, Reagen",Hastings,138,16.0
+"Kaz, Larissa",Hastings,131,12.5
+"Hoeflich, Lisa",Hastings,145,1.0
+"Wood, Tabitha",Hastings,138,0.0
+"Stice, Emma",Hastings,145,0.0
+"Deeds, Isabella",Hastings,160,0.0
+"Patterson, Marissa",Hastings,180,0.0
+"Rickley, Taylor",Hastings,207,0.0
+"Avila, Jannell",Baker,180,17.5
+"Heath, Katherine",Baker,117,11.0
+"Robledo, Kylie",Baker,124,0.0
+"Martin, Jade",Baker,138,0.0
+"Wardlow, Nevaeh",Baker,180,0.0
+"Wieber, Liv",Eastern Oregon,145,21.5
+"Retano, Irma",Eastern Oregon,117,2.5
+"Avelino, Nia",Eastern Oregon,110,0.5
+"Flores Roque, Nayeli",Eastern Oregon,103,0.0
+"Walter, Telsarina",Eastern Oregon,110,0.0
+"Beck, Kadence",Eastern Oregon,124,0.0
+"Jacquez, Alexsys",Saint Mary,110,13.5
+"Jacquez, Eyvori",Saint Mary,103,3.0
+"Boday, Araya",Saint Mary,138,0.0
+"Frounfelter, Amelia",Saint Mary,160,0.0
+"Hatfield, Alexis",Avila,103,16.0
+"Redmond, Nicole",Avila,131,0.0
+"Riedinger, Jaclyn",Avila,138,0.0

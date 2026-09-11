@@ -1,0 +1,556 @@
+
+
+
+
+
+ 
+
+
+
+
+<html>
+<head>
+<script>console.log('ngwMode: optional');</script>
+<script src='https://cmp.osano.com/AzyWAQS5NWEEWkU9/df34419d-698a-4f5c-9dd9-72cd58fa57d7/osano.js?language=en'></script><style>.osano-cm-widget{display:none;}</style><script language='javascript' src='https://www.trackwrestling.com/google_tag_manager.js?version=47'></script>
+<script>dataLayer = [];</script>
+<!-- Begin comScore Tag --><script>window.addEventListener('load', () => {if (typeof _comscore === 'undefined' && window.self === window.top){(function() {window._comscore = window._comscore || [];_comscore.push({ c1: '2', c2: '10037191' });var s = document.createElement('script'), el = document.getElementsByTagName('script')[0]; s.async = true;s.src = 'https://sb.scorecardresearch.com/cs/10037191/beacon.js';el.parentNode.insertBefore(s, el);})();}});</script><noscript><img src='https://sb.scorecardresearch.com/p?c1=2&amp;c2=10037191&amp;cv=3.6.0&amp;cj=1'></noscript><!-- End comScore Tag --><script language='javascript' src='/segment.jsp?twSessionId=ifazbatoal'></script>
+<script language='javascript' src='/jquery.min.js'></script>
+
+
+
+
+<title>
+Tournament Results
+</title>
+
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel='stylesheet' type='text/css' href='../twIconSet.css'></link>
+<link rel='stylesheet' type='text/css' href='../tw.css'></link>
+
+<!--[if lt IE 9]>
+	<script src='../html5.js'></script>
+<![endif]-->
+
+<script language='javascript' src='../jquery.min.js'></script>
+
+<script language='javascript' src='../Pile.js'></script>
+<script language='javascript' src='../Ajax.js'></script>
+<script language='javascript' src='../FormatFormFields.js'></script>
+<script language='javascript' src='../Essentials.js'></script>
+
+<script language='javascript' src='../TWPage.js'></script>
+<link rel='stylesheet' type='text/css' href='../tw_page.css'></link>
+<!--[if lt IE 9]>
+	<link rel='stylesheet' type='text/css' href='../ie-tw_page.css'></link>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"></link>
+
+<script language="javascript">
+
+function startUp(){
+	
+	verifyUser();
+	drawPageHeader("Tournament Results");
+	
+	if(true){
+	
+		addPageFunction("Filter", "openFilter()");
+		drawPageFunctions();
+		
+	}else{
+	
+		selectMultipleValues("weightBox", "", ",");
+		
+	}
+	
+	attachEventTrack();
+}
+
+function verifyUser(){
+	try{
+		if("true"=="false"){
+			location.href="../Login.jsp?TIM=1789155841295&twSessionId=ifazbatoal";
+		}
+	}catch(error){
+		alert("An error occurred and below is the error message.\n\n" + error.message);
+	}
+}
+
+function openFilter(){
+	location.href = "TournamentResults.jsp?TIM=1789155841295&twSessionId=ifazbatoal&displayResult=N&fontSizeBox=10&patternBox=1&orderByBox=weightClass&includeByesBox=Y&weightIds=";
+}
+
+function viewResults(){
+	try{
+	
+		var patternRegExp = /^\s*$|^\s*\d{1,3}\s*(,\s*\d{1,3}\s*)*$/;
+		var patternBox = document.getElementById("patternBox");
+		if(patternBox.value.search(patternRegExp)==-1){
+			alert("Your page break pattern must be something like the following 2 or 1,2,4.");
+			patternBox.focus();
+			return;
+		} 
+	
+		with(window.document.theForm){
+			action = "TournamentResults.jsp?TIM=1789155841295&twSessionId=ifazbatoal&displayResult=Y&fontSizeBox="+fontSizeBox.value+"&patternBox="+patternBox.value+"&orderByBox="+orderByBox.value+"&weightIds="+getMultipleSelectedValues("weightBox");
+			submit();
+		}
+		
+	}catch(error){
+		alert("An error occurred and below is the error message.\n\n" + error.message);
+	}
+}
+
+</script>
+
+<style>
+
+	body { overflow-x: hidden; }
+
+	H3 { page-break-before:always }
+	
+</style>
+
+<link rel='canonical' href='https://www.trackwrestling.com/opentournaments/TournamentResults.jsp'/>
+
+<script type='text/javascript'>var SSPstring = 'rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAADB3CAAAAEAAAAAjdAAJU1NfVGVhbUlkdAAAdAAEV29yZHB0AAtTU19Vc2VyTmFtZXB0AAtPcmRlck51bWJlcnB0AAlteVRyYWNrSWRxAH4AA3QADXBhcnRpY2lwYW50SWRxAH4AA3QAEVRvdXJuYW1lbnRHcm91cElkcHQACGxlYWd1ZUlkcQB+AAN0AAhzdFRlYW1JZHEAfgADdAAIcG9ydGFsSWRxAH4AA3QADHRvdXJuYW1lbnRJZHEAfgADdAAFcHdvcmRxAH4AA3QADXRyYW5zRGV0YWlsSWRxAH4AA3QADVNTX1VzZXJUeXBlSWRwdAAKd3Jlc3RsZXJJZHEAfgADdAAIUGFzc3dvcmR0AAB0AAdldmVudElkcQB+AAN0AAZBVU5hbWVwdAAGQVBXb3JkcHQACFVzZXJOYW1lcQB+ABN0AAV1bmFtZXEAfgADdAANdHJhbnNhY3Rpb25JZHEAfgADdAAOVG91cm5hbWVudFR5cGV0AAEydAAGZHVhbElkcQB+AAN0AAdTU19HQklkcHQAE1N5c3RlbUFkbWluUGFzc3dvcmRwdAAGVXNlcklkcQB+ABN0AAZ0ZWFtSWRxAH4AA3QAClNTUF9leHBpcmV0AA0xNzg5MTU5NDQxMzAzdAAMVG91cm5hbWVudElkdAAJOTIzNDg3MTMydAAJcmFua2luZ0lkcQB+AAN0AAh1c2VyVHlwZXEAfgADdAALU1NfU2Vhc29uSWRwdAAIVXNlclR5cGV0AAZ2aWV3ZXJ0AAVTU19QV3B4';</script>
+</head>
+
+
+
+<body onload="startUp();">
+<script language='javascript'>
+try{ initGoogleTagManager(1); }catch(gtmError){}
+</script>
+
+
+<form id="theForm" name="theForm" method="post">
+<table style='position:absolute;z-index:200;' width='100%' border='0' cellspacing='0' cellpadding='0'><tr height='0'><td align='center'><div id='loadingMessage' class='loading'>LOADING...</div></td></tr></table>
+
+
+<iframe style='position:absolute' id="MethodCallerFrame" name="MethodCallerFrame" src="MethodCaller.jsp" width="1px" height="1px" frameborder='0'></iframe>
+
+<div id="pageContent">
+
+	<div class='modalFrame recordModal' id='recordModal'></div><div class='toolTipFrame' id='toolTipFrame'></div><div class='pageAlertFrame' id='pageAlertFrame'></div><div class='pageHeaderFrame' id='pageHeaderFrame'></div><div class='pageModalFrame' id='pageModalFrame'></div><div class='functionsAndLinksFrame'>	<div class='pageTopLinksFrame' id='pageTopLinksFrame'></div>	<div class='pageFunctionsFrame' id='pageFunctionsFrame'></div></div><div class='pageMessagesFrame' id='pageMessagesFrame'></div><div class='pageGridFrame' id='pageGridFrame'></div><div class='pageFooterFrame' id='pageFooterFrame'></div>
+
+	<font style='font-size:10pt;'>
+<section class='tw-list'>
+<h1>NAIA - 103</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Erin Hikiji of Providence</li>
+<li>2nd Place - Alexis Miller of Oklahoma City</li>
+<li>3rd Place - Judy Sandoval of Grand View</li>
+<li>4th Place - Makayla Young of Indiana Tech</li>
+<li>5th Place - Alexis Hatfield of Avila</li>
+<li>6th Place - Angelina Casteneda of Cumberlands</li>
+<li>7th Place - Karina Vang of Doane</li>
+<li>8th Place - Sofia Abramson of Oklahoma City</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Erin Hikiji (Providence) won by decision over Alexis Miller (Oklahoma City) (Dec 8-2)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Judy Sandoval (Grand View) won by fall over Makayla Young (Indiana Tech) (Fall 0:39)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Alexis Hatfield (Avila) won by forfeit over Angelina Casteneda (Cumberlands) (FF)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Karina Vang (Doane) won by injury default over Sofia Abramson (Oklahoma City) (Inj. 0:17)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 110</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Stefana Jelacic of Lourdes</li>
+<li>2nd Place - Anaya Falcon of Life</li>
+<li>3rd Place - Paige Morales of Providence</li>
+<li>4th Place - Tehani Soares of Indiana Tech</li>
+<li>5th Place - Emma Baertlein of Southern Oregon</li>
+<li>6th Place - Alexsys Jacquez of Saint Mary</li>
+<li>7th Place - Tristan Nitta of Grand View</li>
+<li>8th Place - Nizhoni Tallman of Evergreen State</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Stefana Jelacic (Lourdes) won by decision over Anaya Falcon (Life) (Dec 7-2)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Paige Morales (Providence) won by tech fall over Tehani Soares (Indiana Tech) (TF 10-0)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Emma Baertlein (Southern Oregon) won by decision over Alexsys Jacquez (Saint Mary) (Dec 3-0)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Tristan Nitta (Grand View) won by injury default over Nizhoni Tallman (Evergreen State) (Inj. 6:00)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 117</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Christianah Ogunsanya of William Penn</li>
+<li>2nd Place - Salyna Shotwell of Life</li>
+<li>3rd Place - Shammilka Miranda of Cumberlands</li>
+<li>4th Place - Mayangelie Colon of Grand View</li>
+<li>5th Place - Jasmine Howard of Southern Oregon</li>
+<li>6th Place - Camille Fournier of Texas Wesleyan</li>
+<li>7th Place - Katherine Heath of Baker</li>
+<li>8th Place - Icart Galumette of Campbellsville</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Christianah Ogunsanya (William Penn) won by decision over Salyna Shotwell (Life) (Dec 8-0)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Shammilka Miranda (Cumberlands) won by tech fall over Mayangelie Colon (Grand View) (TF 11-0)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Jasmine Howard (Southern Oregon) won by decision over Camille Fournier (Texas Wesleyan) (Dec 7-4)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Katherine Heath (Baker) won by decision over Icart Galumette (Campbellsville) (Dec 10-6)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 124</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Cristelle Rodriguez of Doane</li>
+<li>2nd Place - Katie Gomez of Cumberlands</li>
+<li>3rd Place - Joanna Vanderwood of William Penn</li>
+<li>4th Place - Catharine Campbell of Grand View</li>
+<li>5th Place - Jasmina Immaeva of Missouri Valley</li>
+<li>6th Place - Rose Kaplan of Indiana Tech</li>
+<li>7th Place - Maya Davis of Grand View</li>
+<li>8th Place - Ariana Martinez of Life</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Cristelle Rodriguez (Doane) won by decision over Katie Gomez (Cumberlands) (Dec 5-5)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Joanna Vanderwood (William Penn) won by decision over Catharine Campbell (Grand View) (Dec 5-1)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Jasmina Immaeva (Missouri Valley) won by tech fall over Rose Kaplan (Indiana Tech) (TF 10-0)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Maya Davis (Grand View) won by tech fall over Ariana Martinez (Life) (TF 13-2)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 131</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Jumoke Adekoye of Dickinson State</li>
+<li>2nd Place - Xochitl Mota-pettis of Missouri Valley</li>
+<li>3rd Place - Mercy Adekuoroye of Wayland Baptist</li>
+<li>4th Place - Carolina Moreno of Southern Oregon</li>
+<li>5th Place - Olivia Mottley of Life</li>
+<li>6th Place - Sarah Savidge of Life</li>
+<li>7th Place - Devin Patton of William Penn</li>
+<li>8th Place - Larissa Kaz of Hastings</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Jumoke Adekoye (Dickinson State) won by decision over Xochitl Mota-pettis (Missouri Valley) (Dec 5-3)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Mercy Adekuoroye (Wayland Baptist) won by decision over Carolina Moreno (Southern Oregon) (Dec 15-6)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Olivia Mottley (Life) won by injury default over Sarah Savidge (Life) (Inj. 0:00)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Devin Patton (William Penn) won by decision over Larissa Kaz (Hastings) (Dec 14-12)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 138</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Zaynah Mcbryde of Life</li>
+<li>2nd Place - Waipuilani Estrella-Beauchamp of Providence</li>
+<li>3rd Place - Samantha Barragan of Texas Wesleyan</li>
+<li>4th Place - Reagen Gallaway of Hastings</li>
+<li>5th Place - Jordan Suarez of Wayland Baptist</li>
+<li>6th Place - Serenity De La Garza of Missouri Valley</li>
+<li>7th Place - Isabelle Hawley of William Penn</li>
+<li>8th Place - Natalia Posada of Oklahoma City</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Zaynah Mcbryde (Life) won by tech fall over Waipuilani Estrella-Beauchamp (Providence) (TF 10-0)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Samantha Barragan (Texas Wesleyan) won by fall over Reagen Gallaway (Hastings) (Fall 2:27)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Jordan Suarez (Wayland Baptist) won by fall over Serenity De La Garza (Missouri Valley) (Fall 3:33)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Isabelle Hawley (William Penn) won by fall over Natalia Posada (Oklahoma City) (Fall 1:21)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 145</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Esther Kolawole of William Penn</li>
+<li>2nd Place - Jamilah Mcbryde of Life</li>
+<li>3rd Place - Liv Wieber of Eastern Oregon</li>
+<li>4th Place - Sevreign Aumua of Missouri Valley</li>
+<li>5th Place - Bridgette Sotomayor of Doane</li>
+<li>6th Place - Aubrey Yauger of Texas Wesleyan</li>
+<li>7th Place - Alivia Ming of Cumberlands</li>
+<li>8th Place - Anastasia Hardin of Missouri Baptist</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Esther Kolawole (William Penn) won by decision over Jamilah Mcbryde (Life) (Dec 12-5)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Liv Wieber (Eastern Oregon) won by fall over Sevreign Aumua (Missouri Valley) (Fall 2:54)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Bridgette Sotomayor (Doane) won by fall over Aubrey Yauger (Texas Wesleyan) (Fall 4:33)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Alivia Ming (Cumberlands) won by disqualification over Anastasia Hardin (Missouri Baptist) (DQ)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 160</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Latifah Mcbryde of Life</li>
+<li>2nd Place - Darby Weidl of Ottawa</li>
+<li>3rd Place - Flor Parker Borrero of Evergreen State</li>
+<li>4th Place - Micah Fisher of Cumberlands</li>
+<li>5th Place - Josette Partney of Missouri Baptist</li>
+<li>6th Place - Allyssa Johnson of Jamestown</li>
+<li>7th Place - Aspen Barber of Doane</li>
+<li>8th Place - Abigail Sebesta of Ottawa</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Latifah Mcbryde (Life) won by decision over Darby Weidl (Ottawa) (Dec 7-2)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Flor Parker Borrero (Evergreen State) won by fall over Micah Fisher (Cumberlands) (Fall 1:28)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Josette Partney (Missouri Baptist) won by injury default over Allyssa Johnson (Jamestown) (Inj. 0:00)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Aspen Barber (Doane) won by fall over Abigail Sebesta (Ottawa) (Fall 2:08)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 180</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Ashley Lekas of Texas Wesleyan</li>
+<li>2nd Place - Kelani Corbett of Missouri Valley</li>
+<li>3rd Place - Jannell Avila of Baker</li>
+<li>4th Place - India Page of Lindsey Wilson</li>
+<li>5th Place - Liliana Vergara of Campbellsville</li>
+<li>6th Place - Lillian Gradillas-Flores of Southern Oregon</li>
+<li>7th Place - Reka Busa of Life</li>
+<li>8th Place - America Lopez of William Penn</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Ashley Lekas (Texas Wesleyan) won by tech fall over Kelani Corbett (Missouri Valley) (TF 12-2)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Jannell Avila (Baker) won by fall over India Page (Lindsey Wilson) (Fall 5:23)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Liliana Vergara (Campbellsville) won by fall over Lillian Gradillas-Flores (Southern Oregon) (Fall 0:27)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Reka Busa (Life) won by fall over America Lopez (William Penn) (Fall 0:43)</li>
+</ul>
+</section>
+</section>
+<div class='pageBreak'></div><section class='tw-list'>
+<h1>NAIA - 207</h1>
+<section>
+<h2>Guaranteed Places</h2>
+<ul>
+<li>1st Place - Savannah Isaac of Life</li>
+<li>2nd Place - Riley Dempewolf of Indiana Tech</li>
+<li>3rd Place - Olivia Brown of Grand View</li>
+<li>4th Place - Hannah Jackson of Ottawa</li>
+<li>5th Place - Maquoia Bernabe of Cumberlands</li>
+<li>6th Place - Kathryn Hingano of Southern Oregon</li>
+<li>7th Place - Mariyah Brumley of William Woods</li>
+<li>8th Place - Alysse Phillips of Lourdes</li>
+</ul>
+</section>
+<section>
+<h2>1st Place Match</h2>
+<ul>
+<li>Savannah Isaac (Life) won by decision over Riley Dempewolf (Indiana Tech) (Dec 4-1)</li>
+</ul>
+</section>
+<section>
+<h2>3rd Place Match</h2>
+<ul>
+<li>Olivia Brown (Grand View) won by decision over Hannah Jackson (Ottawa) (Dec 6-0)</li>
+</ul>
+</section>
+<section>
+<h2>5th Place Match</h2>
+<ul>
+<li>Maquoia Bernabe (Cumberlands) won by decision over Kathryn Hingano (Southern Oregon) (Dec 3-1)</li>
+</ul>
+</section>
+<section>
+<h2>7th Place Match</h2>
+<ul>
+<li>Mariyah Brumley (William Woods) won by fall over Alysse Phillips (Lourdes) (Fall 0:47)</li>
+</ul>
+</section>
+</section>
+
+</font>
+
+		
+</div>
+
+</form>
+
+<script language="javascript" src="../Footer.js"></script>
+
+</body>
+
+
+</html>
+

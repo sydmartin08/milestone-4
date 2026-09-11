@@ -2,6 +2,69 @@
 title: "NAIA Womens Wrestling"
 ---
 
-This is a Quarto website.
+![](naia_logo.png)
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+## Wrestlers by Weight Class
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(htmltools)
+
+# Read athlete data and sort by weight class and points
+athletes <- read_csv("data/athletes.csv", show_col_types = FALSE) |>
+  arrange(weight_class, desc(points_scored), name)
+
+# Get unique weight classes for the dropdown options
+weight_classes <- sort(unique(athletes$weight_class))
+
+options_html <- paste(
+  sprintf('<option value="%s">%s lbs</option>', weight_classes, weight_classes),
+  collapse = ""
+)
+
+rows_html <- paste(
+  sprintf('<tr data-wc="%s"><td>%s</td><td>%s</td><td>%s lbs</td><td>%s</td></tr>',
+          athletes$weight_class, athletes$name, athletes$team, athletes$weight_class, athletes$points_scored),
+  collapse = ""
+)
+
+HTML(paste0(
+  '<div style="margin: 1.5rem 0;">',
+  '<label for="weightClassSelect" style="font-weight: bold; margin-bottom: 0.5rem; display: block;">Select a Weight Class:</label>',
+  '<select id="weightClassSelect" class="form-select" style="max-width: 260px; font-size: 1rem; padding: 0.4rem;" onchange="filterWrestlers(this.value)">',
+  '<option value="all">All Weight Classes</option>',
+  options_html,
+  '</select>',
+  '<div id="wrestlerCount" style="margin-top: 0.5rem; font-style: italic; color: #555;">Showing all ', nrow(athletes), ' wrestlers</div>',
+  '</div>',
+  '<table id="wrestlerTable" class="table table-striped table-hover" style="width: 100%; margin-top: 1rem;">',
+  '<thead><tr><th>Wrestler</th><th>Team</th><th>Weight Class</th><th>Points Scored</th></tr></thead>',
+  '<tbody>', rows_html, '</tbody>',
+  '</table>',
+  '<script>',
+  'function filterWrestlers(selectedWeight) {',
+  '  const rows = document.querySelectorAll("#wrestlerTable tbody tr");',
+  '  let count = 0;',
+  '  rows.forEach(row => {',
+  '    if (selectedWeight === "all" || row.getAttribute("data-wc") === selectedWeight) {',
+  '      row.style.display = "";',
+  '      count++;',
+  '    } else {',
+  '      row.style.display = "none";',
+  '    }',
+  '  });',
+  '  const countEl = document.getElementById("wrestlerCount");',
+  '  if (countEl) {',
+  '    countEl.textContent = (selectedWeight === "all") ?',
+  '      ("Showing all " + count + " wrestlers") :',
+  '      ("Showing " + count + " wrestlers in " + selectedWeight + " lbs");',
+  '  }',
+  '}',
+  '</script>'
+))
+```
+

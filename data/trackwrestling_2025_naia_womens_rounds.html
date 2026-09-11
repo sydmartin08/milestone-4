@@ -1,0 +1,930 @@
+
+
+
+
+
+ 
+
+
+
+
+<html>
+<head>
+<script>console.log('ngwMode: optional');</script>
+<script src='https://cmp.osano.com/AzyWAQS5NWEEWkU9/df34419d-698a-4f5c-9dd9-72cd58fa57d7/osano.js?language=en'></script><style>.osano-cm-widget{display:none;}</style><script language='javascript' src='https://www.trackwrestling.com/google_tag_manager.js?version=47'></script>
+<script>dataLayer = [];</script>
+<!-- Begin comScore Tag --><script>window.addEventListener('load', () => {if (typeof _comscore === 'undefined' && window.self === window.top){(function() {window._comscore = window._comscore || [];_comscore.push({ c1: '2', c2: '10037191' });var s = document.createElement('script'), el = document.getElementsByTagName('script')[0]; s.async = true;s.src = 'https://sb.scorecardresearch.com/cs/10037191/beacon.js';el.parentNode.insertBefore(s, el);})();}});</script><noscript><img src='https://sb.scorecardresearch.com/p?c1=2&amp;c2=10037191&amp;cv=3.6.0&amp;cj=1'></noscript><!-- End comScore Tag --><script language='javascript' src='/segment.jsp?twSessionId=ifazbatoal'></script>
+<script language='javascript' src='/jquery.min.js'></script>
+
+
+
+
+<title>
+Round Results
+</title>
+
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel='stylesheet' type='text/css' href='../twIconSet.css'></link>
+<link rel='stylesheet' type='text/css' href='../tw.css'></link>
+
+<!--[if lt IE 9]>
+	<script src='../html5.js'></script>
+<![endif]-->
+
+<script language='javascript' src='../jquery.min.js'></script>
+
+<script language='javascript' src='../Pile.js'></script>
+<script language='javascript' src='../Ajax.js'></script>
+<script language='javascript' src='../FormatFormFields.js'></script>
+<script language='javascript' src='../Essentials.js'></script>
+
+<script language='javascript' src='../TWPage.js'></script>
+<link rel='stylesheet' type='text/css' href='../tw_page.css'></link>
+<!--[if lt IE 9]>
+	<link rel='stylesheet' type='text/css' href='../ie-tw_page.css'></link>
+<![endif]-->
+
+<link rel="stylesheet" type="text/css" href="../stylesheet.css"></link>
+
+<script language="javascript">
+
+function startUp(){
+	verifyUser();
+	drawPageHeader("Round Results");
+	if(true){ addPageFunction("Filter", "openFilter()"); }
+	drawPageFunctions();
+	
+	attachEventTrack();
+}
+
+function verifyUser(){
+	try{
+		if("true"=="false"){
+			location.href = "../Login.jsp?TIM=1789155841707&twSessionId=ifazbatoal";
+		}
+	}catch(error){
+		alert("An error occurred and below is the error message.\n\n" + error.message);
+	}
+}
+
+function openFilter(){
+	location.href = "RoundResults.jsp?TIM=1789155841707&twSessionId=ifazbatoal&displayResult=&roundId=&groupId=&fontSizeBox=10&displayFormatBox=2&includeByesBox=N&patternBox=1&existingFormatBox=";
+}
+
+function viewSchedule(){
+	try{
+	
+		var patternRegExp = /^\s*$|^\s*\d{1,3}\s*(,\s*\d{1,3}\s*)*$/;
+		var patternBox = document.getElementById("patternBox");
+		if(patternBox.value.search(patternRegExp)==-1){
+			alert("Your page break pattern must be something like the following 2 or 1,2,4.");
+			patternBox.focus();
+			return;
+		} 
+	
+		with(window.document.theForm){
+			if(roundIdBox.value=="" && groupIdBox.value=="" && "viewer"!="admin"){
+				alert("You must select either a round or a weight class.");
+				roundIdBox.focus();
+			}else{
+				action = "RoundResults.jsp?TIM=1789155841707&twSessionId=ifazbatoal&displayResult=Y&roundId="+getMultipleSelectedValues("roundIdBox")+"&groupId="+getMultipleSelectedValues("groupIdBox");
+				submit();
+			}
+		}
+	}catch(error){
+		alert("An error occurred and below is the error message.\n\n" + error.message);
+	}
+}
+
+function loadStyle(s){
+	if(s=="ap"){
+		document.getElementById("format").value = "[wFName] [wLName], [wHometown], [wState] ([wClub]) [apWinType] [lFName] [lLName], [lHometown], [lState] ([lClub]), [scoreSummary]";
+	}else if(s==""){
+		document.getElementById("format").value = "[boutType] - [wFName] [wLName] ([wTeam]) [winType] [lFName] [lLName] ([lTeam]) [scoreSummary]";
+	}
+}
+
+</script>
+
+<link rel='canonical' href='https://www.trackwrestling.com/opentournaments/RoundResults.jsp?displayResult=Y&roundId=&groupId=&displayFormatBox=2&includeByesBox=N'/>
+
+<script type='text/javascript'>var SSPstring = 'rO0ABXNyABFqYXZhLnV0aWwuSGFzaE1hcAUH2sHDFmDRAwACRgAKbG9hZEZhY3RvckkACXRocmVzaG9sZHhwP0AAAAAAADB3CAAAAEAAAAAjdAAJU1NfVGVhbUlkdAAAdAAEV29yZHB0AAtTU19Vc2VyTmFtZXB0AAtPcmRlck51bWJlcnB0AAlteVRyYWNrSWRxAH4AA3QADXBhcnRpY2lwYW50SWRxAH4AA3QAEVRvdXJuYW1lbnRHcm91cElkcHQACGxlYWd1ZUlkcQB+AAN0AAhzdFRlYW1JZHEAfgADdAAIcG9ydGFsSWRxAH4AA3QADHRvdXJuYW1lbnRJZHEAfgADdAAFcHdvcmRxAH4AA3QADXRyYW5zRGV0YWlsSWRxAH4AA3QADVNTX1VzZXJUeXBlSWRwdAAKd3Jlc3RsZXJJZHEAfgADdAAIUGFzc3dvcmR0AAB0AAdldmVudElkcQB+AAN0AAZBVU5hbWVwdAAGQVBXb3JkcHQACFVzZXJOYW1lcQB+ABN0AAV1bmFtZXEAfgADdAANdHJhbnNhY3Rpb25JZHEAfgADdAAOVG91cm5hbWVudFR5cGV0AAEydAAGZHVhbElkcQB+AAN0AAdTU19HQklkcHQAE1N5c3RlbUFkbWluUGFzc3dvcmRwdAAGVXNlcklkcQB+ABN0AAZ0ZWFtSWRxAH4AA3QAClNTUF9leHBpcmV0AA0xNzg5MTU5NDQxNzEzdAAMVG91cm5hbWVudElkdAAJOTIzNDg3MTMydAAJcmFua2luZ0lkcQB+AAN0AAh1c2VyVHlwZXEAfgADdAALU1NfU2Vhc29uSWRwdAAIVXNlclR5cGV0AAZ2aWV3ZXJ0AAVTU19QV3B4';</script>
+</head>
+
+
+
+<body onload="startUp();">
+<script language='javascript'>
+try{ initGoogleTagManager(1); }catch(gtmError){}
+</script>
+
+
+<form id="theForm" name="theForm" method="post">
+<table style='position:absolute;z-index:200;' width='100%' border='0' cellspacing='0' cellpadding='0'><tr height='0'><td align='center'><div id='loadingMessage' class='loading'>LOADING...</div></td></tr></table>
+
+
+<iframe style='position:absolute' id="MethodCallerFrame" name="MethodCallerFrame" src="MethodCaller.jsp" width="1px" height="1px" frameborder='0'></iframe>
+
+<div id="pageContent">
+
+	<div class='modalFrame recordModal' id='recordModal'></div><div class='toolTipFrame' id='toolTipFrame'></div><div class='pageAlertFrame' id='pageAlertFrame'></div><div class='pageHeaderFrame' id='pageHeaderFrame'></div><div class='pageModalFrame' id='pageModalFrame'></div><div class='functionsAndLinksFrame'>	<div class='pageTopLinksFrame' id='pageTopLinksFrame'></div>	<div class='pageFunctionsFrame' id='pageFunctionsFrame'></div></div><div class='pageMessagesFrame' id='pageMessagesFrame'></div><div class='pageGridFrame' id='pageGridFrame'></div><div class='pageFooterFrame' id='pageFooterFrame'></div>
+
+	
+
+		
+
+			<STYLE TYPE="text/css">
+			H3 { page-break-before:always }
+			</STYLE>
+
+			<font style='font-size:10pt;'>
+<section class='tw-list'>
+<h1>NAIA 103</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Erin Hikiji (Providence) won by decision over Alexis Miller (Oklahoma City) Dec 8-2</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Judy Sandoval (Grand View) won by fall over Makayla Young (Indiana Tech) Fall 0:39</li>
+<li>5th Place Match - Alexis Hatfield (Avila) won by forfeit over Angelina Casteneda (Cumberlands) FF</li>
+<li>7th Place Match - Karina Vang (Doane) won by injury default over Sofia Abramson (Oklahoma City) Inj. 0:17</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Makayla Young (Indiana Tech) won by forfeit over Angelina Casteneda (Cumberlands) FF</li>
+<li>Cons. Semi - Judy Sandoval (Grand View) won by tech fall over Alexis Hatfield (Avila) TF 12-0</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Angelina Casteneda (Cumberlands) won by tech fall over Karina Vang (Doane) TF 10-0</li>
+<li>Cons. Round 5 - Alexis Hatfield (Avila) won by fall over Sofia Abramson (Oklahoma City) Fall 1:59</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Erin Hikiji (Providence) won by tech fall over Judy Sandoval (Grand View) TF 10-0</li>
+<li>Semifinal - Alexis Miller (Oklahoma City) won by fall over Makayla Young (Indiana Tech) Fall 2:27</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Karina Vang (Doane) won by decision over Malarie Dominguez (Wayland Baptist) Dec 3-3</li>
+<li>Cons. Round 4 - Angelina Casteneda (Cumberlands) won by tech fall over Eyvori Jacquez (Saint Mary) TF 10-0</li>
+<li>Cons. Round 4 - Sofia Abramson (Oklahoma City) won by fall over Katherine Hernandez (Life) Fall 2:15</li>
+<li>Cons. Round 4 - Alexis Hatfield (Avila) won by decision over Dutchess King (Cumberlands) Dec 8-5</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Malarie Dominguez (Wayland Baptist) won by decision over Isabella Bocanegra (Providence) Dec 6-0</li>
+<li>Cons. Round 3 - Eyvori Jacquez (Saint Mary) won by decision over Alanis Serrano-Rios (Waldorf) Dec 7-0</li>
+<li>Cons. Round 3 - Sofia Abramson (Oklahoma City) won by decision over Olivia Atkins (William Penn) Dec 10-8</li>
+<li>Cons. Round 3 - Alexis Hatfield (Avila) won by decision over Devyn Moore (Grand View) Dec 5-0</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Erin Hikiji (Providence) won by tech fall over Angelina Casteneda (Cumberlands) TF 11-0</li>
+<li>Quarterfinal - Judy Sandoval (Grand View) won by fall over Karina Vang (Doane) Fall 5:41</li>
+<li>Quarterfinal - Alexis Miller (Oklahoma City) won by fall over Dutchess King (Cumberlands) Fall 1:13</li>
+<li>Quarterfinal - Makayla Young (Indiana Tech) won by fall over Katherine Hernandez (Life) Fall 1:53</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Malarie Dominguez (Wayland Baptist) won by decision over Nayeli Flores Roque (Eastern Oregon) Dec 5-1</li>
+<li>Cons. Round 2 - Eyvori Jacquez (Saint Mary) won by tech fall over Lillian Zapata (William Penn) TF 10-0</li>
+<li>Cons. Round 2 - Alexis Hatfield (Avila) won by fall over Morgan Repasky (Montreat) Fall 2:24</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Erin Hikiji (Providence) won by fall over Alexis Hatfield (Avila) Fall 0:53</li>
+<li>Champ. Round 2 - Angelina Casteneda (Cumberlands) won by fall over Devyn Moore (Grand View) Fall 1:47</li>
+<li>Champ. Round 2 - Judy Sandoval (Grand View) won by fall over Sofia Abramson (Oklahoma City) Fall 2:35</li>
+<li>Champ. Round 2 - Karina Vang (Doane) won by fall over Olivia Atkins (William Penn) Fall 3:35</li>
+<li>Champ. Round 2 - Alexis Miller (Oklahoma City) won by fall over Lillian Zapata (William Penn) Fall 1:37</li>
+<li>Champ. Round 2 - Dutchess King (Cumberlands) won by tech fall over Alanis Serrano-Rios (Waldorf) TF 10-0</li>
+<li>Champ. Round 2 - Makayla Young (Indiana Tech) won by decision over Isabella Bocanegra (Providence) Dec 3-1</li>
+<li>Champ. Round 2 - Katherine Hernandez (Life) won by decision over Malarie Dominguez (Wayland Baptist) Dec 4-4</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Alexis Hatfield (Avila) won by decision over Nayeli Flores Roque (Eastern Oregon) Dec 7-0</li>
+<li>Champ. Round 1 - Karina Vang (Doane) won by tech fall over Eyvori Jacquez (Saint Mary) TF 12-2</li>
+<li>Champ. Round 1 - Katherine Hernandez (Life) won by fall over Morgan Repasky (Montreat) Fall 3:18</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 110</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Stefana Jelacic (Lourdes) won by decision over Anaya Falcon (Life) Dec 7-2</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Paige Morales (Providence) won by tech fall over Tehani Soares (Indiana Tech) TF 10-0</li>
+<li>5th Place Match - Emma Baertlein (Southern Oregon) won by decision over Alexsys Jacquez (Saint Mary) Dec 3-0</li>
+<li>7th Place Match - Tristan Nitta (Grand View) won by injury default over Nizhoni Tallman (Evergreen State) Inj. 6:00</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Paige Morales (Providence) won by tech fall over Alexsys Jacquez (Saint Mary) TF 10-0</li>
+<li>Cons. Semi - Tehani Soares (Indiana Tech) won by decision over Emma Baertlein (Southern Oregon) Dec 4-2</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Alexsys Jacquez (Saint Mary) won by tech fall over Nizhoni Tallman (Evergreen State) TF 11-0</li>
+<li>Cons. Round 5 - Tehani Soares (Indiana Tech) won by decision over Tristan Nitta (Grand View) Dec 3-3</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Anaya Falcon (Life) won by decision over Emma Baertlein (Southern Oregon) Dec 3-1</li>
+<li>Semifinal - Stefana Jelacic (Lourdes) won by tech fall over Paige Morales (Providence) TF 11-1</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Nizhoni Tallman (Evergreen State) won by decision over Lita Cruz (Grand View) Dec 6-5</li>
+<li>Cons. Round 4 - Alexsys Jacquez (Saint Mary) won by tech fall over Reagan Thomas (Lindsey Wilson) TF 15-4</li>
+<li>Cons. Round 4 - Tristan Nitta (Grand View) won by fall over Jenna Gerhardt (Dickinson State) Fall 2:55</li>
+<li>Cons. Round 4 - Tehani Soares (Indiana Tech) won by fall over Kayla Shota (Providence) Fall 2:07</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Nizhoni Tallman (Evergreen State) won by decision over Aynsley Fink (Ottawa) Dec 8-4</li>
+<li>Cons. Round 3 - Reagan Thomas (Lindsey Wilson) won by decision over Nia Avelino (Eastern Oregon) Dec 12-3</li>
+<li>Cons. Round 3 - Jenna Gerhardt (Dickinson State) won by decision over Telsarina Walter (Eastern Oregon) Dec 4-3</li>
+<li>Cons. Round 3 - Kayla Shota (Providence) won by tech fall over Hailey Holland (Missouri Valley) TF 10-0</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Anaya Falcon (Life) won by decision over Alexsys Jacquez (Saint Mary) Dec 10-2</li>
+<li>Quarterfinal - Emma Baertlein (Southern Oregon) won by decision over Lita Cruz (Grand View) Dec 5-2</li>
+<li>Quarterfinal - Paige Morales (Providence) won by decision over Tehani Soares (Indiana Tech) Dec 6-4</li>
+<li>Quarterfinal - Stefana Jelacic (Lourdes) won by decision over Tristan Nitta (Grand View) Dec 7-0</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Aynsley Fink (Ottawa) won by fall over Rodiat Adeduntan (Lindsey Wilson) Fall 3:52</li>
+<li>Cons. Round 2 - Nizhoni Tallman (Evergreen State) won by fall over Allison Hancher (Indiana Tech) Fall 2:56</li>
+<li>Cons. Round 2 - Nia Avelino (Eastern Oregon) won by decision over Iby Garcia (Oklahoma City) Dec 8-4</li>
+<li>Cons. Round 2 - Jenna Gerhardt (Dickinson State) won by tech fall over Jaden Breeden (Doane) TF 10-0</li>
+<li>Cons. Round 2 - Hailey Holland (Missouri Valley) won by fall over Sarah Pineda (Missouri Valley) Fall 2:50</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Anaya Falcon (Life) won by fall over Kayla Shota (Providence) Fall 2:23</li>
+<li>Champ. Round 2 - Alexsys Jacquez (Saint Mary) won by tech fall over Hailey Holland (Missouri Valley) TF 13-2</li>
+<li>Champ. Round 2 - Lita Cruz (Grand View) won by fall over Telsarina Walter (Eastern Oregon) Fall 1:39</li>
+<li>Champ. Round 2 - Emma Baertlein (Southern Oregon) won by tech fall over Jaden Breeden (Doane) TF 10-0</li>
+<li>Champ. Round 2 - Paige Morales (Providence) won by fall over Reagan Thomas (Lindsey Wilson) Fall 1:29</li>
+<li>Champ. Round 2 - Tehani Soares (Indiana Tech) won by decision over Nia Avelino (Eastern Oregon) Dec 6-0</li>
+<li>Champ. Round 2 - Tristan Nitta (Grand View) won by fall over Nizhoni Tallman (Evergreen State) Fall 2:40</li>
+<li>Champ. Round 2 - Stefana Jelacic (Lourdes) won by tech fall over Aynsley Fink (Ottawa) TF 14-2</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Anaya Falcon (Life) won by decision over Rodiat Adeduntan (Lindsey Wilson) Dec 9-2</li>
+<li>Champ. Round 1 - Hailey Holland (Missouri Valley) won by tech fall over Allison Hancher (Indiana Tech) TF 10-0</li>
+<li>Champ. Round 1 - Lita Cruz (Grand View) won by fall over Iby Garcia (Oklahoma City) Fall 0:59</li>
+<li>Champ. Round 1 - Reagan Thomas (Lindsey Wilson) won by decision over Jenna Gerhardt (Dickinson State) Dec 4-4</li>
+<li>Champ. Round 1 - Tristan Nitta (Grand View) won by fall over Sarah Pineda (Missouri Valley) Fall 2:00</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 117</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Christianah Ogunsanya (William Penn) won by decision over Salyna Shotwell (Life) Dec 8-0</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Shammilka Miranda (Cumberlands) won by tech fall over Mayangelie Colon (Grand View) TF 11-0</li>
+<li>5th Place Match - Jasmine Howard (Southern Oregon) won by decision over Camille Fournier (Texas Wesleyan) Dec 7-4</li>
+<li>7th Place Match - Katherine Heath (Baker) won by decision over Icart Galumette (Campbellsville) Dec 10-6</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Shammilka Miranda (Cumberlands) won by fall over Camille Fournier (Texas Wesleyan) Fall 2:42</li>
+<li>Cons. Semi - Mayangelie Colon (Grand View) won by fall over Jasmine Howard (Southern Oregon) Fall 2:44</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Shammilka Miranda (Cumberlands) won by fall over Icart Galumette (Campbellsville) Fall 2:32</li>
+<li>Cons. Round 5 - Mayangelie Colon (Grand View) won by tech fall over Katherine Heath (Baker) TF 11-0</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Christianah Ogunsanya (William Penn) won by decision over Jasmine Howard (Southern Oregon) Dec 11-2</li>
+<li>Semifinal - Salyna Shotwell (Life) won by fall over Camille Fournier (Texas Wesleyan) Fall 5:07</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Icart Galumette (Campbellsville) won by tech fall over Cailin Campbell (Grand View) TF 12-2</li>
+<li>Cons. Round 4 - Shammilka Miranda (Cumberlands) won by fall over Irma Retano (Eastern Oregon) Fall 0:58</li>
+<li>Cons. Round 4 - Katherine Heath (Baker) won by tech fall over Jamesa Robinson (Brewton-Parker) TF 12-2</li>
+<li>Cons. Round 4 - Mayangelie Colon (Grand View) won by fall over Callie Payton (Lindsey Wilson) Fall 3:45</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Icart Galumette (Campbellsville) won by fall over Alicia Frank (Providence) Fall 2:02</li>
+<li>Cons. Round 3 - Irma Retano (Eastern Oregon) won by tech fall over Larhae Whaley (Dickinson State) TF 13-2</li>
+<li>Cons. Round 3 - Jamesa Robinson (Brewton-Parker) won by fall over Julia Breeden (Doane) Fall 4:31</li>
+<li>Cons. Round 3 - Callie Payton (Lindsey Wilson) won by tech fall over Victoria Nunez (Central Methodist) TF 10-0</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Christianah Ogunsanya (William Penn) won by tech fall over Shammilka Miranda (Cumberlands) TF 10-0</li>
+<li>Quarterfinal - Jasmine Howard (Southern Oregon) won by decision over Cailin Campbell (Grand View) Dec 7-0</li>
+<li>Quarterfinal - Salyna Shotwell (Life) won by fall over Mayangelie Colon (Grand View) Fall 1:25</li>
+<li>Quarterfinal - Camille Fournier (Texas Wesleyan) won by decision over Katherine Heath (Baker) Dec 9-4</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Icart Galumette (Campbellsville) won by decision over Marissa Kurtz (Southern Oregon) Dec 16-8</li>
+<li>Cons. Round 2 - Larhae Whaley (Dickinson State) won by tech fall over Mora Peterson (Doane) TF 10-0</li>
+<li>Cons. Round 2 - Victoria Nunez (Central Methodist) won by fall over Kendall Martin (Ottawa) Fall 4:31</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Christianah Ogunsanya (William Penn) won by tech fall over Callie Payton (Lindsey Wilson) TF 12-2</li>
+<li>Champ. Round 2 - Shammilka Miranda (Cumberlands) won by fall over Victoria Nunez (Central Methodist) Fall 2:13</li>
+<li>Champ. Round 2 - Jasmine Howard (Southern Oregon) won by fall over Julia Breeden (Doane) Fall 0:58</li>
+<li>Champ. Round 2 - Cailin Campbell (Grand View) won by tech fall over Jamesa Robinson (Brewton-Parker) TF 12-0</li>
+<li>Champ. Round 2 - Salyna Shotwell (Life) won by fall over Irma Retano (Eastern Oregon) Fall 4:08</li>
+<li>Champ. Round 2 - Mayangelie Colon (Grand View) won by tech fall over Mora Peterson (Doane) TF 10-0</li>
+<li>Champ. Round 2 - Katherine Heath (Baker) won by tech fall over Icart Galumette (Campbellsville) TF 12-1</li>
+<li>Champ. Round 2 - Camille Fournier (Texas Wesleyan) won by fall over Alicia Frank (Providence) Fall 2:25</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Shammilka Miranda (Cumberlands) won by decision over Marissa Kurtz (Southern Oregon) Dec 6-0</li>
+<li>Champ. Round 1 - Jasmine Howard (Southern Oregon) won by tech fall over Larhae Whaley (Dickinson State) TF 10-0</li>
+<li>Champ. Round 1 - Katherine Heath (Baker) won by tech fall over Kendall Martin (Ottawa) TF 15-2</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 124</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Cristelle Rodriguez (Doane) won by decision over Katie Gomez (Cumberlands) Dec 5-5</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Joanna Vanderwood (William Penn) won by decision over Catharine Campbell (Grand View) Dec 5-1</li>
+<li>5th Place Match - Jasmina Immaeva (Missouri Valley) won by tech fall over Rose Kaplan (Indiana Tech) TF 10-0</li>
+<li>7th Place Match - Maya Davis (Grand View) won by tech fall over Ariana Martinez (Life) TF 13-2</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Joanna Vanderwood (William Penn) won by fall over Rose Kaplan (Indiana Tech) Fall 2:19</li>
+<li>Cons. Semi - Catharine Campbell (Grand View) won by decision over Jasmina Immaeva (Missouri Valley) Dec 8-6</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Rose Kaplan (Indiana Tech) won by tech fall over Ariana Martinez (Life) TF 12-0</li>
+<li>Cons. Round 5 - Catharine Campbell (Grand View) won by fall over Maya Davis (Grand View) Fall 2:59</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Cristelle Rodriguez (Doane) won by tech fall over Jasmina Immaeva (Missouri Valley) TF 11-0</li>
+<li>Semifinal - Katie Gomez (Cumberlands) won by decision over Joanna Vanderwood (William Penn) Dec 8-2</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Rose Kaplan (Indiana Tech) won by decision over Alyssa Randles (Providence) Dec 6-5</li>
+<li>Cons. Round 4 - Ariana Martinez (Life) won by disqualification over Kamilah Brooks (Lindsey Wilson) DQ</li>
+<li>Cons. Round 4 - Catharine Campbell (Grand View) won by tech fall over Ellabelle Taylor (Evergreen State) TF 11-0</li>
+<li>Cons. Round 4 - Maya Davis (Grand View) won by fall over Malia Welch (Southern Oregon) Fall 2:06</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Alyssa Randles (Providence) won by tech fall over Presley Anderson (Cumberlands) TF 14-4</li>
+<li>Cons. Round 3 - Ariana Martinez (Life) won by tech fall over Peyton Hand (Ottawa) TF 12-0</li>
+<li>Cons. Round 3 - Catharine Campbell (Grand View) won by fall over Catherine Steinkamp (William Penn) Fall 1:02</li>
+<li>Cons. Round 3 - Malia Welch (Southern Oregon) won by tech fall over Tess Barnett (Wayland Baptist) TF 13-2</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Cristelle Rodriguez (Doane) won by tech fall over Kamilah Brooks (Lindsey Wilson) TF 10-0</li>
+<li>Quarterfinal - Jasmina Immaeva (Missouri Valley) won by decision over Rose Kaplan (Indiana Tech) Dec 5-3</li>
+<li>Quarterfinal - Joanna Vanderwood (William Penn) won by tech fall over Maya Davis (Grand View) TF 11-1</li>
+<li>Quarterfinal - Katie Gomez (Cumberlands) won by tech fall over Ellabelle Taylor (Evergreen State) TF 10-0</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Presley Anderson (Cumberlands) won by decision over Isla Baeza (Missouri Valley) Dec 12-10</li>
+<li>Cons. Round 2 - Alyssa Randles (Providence) won by decision over Kaylee Annis (Southern Oregon) Dec 10-9</li>
+<li>Cons. Round 2 - Ariana Martinez (Life) won by tech fall over Anna Krejsa (Life) TF 10-0</li>
+<li>Cons. Round 2 - Peyton Hand (Ottawa) won by fall over Jill High (York) Fall 1:38</li>
+<li>Cons. Round 2 - Catharine Campbell (Grand View) won by fall over Kadence Beck (Eastern Oregon) Fall 1:38</li>
+<li>Cons. Round 2 - Catherine Steinkamp (William Penn) won by tech fall over Sydney Bridenstine (Lindsey Wilson) TF 10-0</li>
+<li>Cons. Round 2 - Malia Welch (Southern Oregon) won by tech fall over Kylie Robledo (Baker) TF 10-0</li>
+<li>Cons. Round 2 - Tess Barnett (Wayland Baptist) won by decision over Chloe Herrick (Missouri Baptist) Dec 9-0</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Cristelle Rodriguez (Doane) won by fall over Tess Barnett (Wayland Baptist) Fall 0:48</li>
+<li>Champ. Round 2 - Kamilah Brooks (Lindsey Wilson) won by decision over Kylie Robledo (Baker) Dec 9-6</li>
+<li>Champ. Round 2 - Rose Kaplan (Indiana Tech) won by decision over Catherine Steinkamp (William Penn) Dec 8-3</li>
+<li>Champ. Round 2 - Jasmina Immaeva (Missouri Valley) won by decision over Catharine Campbell (Grand View) Dec 9-2</li>
+<li>Champ. Round 2 - Joanna Vanderwood (William Penn) won by tech fall over Peyton Hand (Ottawa) TF 10-0</li>
+<li>Champ. Round 2 - Maya Davis (Grand View) won by tech fall over Anna Krejsa (Life) TF 15-4</li>
+<li>Champ. Round 2 - Ellabelle Taylor (Evergreen State) won by decision over Alyssa Randles (Providence) Dec 10-7</li>
+<li>Champ. Round 2 - Katie Gomez (Cumberlands) won by tech fall over Isla Baeza (Missouri Valley) TF 10-0</li>
+<li>Cons. Round 1 - Malia Welch (Southern Oregon) won by tech fall over Emily Paulino (Midland) TF 11-0</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Cristelle Rodriguez (Doane) won by fall over Presley Anderson (Cumberlands) Fall 1:12</li>
+<li>Champ. Round 1 - Kamilah Brooks (Lindsey Wilson) won by tech fall over Kaylee Annis (Southern Oregon) TF 10-0</li>
+<li>Champ. Round 1 - Rose Kaplan (Indiana Tech) won by tech fall over Ariana Martinez (Life) TF 12-1</li>
+<li>Champ. Round 1 - Jasmina Immaeva (Missouri Valley) won by tech fall over Jill High (York) TF 15-4</li>
+<li>Champ. Round 1 - Joanna Vanderwood (William Penn) won by tech fall over Kadence Beck (Eastern Oregon) TF 10-0</li>
+<li>Champ. Round 1 - Anna Krejsa (Life) won by fall over Sydney Bridenstine (Lindsey Wilson) Fall 2:18</li>
+<li>Champ. Round 1 - Alyssa Randles (Providence) won by decision over Malia Welch (Southern Oregon) Dec 8-1</li>
+<li>Champ. Round 1 - Ellabelle Taylor (Evergreen State) won by decision over Emily Paulino (Midland) Dec 6-2</li>
+<li>Champ. Round 1 - Katie Gomez (Cumberlands) won by tech fall over Chloe Herrick (Missouri Baptist) TF 10-0</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 131</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Jumoke Adekoye (Dickinson State) won by decision over Xochitl Mota-pettis (Missouri Valley) Dec 5-3</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Mercy Adekuoroye (Wayland Baptist) won by decision over Carolina Moreno (Southern Oregon) Dec 15-6</li>
+<li>5th Place Match - Olivia Mottley (Life) won by injury default over Sarah Savidge (Life) Inj. 0:00</li>
+<li>7th Place Match - Devin Patton (William Penn) won by decision over Larissa Kaz (Hastings) Dec 14-12</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Mercy Adekuoroye (Wayland Baptist) won by decision over Sarah Savidge (Life) Dec 11-5</li>
+<li>Cons. Semi - Carolina Moreno (Southern Oregon) won by tech fall over Olivia Mottley (Life) TF 12-2</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Sarah Savidge (Life) won by decision over Devin Patton (William Penn) Dec 10-6</li>
+<li>Cons. Round 5 - Olivia Mottley (Life) won by decision over Larissa Kaz (Hastings) Dec 5-1</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Jumoke Adekoye (Dickinson State) won by decision over Carolina Moreno (Southern Oregon) Dec 3-1</li>
+<li>Semifinal - Xochitl Mota-pettis (Missouri Valley) won by fall over Mercy Adekuoroye (Wayland Baptist) Fall 4:42</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Sarah Savidge (Life) won by fall over Olivia Messerly (Campbellsville) Fall 3:52</li>
+<li>Cons. Round 4 - Devin Patton (William Penn) won by tech fall over Andrea Hernandez (Indiana Tech) TF 11-0</li>
+<li>Cons. Round 4 - Larissa Kaz (Hastings) won by tech fall over Ashley Whetzal (Missouri Valley) TF 13-2</li>
+<li>Cons. Round 4 - Olivia Mottley (Life) won by tech fall over Ashlee Palimo (Doane) TF 11-0</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Olivia Messerly (Campbellsville) won by tech fall over Mary Jane Porter (Cumberlands) TF 13-2</li>
+<li>Cons. Round 3 - Andrea Hernandez (Indiana Tech) won by fall over Paige Respicio (Providence) Fall 2:28</li>
+<li>Cons. Round 3 - Larissa Kaz (Hastings) won by fall over Destiny Campbell (Oklahoma City) Fall 3:49</li>
+<li>Cons. Round 3 - Ashlee Palimo (Doane) won by decision over Cameron Ortiz (Campbellsville) Dec 4-3</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Carolina Moreno (Southern Oregon) won by tech fall over Devin Patton (William Penn) TF 10-0</li>
+<li>Quarterfinal - Jumoke Adekoye (Dickinson State) won by fall over Sarah Savidge (Life) Fall 3:55</li>
+<li>Quarterfinal - Xochitl Mota-pettis (Missouri Valley) won by tech fall over Olivia Mottley (Life) TF 12-1</li>
+<li>Quarterfinal - Mercy Adekuoroye (Wayland Baptist) won by tech fall over Ashley Whetzal (Missouri Valley) TF 10-0</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Olivia Messerly (Campbellsville) won by decision over Annabelle Suto (Cumberlands) Dec 11-2</li>
+<li>Cons. Round 2 - Paige Respicio (Providence) won by tech fall over Nicole Redmond (Avila) TF 11-0</li>
+<li>Cons. Round 2 - Andrea Hernandez (Indiana Tech) won by fall over Hannah Seitzinger (Indiana Tech) Fall 1:10</li>
+<li>Cons. Round 2 - Larissa Kaz (Hastings) won by fall over Keira Nartatez (Midland) Fall 3:38</li>
+<li>Cons. Round 2 - Destiny Campbell (Oklahoma City) won by fall over Bryce White (Oklahoma City) Fall 2:49</li>
+<li>Cons. Round 2 - Cameron Ortiz (Campbellsville) won by fall over Emma Truex (Ottawa) Fall 3:53</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Carolina Moreno (Southern Oregon) won by tech fall over Cameron Ortiz (Campbellsville) TF 10-0</li>
+<li>Champ. Round 2 - Devin Patton (William Penn) won by tech fall over Ashlee Palimo (Doane) TF 10-0</li>
+<li>Champ. Round 2 - Jumoke Adekoye (Dickinson State) won by tech fall over Bryce White (Oklahoma City) TF 10-0</li>
+<li>Champ. Round 2 - Sarah Savidge (Life) won by tech fall over Larissa Kaz (Hastings) TF 11-0</li>
+<li>Champ. Round 2 - Xochitl Mota-pettis (Missouri Valley) won by tech fall over Hannah Seitzinger (Indiana Tech) TF 10-0</li>
+<li>Champ. Round 2 - Olivia Mottley (Life) won by decision over Paige Respicio (Providence) Dec 7-1</li>
+<li>Champ. Round 2 - Ashley Whetzal (Missouri Valley) won by fall over Olivia Messerly (Campbellsville) Fall 4:36</li>
+<li>Champ. Round 2 - Mercy Adekuoroye (Wayland Baptist) won by tech fall over Mary Jane Porter (Cumberlands) TF 10-0</li>
+<li>Cons. Round 1 - Andrea Hernandez (Indiana Tech) won by fall over Keera Lacock (Dakota Wesleyan) Fall 1:37</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Ashlee Palimo (Doane) won by decision over Annabelle Suto (Cumberlands) Dec 4-2</li>
+<li>Champ. Round 1 - Jumoke Adekoye (Dickinson State) won by tech fall over Nicole Redmond (Avila) TF 11-0</li>
+<li>Champ. Round 1 - Larissa Kaz (Hastings) won by tech fall over Andrea Hernandez (Indiana Tech) TF 10-0</li>
+<li>Champ. Round 1 - Sarah Savidge (Life) won by tech fall over Keera Lacock (Dakota Wesleyan) TF 10-0</li>
+<li>Champ. Round 1 - Xochitl Mota-pettis (Missouri Valley) won by tech fall over Keira Nartatez (Midland) TF 10-0</li>
+<li>Champ. Round 1 - Olivia Mottley (Life) won by tech fall over Destiny Campbell (Oklahoma City) TF 11-0</li>
+<li>Champ. Round 1 - Mary Jane Porter (Cumberlands) won by fall over Emma Truex (Ottawa) Fall 4:01</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 138</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Zaynah Mcbryde (Life) won by tech fall over Waipuilani Estrella-Beauchamp (Providence) TF 10-0</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Samantha Barragan (Texas Wesleyan) won by fall over Reagen Gallaway (Hastings) Fall 2:27</li>
+<li>5th Place Match - Jordan Suarez (Wayland Baptist) won by fall over Serenity De La Garza (Missouri Valley) Fall 3:33</li>
+<li>7th Place Match - Isabelle Hawley (William Penn) won by fall over Natalia Posada (Oklahoma City) Fall 1:21</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Reagen Gallaway (Hastings) won by fall over Serenity De La Garza (Missouri Valley) Fall 4:51</li>
+<li>Cons. Semi - Samantha Barragan (Texas Wesleyan) won by decision over Jordan Suarez (Wayland Baptist) Dec 9-9</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Serenity De La Garza (Missouri Valley) won by fall over Isabelle Hawley (William Penn) Fall 0:33</li>
+<li>Cons. Round 5 - Jordan Suarez (Wayland Baptist) won by fall over Natalia Posada (Oklahoma City) Fall 1:47</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Zaynah Mcbryde (Life) won by decision over Samantha Barragan (Texas Wesleyan) Dec 8-0</li>
+<li>Semifinal - Waipuilani Estrella-Beauchamp (Providence) won by tech fall over Reagen Gallaway (Hastings) TF 12-2</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Serenity De La Garza (Missouri Valley) won by fall over Kendall Bostelman (William Penn) Fall 2:08</li>
+<li>Cons. Round 4 - Isabelle Hawley (William Penn) won by decision over Gabriella Perez (Campbellsville) Dec 2-1</li>
+<li>Cons. Round 4 - Natalia Posada (Oklahoma City) won by decision over Kori Campbell (Lindsey Wilson) Dec 6-4</li>
+<li>Cons. Round 4 - Jordan Suarez (Wayland Baptist) won by decision over Livia Swift (Ottawa) Dec 8-4</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Serenity De La Garza (Missouri Valley) won by fall over Lilly Gough (Central Methodist) Fall 3:37</li>
+<li>Cons. Round 3 - Isabelle Hawley (William Penn) won by fall over Addison Messerly (Campbellsville) Fall 2:13</li>
+<li>Cons. Round 3 - Natalia Posada (Oklahoma City) won by decision over Kailey Rees (Providence) Dec 12-10</li>
+<li>Cons. Round 3 - Livia Swift (Ottawa) won by fall over Araya Boday (Saint Mary) Fall 1:51</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Zaynah Mcbryde (Life) won by tech fall over Gabriella Perez (Campbellsville) TF 10-0</li>
+<li>Quarterfinal - Samantha Barragan (Texas Wesleyan) won by tech fall over Kendall Bostelman (William Penn) TF 13-2</li>
+<li>Quarterfinal - Reagen Gallaway (Hastings) won by decision over Jordan Suarez (Wayland Baptist) Dec 4-3</li>
+<li>Quarterfinal - Waipuilani Estrella-Beauchamp (Providence) won by decision over Kori Campbell (Lindsey Wilson) Dec 10-4</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Lilly Gough (Central Methodist) won by decision over Gianna Moreno (Friends) Dec 6-6</li>
+<li>Cons. Round 2 - Addison Messerly (Campbellsville) won by fall over Tabitha Wood (Hastings) Fall 4:56</li>
+<li>Cons. Round 2 - Kailey Rees (Providence) won by tech fall over Jaclyn Riedinger (Avila) TF 12-0</li>
+<li>Cons. Round 2 - Livia Swift (Ottawa) won by fall over Jade Martin (Baker) Fall 2:26</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Zaynah Mcbryde (Life) won by tech fall over Jade Martin (Baker) TF 10-0</li>
+<li>Champ. Round 2 - Gabriella Perez (Campbellsville) won by fall over Araya Boday (Saint Mary) Fall 5:16</li>
+<li>Champ. Round 2 - Samantha Barragan (Texas Wesleyan) won by fall over Kailey Rees (Providence) Fall 2:19</li>
+<li>Champ. Round 2 - Kendall Bostelman (William Penn) won by tech fall over Natalia Posada (Oklahoma City) TF 10-0</li>
+<li>Champ. Round 2 - Jordan Suarez (Wayland Baptist) won by fall over Addison Messerly (Campbellsville) Fall 5:04</li>
+<li>Champ. Round 2 - Reagen Gallaway (Hastings) won by tech fall over Isabelle Hawley (William Penn) TF 12-1</li>
+<li>Champ. Round 2 - Kori Campbell (Lindsey Wilson) won by fall over Gianna Moreno (Friends) Fall 3:31</li>
+<li>Champ. Round 2 - Waipuilani Estrella-Beauchamp (Providence) won by fall over Serenity De La Garza (Missouri Valley) Fall 1:56</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Gabriella Perez (Campbellsville) won by decision over Lilly Gough (Central Methodist) Dec 9-1</li>
+<li>Champ. Round 1 - Kendall Bostelman (William Penn) won by fall over Tabitha Wood (Hastings) Fall 0:30</li>
+<li>Champ. Round 1 - Isabelle Hawley (William Penn) won by fall over Jaclyn Riedinger (Avila) Fall 0:29</li>
+<li>Champ. Round 1 - Serenity De La Garza (Missouri Valley) won by tech fall over Livia Swift (Ottawa) TF 10-0</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 145</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Esther Kolawole (William Penn) won by decision over Jamilah Mcbryde (Life) Dec 12-5</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Liv Wieber (Eastern Oregon) won by fall over Sevreign Aumua (Missouri Valley) Fall 2:54</li>
+<li>5th Place Match - Bridgette Sotomayor (Doane) won by fall over Aubrey Yauger (Texas Wesleyan) Fall 4:33</li>
+<li>7th Place Match - Alivia Ming (Cumberlands) won by disqualification over Anastasia Hardin (Missouri Baptist) DQ</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Liv Wieber (Eastern Oregon) won by fall over Bridgette Sotomayor (Doane) Fall 5:21</li>
+<li>Cons. Semi - Sevreign Aumua (Missouri Valley) won by fall over Aubrey Yauger (Texas Wesleyan) Fall 2:51</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Bridgette Sotomayor (Doane) won by disqualification over Anastasia Hardin (Missouri Baptist) DQ</li>
+<li>Cons. Round 5 - Aubrey Yauger (Texas Wesleyan) won by fall over Alivia Ming (Cumberlands) Fall 3:45</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Jamilah Mcbryde (Life) won by tech fall over Sevreign Aumua (Missouri Valley) TF 14-4</li>
+<li>Semifinal - Esther Kolawole (William Penn) won by tech fall over Liv Wieber (Eastern Oregon) TF 11-0</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Bridgette Sotomayor (Doane) won by fall over Krista Warren (Grand View) Fall 4:41</li>
+<li>Cons. Round 4 - Anastasia Hardin (Missouri Baptist) won by fall over Aspen Dodge (Providence) Fall 5:16</li>
+<li>Cons. Round 4 - Alivia Ming (Cumberlands) won by decision over Josselinne Campos (Lindsey Wilson) Dec 4-2</li>
+<li>Cons. Round 4 - Aubrey Yauger (Texas Wesleyan) won by decision over Esther Han (Providence) Dec 5-2</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Bridgette Sotomayor (Doane) won by decision over Emma Stice (Hastings) Dec 9-4</li>
+<li>Cons. Round 3 - Anastasia Hardin (Missouri Baptist) won by fall over Berlyn Davis (Westcliff) Fall 1:53</li>
+<li>Cons. Round 3 - Alivia Ming (Cumberlands) won by fall over Aniseta Acosta (Missouri Valley) Fall 2:16</li>
+<li>Cons. Round 3 - Esther Han (Providence) won by fall over Ann Meiman (Jamestown) Fall 5:53</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Jamilah Mcbryde (Life) won by tech fall over Aspen Dodge (Providence) TF 12-0</li>
+<li>Quarterfinal - Sevreign Aumua (Missouri Valley) won by tech fall over Krista Warren (Grand View) TF 11-0</li>
+<li>Quarterfinal - Esther Kolawole (William Penn) won by tech fall over Aubrey Yauger (Texas Wesleyan) TF 10-0</li>
+<li>Quarterfinal - Liv Wieber (Eastern Oregon) won by decision over Josselinne Campos (Lindsey Wilson) Dec 5-0</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Bridgette Sotomayor (Doane) won by decision over Holland Wieber (Southern Oregon) Dec 11-5</li>
+<li>Cons. Round 2 - Anastasia Hardin (Missouri Baptist) won by fall over Makena Schramm (Midland) Fall 4:38</li>
+<li>Cons. Round 2 - Berlyn Davis (Westcliff) won by fall over Aevri Ciha (Doane) Fall 1:38</li>
+<li>Cons. Round 2 - Alivia Ming (Cumberlands) won by fall over Naida Abdijanovic (William Penn) Fall 4:03</li>
+<li>Cons. Round 2 - Aniseta Acosta (Missouri Valley) won by tech fall over Lisa Hoeflich (Hastings) TF 11-0</li>
+<li>Cons. Round 2 - Esther Han (Providence) won by fall over Lexi Ritchie (Lindsey Wilson) Fall 4:30</li>
+<li>Cons. Round 2 - Ann Meiman (Jamestown) won by fall over Makayla Munoz (Oklahoma City) Fall 0:53</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Jamilah Mcbryde (Life) won by tech fall over Ann Meiman (Jamestown) TF 10-0</li>
+<li>Champ. Round 2 - Aspen Dodge (Providence) won by fall over Lexi Ritchie (Lindsey Wilson) Fall 5:15</li>
+<li>Champ. Round 2 - Krista Warren (Grand View) won by fall over Lisa Hoeflich (Hastings) Fall 2:26</li>
+<li>Champ. Round 2 - Sevreign Aumua (Missouri Valley) won by tech fall over Naida Abdijanovic (William Penn) TF 10-0</li>
+<li>Champ. Round 2 - Esther Kolawole (William Penn) won by tech fall over Berlyn Davis (Westcliff) TF 10-0</li>
+<li>Champ. Round 2 - Aubrey Yauger (Texas Wesleyan) won by fall over Anastasia Hardin (Missouri Baptist) Fall 5:26</li>
+<li>Champ. Round 2 - Josselinne Campos (Lindsey Wilson) won by decision over Emma Stice (Hastings) Dec 9-9</li>
+<li>Champ. Round 2 - Liv Wieber (Eastern Oregon) won by fall over Bridgette Sotomayor (Doane) Fall 1:50</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Jamilah Mcbryde (Life) won by fall over Holland Wieber (Southern Oregon) Fall 1:05</li>
+<li>Champ. Round 1 - Lisa Hoeflich (Hastings) won by decision over Makena Schramm (Midland) Dec 7-2</li>
+<li>Champ. Round 1 - Sevreign Aumua (Missouri Valley) won by tech fall over Aevri Ciha (Doane) TF 12-0</li>
+<li>Champ. Round 1 - Esther Kolawole (William Penn) won by tech fall over Alivia Ming (Cumberlands) TF 10-0</li>
+<li>Champ. Round 1 - Anastasia Hardin (Missouri Baptist) won by fall over Aniseta Acosta (Missouri Valley) Fall 3:46</li>
+<li>Champ. Round 1 - Josselinne Campos (Lindsey Wilson) won by decision over Esther Han (Providence) Dec 5-4</li>
+<li>Champ. Round 1 - Liv Wieber (Eastern Oregon) won by fall over Makayla Munoz (Oklahoma City) Fall 2:35</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 160</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Latifah Mcbryde (Life) won by decision over Darby Weidl (Ottawa) Dec 7-2</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Flor Parker Borrero (Evergreen State) won by fall over Micah Fisher (Cumberlands) Fall 1:28</li>
+<li>5th Place Match - Josette Partney (Missouri Baptist) won by injury default over Allyssa Johnson (Jamestown) Inj. 0:00</li>
+<li>7th Place Match - Aspen Barber (Doane) won by fall over Abigail Sebesta (Ottawa) Fall 2:08</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Micah Fisher (Cumberlands) won by injury default over Allyssa Johnson (Jamestown) Inj. 4:07</li>
+<li>Cons. Semi - Flor Parker Borrero (Evergreen State) won by fall over Josette Partney (Missouri Baptist) Fall 1:36</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Micah Fisher (Cumberlands) won by fall over Aspen Barber (Doane) Fall 2:34</li>
+<li>Cons. Round 5 - Flor Parker Borrero (Evergreen State) won by fall over Abigail Sebesta (Ottawa) Fall 1:31</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Latifah Mcbryde (Life) won by decision over Josette Partney (Missouri Baptist) Dec 7-2</li>
+<li>Semifinal - Darby Weidl (Ottawa) won by fall over Allyssa Johnson (Jamestown) Fall 5:27</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Micah Fisher (Cumberlands) won by tech fall over Kylee Tait (Campbellsville) TF 11-0</li>
+<li>Cons. Round 4 - Aspen Barber (Doane) won by decision over Alexa Wolf (William Penn) Dec 8-1</li>
+<li>Cons. Round 4 - Flor Parker Borrero (Evergreen State) won by fall over Taydem Khamjoi (Texas Wesleyan) Fall 1:28</li>
+<li>Cons. Round 4 - Abigail Sebesta (Ottawa) won by injury default over Quilaztli Miguel-Lapham (Southern Oregon) Inj. 0:00</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Kylee Tait (Campbellsville) won by fall over Kiley Hubby (Dickinson State) Fall 5:36</li>
+<li>Cons. Round 3 - Alexa Wolf (William Penn) won by fall over Corin Lowe (Oklahoma City) Fall 5:48</li>
+<li>Cons. Round 3 - Taydem Khamjoi (Texas Wesleyan) won by tech fall over Emmalee Spurgeon (Grand View) TF 12-0</li>
+<li>Cons. Round 3 - Abigail Sebesta (Ottawa) won by fall over Hailey Sutton (Providence) Fall 1:10</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Latifah Mcbryde (Life) won by tech fall over Aspen Barber (Doane) TF 10-0</li>
+<li>Quarterfinal - Josette Partney (Missouri Baptist) won by decision over Micah Fisher (Cumberlands) Dec 5-1</li>
+<li>Quarterfinal - Allyssa Johnson (Jamestown) won by injury default over Quilaztli Miguel-Lapham (Southern Oregon) Inj. 4:56</li>
+<li>Quarterfinal - Darby Weidl (Ottawa) won by decision over Flor Parker Borrero (Evergreen State) Dec 13-8</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Kiley Hubby (Dickinson State) won by decision over Isabella Deeds (Hastings) Dec 9-0</li>
+<li>Cons. Round 2 - Alexa Wolf (William Penn) won by decision over Mohagany Casel (Wayland Baptist) Dec 6-5</li>
+<li>Cons. Round 2 - Taydem Khamjoi (Texas Wesleyan) won by fall over Amelia Frounfelter (Saint Mary) Fall 1:31</li>
+<li>Cons. Round 2 - Hailey Sutton (Providence) won by fall over Lamia Benn (Doane) Fall 4:33</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Latifah Mcbryde (Life) won by tech fall over Abigail Sebesta (Ottawa) TF 10-0</li>
+<li>Champ. Round 2 - Aspen Barber (Doane) won by decision over Hailey Sutton (Providence) Dec 4-1</li>
+<li>Champ. Round 2 - Josette Partney (Missouri Baptist) won by decision over Emmalee Spurgeon (Grand View) Dec 5-1</li>
+<li>Champ. Round 2 - Micah Fisher (Cumberlands) won by fall over Taydem Khamjoi (Texas Wesleyan) Fall 4:35</li>
+<li>Champ. Round 2 - Quilaztli Miguel-Lapham (Southern Oregon) won by tech fall over Corin Lowe (Oklahoma City) TF 11-1</li>
+<li>Champ. Round 2 - Allyssa Johnson (Jamestown) won by tech fall over Alexa Wolf (William Penn) TF 10-0</li>
+<li>Champ. Round 2 - Darby Weidl (Ottawa) won by tech fall over Kylee Tait (Campbellsville) TF 10-0</li>
+<li>Champ. Round 2 - Flor Parker Borrero (Evergreen State) won by fall over Kiley Hubby (Dickinson State) Fall 0:34</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Abigail Sebesta (Ottawa) won by fall over Isabella Deeds (Hastings) Fall 1:04</li>
+<li>Champ. Round 1 - Josette Partney (Missouri Baptist) won by tech fall over Mohagany Casel (Wayland Baptist) TF 10-0</li>
+<li>Champ. Round 1 - Quilaztli Miguel-Lapham (Southern Oregon) won by fall over Amelia Frounfelter (Saint Mary) Fall 2:24</li>
+<li>Champ. Round 1 - Darby Weidl (Ottawa) won by tech fall over Lamia Benn (Doane) TF 10-0</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 180</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Ashley Lekas (Texas Wesleyan) won by tech fall over Kelani Corbett (Missouri Valley) TF 12-2</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Jannell Avila (Baker) won by fall over India Page (Lindsey Wilson) Fall 5:23</li>
+<li>5th Place Match - Liliana Vergara (Campbellsville) won by fall over Lillian Gradillas-Flores (Southern Oregon) Fall 0:27</li>
+<li>7th Place Match - Reka Busa (Life) won by fall over America Lopez (William Penn) Fall 0:43</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Jannell Avila (Baker) won by decision over Lillian Gradillas-Flores (Southern Oregon) Dec 5-1</li>
+<li>Cons. Semi - India Page (Lindsey Wilson) won by decision over Liliana Vergara (Campbellsville) Dec 7-0</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Lillian Gradillas-Flores (Southern Oregon) won by decision over America Lopez (William Penn) Dec 6-0</li>
+<li>Cons. Round 5 - India Page (Lindsey Wilson) won by fall over Reka Busa (Life) Fall 2:53</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Ashley Lekas (Texas Wesleyan) won by tech fall over Liliana Vergara (Campbellsville) TF 10-0</li>
+<li>Semifinal - Kelani Corbett (Missouri Valley) won by fall over Jannell Avila (Baker) Fall 3:39</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - America Lopez (William Penn) won by tech fall over Bailey Dennis (Southern Oregon) TF 10-0</li>
+<li>Cons. Round 4 - Lillian Gradillas-Flores (Southern Oregon) won by decision over Saiheron Preciado-Meza (Cumberlands) Dec 7-0</li>
+<li>Cons. Round 4 - India Page (Lindsey Wilson) won by fall over Siara Arrington (Ottawa) Fall 1:01</li>
+<li>Cons. Round 4 - Reka Busa (Life) won by fall over Catherine Mcnulty (Indiana Tech) Fall 0:26</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - America Lopez (William Penn) won by tech fall over Marissa Patterson (Hastings) TF 11-0</li>
+<li>Cons. Round 3 - Lillian Gradillas-Flores (Southern Oregon) won by fall over Yazmin Belk (Doane) Fall 0:48</li>
+<li>Cons. Round 3 - Siara Arrington (Ottawa) won by fall over Kaylee Davis (Ottawa) Fall 1:03</li>
+<li>Cons. Round 3 - Catherine Mcnulty (Indiana Tech) won by decision over Grace Doering (Indiana Tech) Dec 2-2</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Ashley Lekas (Texas Wesleyan) won by tech fall over Saiheron Preciado-Meza (Cumberlands) TF 11-0</li>
+<li>Quarterfinal - Liliana Vergara (Campbellsville) won by decision over Bailey Dennis (Southern Oregon) Dec 5-0</li>
+<li>Quarterfinal - Kelani Corbett (Missouri Valley) won by tech fall over Reka Busa (Life) TF 11-0</li>
+<li>Quarterfinal - Jannell Avila (Baker) won by fall over India Page (Lindsey Wilson) Fall 5:48</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - America Lopez (William Penn) won by fall over Emma Schreiber (Missouri Baptist) Fall 2:16</li>
+<li>Cons. Round 2 - Lillian Gradillas-Flores (Southern Oregon) won by tech fall over Ella Murphey (Oklahoma City) TF 13-2</li>
+<li>Cons. Round 2 - Kaylee Davis (Ottawa) won by fall over Nevaeh Wardlow (Baker) Fall 1:55</li>
+<li>Cons. Round 2 - Catherine Mcnulty (Indiana Tech) won by forfeit over (Forfeit) Bailee Nelson (Friends) FF</li>
+<li>Cons. Round 2 - Grace Doering (Indiana Tech) won by fall over Kyree Rubio (Westcliff) Fall 3:21</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Ashley Lekas (Texas Wesleyan) won by tech fall over Grace Doering (Indiana Tech) TF 10-0</li>
+<li>Champ. Round 2 - Saiheron Preciado-Meza (Cumberlands) won by forfeit over (Forfeit) Bailee Nelson (Friends) FF</li>
+<li>Champ. Round 2 - Liliana Vergara (Campbellsville) won by fall over Nevaeh Wardlow (Baker) Fall 1:04</li>
+<li>Champ. Round 2 - Bailey Dennis (Southern Oregon) won by decision over Siara Arrington (Ottawa) Dec 8-1</li>
+<li>Champ. Round 2 - Kelani Corbett (Missouri Valley) won by tech fall over Lillian Gradillas-Flores (Southern Oregon) TF 11-0</li>
+<li>Champ. Round 2 - Reka Busa (Life) won by tech fall over Yazmin Belk (Doane) TF 11-0</li>
+<li>Champ. Round 2 - Jannell Avila (Baker) won by decision over America Lopez (William Penn) Dec 4-0</li>
+<li>Champ. Round 2 - India Page (Lindsey Wilson) won by fall over Marissa Patterson (Hastings) Fall 1:03</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Saiheron Preciado-Meza (Cumberlands) won by fall over Emma Schreiber (Missouri Baptist) Fall 2:42</li>
+<li>Champ. Round 1 - Bailey Dennis (Southern Oregon) won by decision over Ella Murphey (Oklahoma City) Dec 10-3</li>
+<li>Champ. Round 1 - Yazmin Belk (Doane) won by fall over Kaylee Davis (Ottawa) Fall 2:59</li>
+<li>Champ. Round 1 - America Lopez (William Penn) won by fall over Catherine Mcnulty (Indiana Tech) Fall 3:00</li>
+<li>Champ. Round 1 - India Page (Lindsey Wilson) won by decision over Kyree Rubio (Westcliff) Dec 7-3</li>
+</ul>
+</section>
+<div class='pageBreak'></div>
+<section class='tw-list'>
+<h1>NAIA 207</h1>
+<h2>Finals</h2>
+<ul>
+<li>1st Place Match - Savannah Isaac (Life) won by decision over Riley Dempewolf (Indiana Tech) Dec 4-1</li>
+</ul>
+<h2>Placement Matches (32 Man)</h2>
+<ul>
+<li>3rd Place Match - Olivia Brown (Grand View) won by decision over Hannah Jackson (Ottawa) Dec 6-0</li>
+<li>5th Place Match - Maquoia Bernabe (Cumberlands) won by decision over Kathryn Hingano (Southern Oregon) Dec 3-1</li>
+<li>7th Place Match - Mariyah Brumley (William Woods) won by fall over Alysse Phillips (Lourdes) Fall 0:47</li>
+</ul>
+<h2>6th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Semi - Hannah Jackson (Ottawa) won by fall over Kathryn Hingano (Southern Oregon) Fall 3:51</li>
+<li>Cons. Semi - Olivia Brown (Grand View) won by decision over Maquoia Bernabe (Cumberlands) Dec 7-0</li>
+</ul>
+<h2>5th WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 5 - Hannah Jackson (Ottawa) won by decision over Mariyah Brumley (William Woods) Dec 8-0</li>
+<li>Cons. Round 5 - Maquoia Bernabe (Cumberlands) won by decision over Alysse Phillips (Lourdes) Dec 3-0</li>
+</ul>
+<h2>Semi Finals</h2>
+<ul>
+<li>Semifinal - Riley Dempewolf (Indiana Tech) won by decision over Olivia Brown (Grand View) Dec 2-1</li>
+<li>Semifinal - Savannah Isaac (Life) won by decision over Kathryn Hingano (Southern Oregon) Dec 7-0</li>
+</ul>
+<h2>4th Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 4 - Hannah Jackson (Ottawa) won by fall over Brianna Staebler (Campbellsville) Fall 1:05</li>
+<li>Cons. Round 4 - Mariyah Brumley (William Woods) won by fall over Hayeni Costa (Lindsey Wilson) Fall 2:13</li>
+<li>Cons. Round 4 - Maquoia Bernabe (Cumberlands) won by fall over Bella Porcelli (Grand View) Fall 3:00</li>
+<li>Cons. Round 4 - Alysse Phillips (Lourdes) won by fall over Leilani Sanchez (Wayland Baptist) Fall 5:44</li>
+</ul>
+<h2>3rd WB (32 Man)</h2>
+<ul>
+<li>Cons. Round 3 - Brianna Staebler (Campbellsville) won by fall over Grace Todhunter (Jamestown) Fall 0:35</li>
+<li>Cons. Round 3 - Mariyah Brumley (William Woods) won by fall over Hailey Romero (Doane) Fall 0:55</li>
+<li>Cons. Round 3 - Maquoia Bernabe (Cumberlands) won by decision over Kena Leonard (Ottawa) Dec 2-1</li>
+<li>Cons. Round 3 - Leilani Sanchez (Wayland Baptist) won by fall over Naomi Duenas (Cumberlands) Fall 4:39</li>
+</ul>
+<h2>Quarters</h2>
+<ul>
+<li>Quarterfinal - Olivia Brown (Grand View) won by fall over Hayeni Costa (Lindsey Wilson) Fall 1:24</li>
+<li>Quarterfinal - Riley Dempewolf (Indiana Tech) won by decision over Hannah Jackson (Ottawa) Dec 2-1</li>
+<li>Quarterfinal - Savannah Isaac (Life) won by fall over Alysse Phillips (Lourdes) Fall 3:55</li>
+<li>Quarterfinal - Kathryn Hingano (Southern Oregon) won by fall over Bella Porcelli (Grand View) Fall 4:11</li>
+</ul>
+<h2>2nd Wrestleback (32 Man)</h2>
+<ul>
+<li>Cons. Round 2 - Brianna Staebler (Campbellsville) won by fall over Abigail Fonseca (Texas Wesleyan) Fall 1:49</li>
+<li>Cons. Round 2 - Kena Leonard (Ottawa) won by decision over Taylor Rickley (Hastings) Dec 4-2</li>
+<li>Cons. Round 2 - Naomi Duenas (Cumberlands) won by tech fall over Skyler Bruno (Waldorf) TF 14-2</li>
+</ul>
+<h2>Round 2 Champ & WB (32 Man)</h2>
+<ul>
+<li>Champ. Round 2 - Olivia Brown (Grand View) won by fall over Leilani Sanchez (Wayland Baptist) Fall 1:46</li>
+<li>Champ. Round 2 - Hayeni Costa (Lindsey Wilson) won by decision over Skyler Bruno (Waldorf) Dec 8-0</li>
+<li>Champ. Round 2 - Hannah Jackson (Ottawa) won by tech fall over Taylor Rickley (Hastings) TF 10-0</li>
+<li>Champ. Round 2 - Riley Dempewolf (Indiana Tech) won by decision over Maquoia Bernabe (Cumberlands) Dec 2-1</li>
+<li>Champ. Round 2 - Savannah Isaac (Life) won by fall over Mariyah Brumley (William Woods) Fall 0:52</li>
+<li>Champ. Round 2 - Alysse Phillips (Lourdes) won by fall over Hailey Romero (Doane) Fall 0:52</li>
+<li>Champ. Round 2 - Bella Porcelli (Grand View) won by fall over Grace Todhunter (Jamestown) Fall 1:47</li>
+<li>Champ. Round 2 - Kathryn Hingano (Southern Oregon) won by tech fall over Abigail Fonseca (Texas Wesleyan) TF 10-0</li>
+</ul>
+<h2>Round 1 (32 Man)</h2>
+<ul>
+<li>Champ. Round 1 - Olivia Brown (Grand View) won by decision over Brianna Staebler (Campbellsville) Dec 3-0</li>
+<li>Champ. Round 1 - Hailey Romero (Doane) won by fall over Kena Leonard (Ottawa) Fall 1:50</li>
+<li>Champ. Round 1 - Bella Porcelli (Grand View) won by fall over Naomi Duenas (Cumberlands) Fall 1:47</li>
+</ul>
+</section>
+</font>
+
+
+		
+
+	
+		
+</div>
+
+</form>
+
+<script language="javascript" src="../Footer.js"></script>
+
+</body>
+
+
+</html>
+

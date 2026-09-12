@@ -2,9 +2,13 @@
 title: "Schools & Rosters"
 ---
 
-::: {.panel-tabset}
-
-## School Rosters
+::: {.hero-banner}
+::: {.hero-content}
+# Schools & Team Rosters
+Explore NAIA women's wrestling programs, team national achievements, and complete athlete rosters across all championship seasons.
+:::
+<img src="naia_logo.png" alt="NAIA Logo" class="hero-logo-img">
+:::
 
 ```{r}
 #| echo: false
@@ -14,18 +18,251 @@ title: "Schools & Rosters"
 library(tidyverse)
 library(htmltools)
 
-# Read athlete data and sort by team, weight class, points
+# Read datasets
 athletes <- read_csv("data/athletes.csv", show_col_types = FALSE) |>
   arrange(team, weight_class, desc(points_scored), name)
+
+programs <- read_csv("data/naia_women_programs.csv", show_col_types = FALSE)
+
+# Clean school names from programs for matching
+programs_clean <- programs |>
+  mutate(clean_team = str_remove_all(school, " (University|College)$") |>
+           str_remove("^University of (the )?") |>
+           str_remove("^The "))
+
+# Program lookup dictionary for state, city, conference
+program_lookup <- programs_clean |>
+  select(clean_team, city, state, conference) |>
+  distinct()
+
+# Edge case corrections for older or alternatively-named institutions
+special_cases <- tibble(
+  clean_team = c("Menlo", "Vanguard", "Evergreen State", "Evergreen", "Iowa Wesleyan",
+                 "St. Mary", "Saint Mary", "Brewton Parker", "Brewton-Parker",
+                 "Jarvis Christian", "St. Andrews", "St Andrews"),
+  city = c("Atherton", "Costa Mesa", "Olympia", "Olympia", "Mount Pleasant",
+           "Leavenworth", "Leavenworth", "Mount Vernon", "Mount Vernon",
+           "Hawkins", "Laurinburg", "Laurinburg"),
+  state = c("CA", "CA", "WA", "WA", "IA", "KS", "KS", "GA", "GA", "TX", "NC", "NC"),
+  conference = c("Cascade / Independent", "Cascade Collegiate Conference", "Cascade Collegiate Conference",
+                 "Cascade Collegiate Conference", "Heart of America", "KCAC / SAC", "KCAC / SAC",
+                 "Mid-South Conference", "Mid-South Conference", "KCAC / SAC",
+                 "Mid-South Conference", "Mid-South Conference")
+)
+
+all_lookups <- bind_rows(program_lookup, special_cases) |>
+  distinct(clean_team, .keep_all = TRUE)
+
+# Calculate summary stats per school
+school_summary <- athletes |>
+  group_by(team) |>
+  summarize(
+    total_qualifiers = n(),
+    all_americans = sum(place %in% c("1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "1st Place", "2nd Place")),
+    national_champions = sum(place %in% c("1st", "1st Place")),
+    total_points = sum(points_scored, na.rm = TRUE),
+    seasons_list = paste(sort(unique(season), decreasing = TRUE), collapse = ", "),
+    .groups = "drop"
+  ) |>
+  left_join(all_lookups, by = c("team" = "clean_team")) |>
+  mutate(
+    city = coalesce(city, "—"),
+    state = coalesce(state, "—"),
+    conference = coalesce(conference, "NAIA Independent"),
+    location = ifelse(city != "—" & state != "—", paste0(city, ", ", state), "—")
+  ) |>
+  arrange(desc(all_americans), desc(total_points), team)
+
+# Overall summary statistics for top cards
+total_schools <- nrow(school_summary)
+total_athletes <- nrow(athletes)
+total_aas <- sum(school_summary$all_americans)
+total_confs <- length(unique(school_summary$conference[school_summary$conference != "NAIA Independent"]))
+
+HTML(paste0(
+  '<div class="stats-grid">',
+  '  <div class="stat-card"><div class="stat-number">', total_schools, '</div><div class="stat-label">Programs Represented</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', total_confs, '</div><div class="stat-label">Active Conferences</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', total_athletes, '</div><div class="stat-label">Championship Wrestlers</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', total_aas, '</div><div class="stat-label">All-Americans (Top 8)</div></div>',
+  '</div>'
+))
+```
+
+::: {.panel-tabset}
+
+## 🏫 NAIA Schools Directory
+
+Explore collegiate programs that have competed in the NAIA Women's Wrestling National Championships. Use the search bar or conference filter to quickly find any school, or click **"View Roster"** to inspect its full roster and wrestler records.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+conferences <- sort(unique(school_summary$conference))
+conf_options_html <- paste(
+  sprintf('<option value="%s">%s</option>', conferences, conferences),
+  collapse = ""
+)
+
+school_rows_html <- paste(
+  sprintf(
+    '<tr data-school="%s" data-conf="%s" data-state="%s">
+      <td style="font-weight: 700; color: #1e3a8a; font-size: 1rem;">%s</td>
+      <td><span class="badge-weight" style="font-weight: 500;">%s</span></td>
+      <td style="color: #475569;">%s</td>
+      <td style="text-align: center; font-weight: 600;">%d</td>
+      <td style="text-align: center;">%s</td>
+      <td style="text-align: right; font-weight: 700; color: #0f172a;">%.1f</td>
+      <td style="text-align: center; color: #64748b; font-size: 0.85rem;">%s</td>
+      <td style="text-align: center;">
+        <button type="button" class="btn-roster-link" onclick="viewSchoolRoster(\'%s\')">View Roster →</button>
+      </td>
+    </tr>',
+    tolower(school_summary$team),
+    school_summary$conference,
+    school_summary$state,
+    school_summary$team,
+    school_summary$conference,
+    school_summary$location,
+    school_summary$total_qualifiers,
+    ifelse(
+      school_summary$national_champions > 0,
+      sprintf('<span class="badge-gold">🏆 %d Champ%s</span> <span class="badge-place">%d AA%s</span>',
+              school_summary$national_champions, ifelse(school_summary$national_champions > 1, "s", ""),
+              school_summary$all_americans, ifelse(school_summary$all_americans > 1, "s", "")),
+      ifelse(
+        school_summary$all_americans > 0,
+        sprintf('<span class="badge-place">%d All-American%s</span>',
+                school_summary$all_americans, ifelse(school_summary$all_americans > 1, "s", "")),
+        '<span style="color: #94a3b8; font-size: 0.85rem;">—</span>'
+      )
+    ),
+    school_summary$total_points,
+    school_summary$seasons_list,
+    gsub("'", "\\\\'", school_summary$team)
+  ),
+  collapse = ""
+)
+
+HTML(paste0(
+  '<style>
+  .btn-roster-link {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+    border: 1px solid #bfdbfe;
+    border-radius: 6px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+    white-space: nowrap;
+  }
+  .btn-roster-link:hover {
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border-color: #1d4ed8;
+  }
+  </style>',
+  '<div class="filter-card">',
+  '  <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: flex-end;">',
+  '    <div style="flex: 1; min-width: 250px;">',
+  '      <label for="schoolSearchInput">Search Schools</label>',
+  '      <input type="text" id="schoolSearchInput" class="form-control" style="padding: 0.45rem 0.75rem;" placeholder="Search school name, city, state..." onkeyup="filterSchoolsDirectory()">',
+  '    </div>',
+  '    <div style="min-width: 240px;">',
+  '      <label for="conferenceFilterSelect">Conference</label>',
+  '      <select id="conferenceFilterSelect" class="form-select" style="padding: 0.45rem;" onchange="filterSchoolsDirectory()">',
+  '        <option value="all">All Conferences</option>',
+  conf_options_html,
+  '      </select>',
+  '    </div>',
+  '  </div>',
+  '  <div id="schoolDirectoryCount" style="margin-top: 0.75rem; font-weight: 500; font-size: 0.9rem; color: #475569;">Showing all ', total_schools, ' NAIA programs</div>',
+  '</div>',
+  '<div class="table-wrapper">',
+  '<table id="schoolsDirectoryTable" class="table table-hover">',
+  '<thead>',
+  '  <tr>',
+  '    <th>School</th>',
+  '    <th>Conference</th>',
+  '    <th>Location</th>',
+  '    <th style="text-align: center;">Qualifiers</th>',
+  '    <th style="text-align: center;">All-Americans</th>',
+  '    <th style="text-align: right;">Total Points</th>',
+  '    <th style="text-align: center;">Seasons</th>',
+  '    <th style="text-align: center;">Roster</th>',
+  '  </tr>',
+  '</thead>',
+  '<tbody>', school_rows_html, '</tbody>',
+  '</table>',
+  '</div>',
+  '<script>',
+  'function filterSchoolsDirectory() {',
+  '  const search = document.getElementById("schoolSearchInput").value.toLowerCase().trim();',
+  '  const conf = document.getElementById("conferenceFilterSelect").value;',
+  '  const rows = document.querySelectorAll("#schoolsDirectoryTable tbody tr");',
+  '  let count = 0;',
+  '  rows.forEach(row => {',
+  '    const text = row.textContent.toLowerCase();',
+  '    const rowConf = row.getAttribute("data-conf");',
+  '    const matchSearch = (search === "" || text.includes(search));',
+  '    const matchConf = (conf === "all" || rowConf === conf);',
+  '    if (matchSearch && matchConf) {',
+  '      row.style.display = "";',
+  '      count++;',
+  '    } else {',
+  '      row.style.display = "none";',
+  '    }',
+  '  });',
+  '  const countEl = document.getElementById("schoolDirectoryCount");',
+  '  if (countEl) {',
+  '    countEl.textContent = (conf === "all" && search === "") ?',
+  '      ("Showing all " + count + " NAIA programs") :',
+  '      ("Showing " + count + " matching programs");',
+  '  }',
+  '}',
+  'function viewSchoolRoster(teamName) {',
+  '  const tabs = document.querySelectorAll(".panel-tabset .nav-link, .panel-tabset [role=\"tab\"]");',
+  '  if (tabs.length >= 2) {',
+  '    tabs[1].click();',
+  '  }',
+  '  setTimeout(() => {',
+  '    const select = document.getElementById("schoolSelect");',
+  '    if (select) {',
+  '      select.value = teamName;',
+  '      filterSchoolRoster();',
+  '    }',
+  '    const rTable = document.getElementById("schoolRosterTable");',
+  '    if (rTable) {',
+  '      rTable.scrollIntoView({ behavior: "smooth", block: "start" });',
+  '    }',
+  '  }, 80);',
+  '}',
+  'makeTableSortable("schoolsDirectoryTable");',
+  '</script>'
+))
+```
+
+## 🤼 Athlete Rosters
+
+Filter and search individual student-athlete records, national placements, and points scored by institution and championship year.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
 
 # Helper function for place badges
 get_place_badge <- function(place) {
   case_when(
-    place == "1st" ~ '<span class="badge-gold">🥇 1st Place</span>',
-    place == "2nd" ~ '<span class="badge-silver">🥈 2nd Place</span>',
-    place == "3rd" ~ '<span class="badge-bronze">🥉 3rd Place</span>',
-    place %in% c("4th", "5th", "6th", "7th", "8th") ~ sprintf('<span class="badge-place">%s Place</span>', place),
-    TRUE ~ '<span class="badge-dnp">Did not place</span>'
+    place %in% c("1st", "1st Place") ~ '<span class="badge-gold">🥇 1st Place</span>',
+    place %in% c("2nd", "2nd Place") ~ '<span class="badge-silver">🥈 2nd Place</span>',
+    place %in% c("3rd", "3rd Place") ~ '<span class="badge-bronze">🥉 3rd Place</span>',
+    place %in% c("4th", "5th", "6th", "7th", "8th", "4th Place", "5th Place", "6th Place", "7th Place", "8th Place") ~ sprintf('<span class="badge-place">%s</span>', place),
+    TRUE ~ '<span class="badge-dnp">—</span>'
   )
 }
 
@@ -44,34 +281,59 @@ season_options_html <- paste(
 )
 
 rows_html <- paste(
-  sprintf('<tr data-team="%s" data-season="%s"><td><strong>%s</strong></td><td>%s</td><td><span class="badge-weight">%s lbs</span></td><td>%s</td><td><strong>%s</strong></td><td>%s</td><td><span class="badge-season">%s</span></td></tr>',
-          athletes$team, athletes$season, athletes$name, athletes$team, athletes$weight_class, get_place_badge(athletes$place), athletes$record, athletes$points_scored, athletes$season),
+  sprintf(
+    '<tr data-team="%s" data-season="%s">
+      <td style="font-weight: 600; color: #0f172a;">%s</td>
+      <td style="color: #334155; font-weight: 500;">%s</td>
+      <td><span class="badge-weight">%s lbs</span></td>
+      <td>%s</td>
+      <td style="text-align: center; font-weight: 600;">%s</td>
+      <td style="text-align: right; font-weight: 700; color: #1e3a8a;">%.1f</td>
+      <td style="text-align: center;"><span class="badge-season">%s</span></td>
+    </tr>',
+    athletes$team, athletes$season, athletes$name, athletes$team, athletes$weight_class,
+    get_place_badge(athletes$place), athletes$record, athletes$points_scored, athletes$season
+  ),
   collapse = ""
 )
 
 HTML(paste0(
   '<div class="filter-card">',
-  '  <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: flex-end;">',
-  '    <div>',
-  '      <label for="schoolSelect">Select a School</label>',
-  '      <select id="schoolSelect" class="form-select" style="min-width: 280px; padding: 0.45rem;" onchange="filterSchoolRoster()">',
+  '  <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: flex-end;">',
+  '    <div style="flex: 1; min-width: 220px;">',
+  '      <label for="schoolSelect">Filter by School</label>',
+  '      <select id="schoolSelect" class="form-select" style="padding: 0.45rem;" onchange="filterSchoolRoster()">',
   '        <option value="all">All Schools (', length(schools), ' Programs)</option>',
   school_options_html,
   '      </select>',
   '    </div>',
-  '    <div>',
+  '    <div style="min-width: 160px;">',
   '      <label for="seasonSelect">Championship Season</label>',
-  '      <select id="seasonSelect" class="form-select" style="min-width: 170px; padding: 0.45rem;" onchange="filterSchoolRoster()">',
-  '        <option value="all">All Seasons</option>',
+  '      <select id="seasonSelect" class="form-select" style="padding: 0.45rem;" onchange="filterSchoolRoster()">',
+  '        <option value="all">All Seasons (2023–2026)</option>',
   season_options_html,
   '      </select>',
+  '    </div>',
+  '    <div style="flex: 1; min-width: 200px;">',
+  '      <label for="wrestlerSearchInput">Search Wrestler</label>',
+  '      <input type="text" id="wrestlerSearchInput" class="form-control" style="padding: 0.45rem 0.75rem;" placeholder="Search wrestler name..." onkeyup="filterSchoolRoster()">',
   '    </div>',
   '  </div>',
   '  <div id="schoolRosterCount" style="margin-top: 0.75rem; font-weight: 500; font-size: 0.9rem; color: #475569;">Showing all ', nrow(athletes), ' wrestlers</div>',
   '</div>',
   '<div class="table-wrapper">',
   '<table id="schoolRosterTable" class="table table-hover">',
-  '<thead><tr><th>Wrestler</th><th>School</th><th>Weight Class</th><th>Place</th><th>Record (W-L)</th><th>Points Scored</th><th>Season</th></tr></thead>',
+  '<thead>',
+  '  <tr>',
+  '    <th>Wrestler</th>',
+  '    <th>School</th>',
+  '    <th>Weight Class</th>',
+  '    <th>Place</th>',
+  '    <th style="text-align: center;">Record (W-L)</th>',
+  '    <th style="text-align: right;">Points Scored</th>',
+  '    <th style="text-align: center;">Season</th>',
+  '  </tr>',
+  '</thead>',
   '<tbody>', rows_html, '</tbody>',
   '</table>',
   '</div>',
@@ -79,12 +341,15 @@ HTML(paste0(
   'function filterSchoolRoster() {',
   '  const selectedTeam = document.getElementById("schoolSelect").value;',
   '  const selectedSeason = document.getElementById("seasonSelect").value;',
+  '  const search = document.getElementById("wrestlerSearchInput") ? document.getElementById("wrestlerSearchInput").value.toLowerCase().trim() : "";',
   '  const rows = document.querySelectorAll("#schoolRosterTable tbody tr");',
   '  let count = 0;',
   '  rows.forEach(row => {',
   '    const matchTeam = (selectedTeam === "all" || row.getAttribute("data-team") === selectedTeam);',
   '    const matchSeason = (selectedSeason === "all" || row.getAttribute("data-season") === selectedSeason);',
-  '    if (matchTeam && matchSeason) {',
+  '    const nameCell = row.children[0].textContent.toLowerCase();',
+  '    const matchSearch = (search === "" || nameCell.includes(search));',
+  '    if (matchTeam && matchSeason && matchSearch) {',
   '      row.style.display = "";',
   '      count++;',
   '    } else {',
@@ -93,9 +358,9 @@ HTML(paste0(
   '  });',
   '  const countEl = document.getElementById("schoolRosterCount");',
   '  if (countEl) {',
-  '    countEl.textContent = (selectedTeam === "all") ?',
-  '      ("Showing all " + count + " wrestlers") :',
-  '      ("Showing " + count + " wrestlers for " + selectedTeam);',
+  '    let text = (selectedTeam === "all") ? ("Showing " + count + " wrestlers") : ("Showing " + count + " wrestlers for " + selectedTeam);',
+  '    if (selectedSeason !== "all") text += " (" + selectedSeason + ")";',
+  '    countEl.textContent = text;',
   '  }',
   '}',
   'function makeTableSortable(tableId) {',
@@ -131,36 +396,6 @@ HTML(paste0(
   '  });',
   '}',
   'makeTableSortable("schoolRosterTable");',
-  '</script>'
-))
-```
-
-## All NAIA Schools
-
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-
-programs <- read_csv("data/naia_women_programs.csv", show_col_types = FALSE) |>
-  arrange(school)
-
-HTML(paste0(
-  '<p style="color: #475569; margin: 1rem 0; font-weight: 500;">Showing all ', nrow(programs), ' NAIA institutions sponsoring varsity women\'s wrestling programs.</p>',
-  '<div class="table-wrapper">',
-  '<table id="allSchoolsTable" class="table table-hover">',
-  '<thead><tr><th>School</th><th>City</th><th>State</th><th>Conference</th></tr></thead>',
-  '<tbody>',
-  paste(
-    sprintf('<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td><td><span class="badge-weight">%s</span></td></tr>',
-            programs$school, programs$city, programs$state, programs$conference),
-    collapse = ""
-  ),
-  '</tbody>',
-  '</table>',
-  '</div>',
-  '<script>',
-  'makeTableSortable("allSchoolsTable");',
   '</script>'
 ))
 ```

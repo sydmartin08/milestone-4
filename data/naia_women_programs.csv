@@ -1,48 +1,48 @@
-school,city,state,conference
-Brewton-Parker College,Mount Vernon,GA,Mid-South Conference
-Campbellsville University,Campbellsville,KY,Mid-South Conference
-Georgetown College,Georgetown,KY,Mid-South Conference
-Indiana Tech,Fort Wayne,IN,Mid-South Conference
-Life University,Marietta,GA,Mid-South Conference
-Lindsey Wilson College,Columbia,KY,Mid-South Conference
-Lourdes University,Sylvania,OH,Mid-South Conference
-Midway University,Midway,KY,Mid-South Conference
-Montreat College,Montreat,NC,Mid-South Conference
-Rochester Christian University,Rochester Hills,MI,Mid-South Conference
-Siena Heights University,Adrian,MI,Mid-South Conference
-University of Rio Grande,Rio Grande,OH,Mid-South Conference
-University of the Cumberlands,Williamsburg,KY,Mid-South Conference
-Baker University,Baldwin City,KS,Heart of America Athletic Conference
-Central Methodist University,Fayette,MO,Heart of America Athletic Conference
-Graceland University,Lamoni,IA,Heart of America Athletic Conference
-Grand View University,Des Moines,IA,Heart of America Athletic Conference
-Missouri Baptist University,St. Louis,MO,Heart of America Athletic Conference
-Missouri Valley College,Marshall,MO,Heart of America Athletic Conference
-William Penn University,Oskaloosa,IA,Heart of America Athletic Conference
-William Woods University,Fulton,MO,Heart of America Athletic Conference
-Dickinson State University,Dickinson,ND,Heart of America / Independent
-Bismarck State College,Bismarck,ND,Heart of America / Independent
-Dakota Wesleyan University,Mitchell,SD,Great Plains Athletic Conference
-Doane University,Crete,NE,Great Plains Athletic Conference
-Hastings College,Hastings,NE,Great Plains Athletic Conference
-Midland University,Fremont,NE,Great Plains Athletic Conference
-Morningside University,Sioux City,IA,Great Plains Athletic Conference
-Waldorf University,Forest City,IA,Great Plains Athletic Conference
-University of Jamestown,Jamestown,ND,Great Plains Athletic Conference
-Avila University,Kansas City,MO,KCAC / SAC
-Central Christian College,McPherson,KS,KCAC / SAC
-Friends University,Wichita,KS,KCAC / SAC
-Oklahoma City University,Oklahoma City,OK,KCAC / SAC
-Ottawa University,Ottawa,KS,KCAC / SAC
-Texas Wesleyan University,Fort Worth,TX,KCAC / SAC
-University of Saint Mary,Leavenworth,KS,KCAC / SAC
-Wayland Baptist University,Plainview,TX,KCAC / SAC
-York University,York,NE,KCAC / SAC
-Arizona Christian University,Glendale,AZ,Cascade Collegiate Conference
-Eastern Oregon University,La Grande,OR,Cascade Collegiate Conference
-Hope International University,Fullerton,CA,Cascade Collegiate Conference
-Simpson University,Redding,CA,Cascade Collegiate Conference
-Southern Oregon University,Ashland,OR,Cascade Collegiate Conference
-The Evergreen State College,Olympia,WA,Cascade Collegiate Conference
-University of Providence,Great Falls,MT,Cascade Collegiate Conference
-Westcliff University,Irvine,CA,Cascade Collegiate Conference
+school,city,state,conference,latitude,longitude
+Brewton-Parker College,Mount Vernon,GA,Mid-South Conference,32.185389,-82.5834727
+Campbellsville University,Campbellsville,KY,Mid-South Conference,37.3431658,-85.3505862
+Georgetown College,Georgetown,KY,Mid-South Conference,38.2069207,-84.5540343
+Indiana Tech,Fort Wayne,IN,Mid-South Conference,41.0775484,-85.1176847
+Life University,Marietta,GA,Mid-South Conference,33.9311113,-84.5174088
+Lindsey Wilson College,Columbia,KY,Mid-South Conference,37.1028271,-85.3060432
+Lourdes University,Sylvania,OH,Mid-South Conference,41.7108377,-83.7081605
+Midway University,Midway,KY,Mid-South Conference,38.1431662,-84.6730592
+Montreat College,Montreat,NC,Mid-South Conference,35.6459434,-82.2970364
+Rochester Christian University,Rochester Hills,MI,Mid-South Conference,42.6687081,-83.1435409
+Siena Heights University,Adrian,MI,Mid-South Conference,41.9062844,-84.0179652
+University of Rio Grande,Rio Grande,OH,Mid-South Conference,38.8788275,-82.3760292
+University of the Cumberlands,Williamsburg,KY,Mid-South Conference,36.7367431,-84.1628617
+Baker University,Baldwin City,KS,Heart of America Athletic Conference,38.7762432,-95.179395
+Central Methodist University,Fayette,MO,Heart of America Athletic Conference,39.150919,-92.6863607
+Graceland University,Lamoni,IA,Heart of America Athletic Conference,40.6169077,-93.9255656
+Grand View University,Des Moines,IA,Heart of America Athletic Conference,41.6198031,-93.5988096
+Missouri Baptist University,St. Louis,MO,Heart of America Athletic Conference,38.6419861,-90.4622981
+Missouri Valley College,Marshall,MO,Heart of America Athletic Conference,39.1064411,-93.1907708
+William Penn University,Oskaloosa,IA,Heart of America Athletic Conference,41.3117756,-92.6489405
+William Woods University,Fulton,MO,Heart of America Athletic Conference,38.8629209,-91.9488091
+Dickinson State University,Dickinson,ND,Heart of America / Independent,46.8827077,-102.8011777
+Bismarck State College,Bismarck,ND,Heart of America / Independent,46.8209518,-100.8156833
+Dakota Wesleyan University,Mitchell,SD,Great Plains Athletic Conference,43.6972352,-98.0304679
+Doane University,Crete,NE,Great Plains Athletic Conference,40.6213155,-96.9471759
+Hastings College,Hastings,NE,Great Plains Athletic Conference,40.5943839,-98.3654967
+Midland University,Fremont,NE,Great Plains Athletic Conference,41.4382741,-96.4877201
+Morningside University,Sioux City,IA,Great Plains Athletic Conference,42.4744179,-96.3601166
+Waldorf University,Forest City,IA,Great Plains Athletic Conference,43.2575536,-93.6477234
+University of Jamestown,Jamestown,ND,Great Plains Athletic Conference,46.9138872,-98.6970337
+Avila University,Kansas City,MO,KCAC / SAC,38.9123294,-94.5915629
+Central Christian College,McPherson,KS,KCAC / SAC,38.3569527,-97.6675424
+Friends University,Wichita,KS,KCAC / SAC,37.678242,-97.3653857
+Oklahoma City University,Oklahoma City,OK,KCAC / SAC,35.4963152,-97.5412241
+Ottawa University,Ottawa,KS,KCAC / SAC,38.602937,-95.2638029
+Texas Wesleyan University,Fort Worth,TX,KCAC / SAC,32.7330676,-97.280134
+University of Saint Mary,Leavenworth,KS,KCAC / SAC,39.2778813,-94.904488
+Wayland Baptist University,Plainview,TX,KCAC / SAC,34.1878952,-101.729445
+York University,York,NE,KCAC / SAC,40.8696777,-97.5803408
+Arizona Christian University,Glendale,AZ,Cascade Collegiate Conference,33.6226133,-112.1826058
+Eastern Oregon University,La Grande,OR,Cascade Collegiate Conference,45.3171859,-118.0916428
+Hope International University,Fullerton,CA,Cascade Collegiate Conference,33.8763883,-117.885569
+Simpson University,Redding,CA,Cascade Collegiate Conference,40.6142213,-122.3321006
+Southern Oregon University,Ashland,OR,Cascade Collegiate Conference,42.1885145,-122.6904198
+The Evergreen State College,Olympia,WA,Cascade Collegiate Conference,47.0749498,-122.9731279
+University of Providence,Great Falls,MT,Cascade Collegiate Conference,47.4910998,-111.2704633
+Westcliff University,Irvine,CA,Cascade Collegiate Conference,33.6856969,-117.825981

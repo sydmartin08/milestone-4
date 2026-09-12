@@ -2,4 +2,47 @@
 title: "About"
 ---
 
-About this site
+## NAIA Women's Wrestling Project
+
+This website provides an interactive portal for exploring collegiate women's wrestling data across the **National Association of Intercollegiate Athletics (NAIA)**.
+
+::: {.stats-grid}
+::: {.stat-card}
+::: {.stat-number}
+300+
+:::
+::: {.stat-label}
+Wrestlers Tracked
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+39
+:::
+::: {.stat-label}
+Collegiate Programs
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+10
+:::
+::: {.stat-label}
+Weight Classes
+:::
+:::
+:::
+
+### Project Goals
+
+1. **Roster Accessibility:** Provide accessible, filterable team rosters for all NAIA institutions with women's wrestling programs.
+2. **National Tournament Results:** Track individual national tournament placements, points scored, and win-loss match records from official NAIA Championship events.
+3. **Data Transparency:** Offer clean, public CSV datasets for sports data science research and analysis.
+
+### Data Sources & Methodology
+
+- **Tournament Data:** Sourced from official public event tournament results hosted on [Trackwrestling](https://www.trackwrestling.com).
+- **Institutional Directory:** Compiled from NAIA varsity athletics directories, tracking institution names, locations, and conferences.
+- **Built with:** [Quarto](https://quarto.org), [R](https://www.r-project.org/), and the [Tidyverse](https://www.tidyverse.org/).

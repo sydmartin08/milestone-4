@@ -1,0 +1,154 @@
+---
+title: "Conference Competitiveness"
+---
+
+::: {.hero-banner}
+::: {.hero-content}
+# Conference Competitiveness Analysis
+Compare NAIA women's wrestling conferences by national tournament points, individual All-Americans, win percentages, and national champions.
+:::
+:::
+
+::: {.stats-grid}
+::: {.stat-card}
+::: {.stat-number}
+Mid-South
+:::
+::: {.stat-label}
+#1 Most Competitive Conference
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+818 pts
+:::
+::: {.stat-label}
+Mid-South Total Points
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+43
+:::
+::: {.stat-label}
+Mid-South All-Americans
+:::
+:::
+
+::: {.stat-card}
+::: {.stat-number}
+55.2%
+:::
+::: {.stat-label}
+Highest Win Rate
+:::
+:::
+:::
+
+## Conference Performance Summary
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig-width: 9
+#| fig-height: 4.8
+
+library(tidyverse)
+library(htmltools)
+
+conf_data <- read_csv("data/conference_comparison.csv", show_col_types = FALSE)
+
+ggplot(conf_data, aes(x = reorder(conference, total_points), y = total_points)) +
+  geom_col(fill = "#1e3a8a", width = 0.65) +
+  geom_text(aes(label = paste0(total_points, " pts (", all_americans, " All-Americans)")),
+            hjust = -0.05, size = 3.6, fontface = "bold", color = "#1e293b") +
+  coord_flip() +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.28))) +
+  labs(
+    title = "National Championship Points by Conference",
+    subtitle = "Total points scored and individual All-Americans (Top 8) produced at NAIA Nationals",
+    x = NULL,
+    y = "Total Points Scored"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    panel.grid.major.y = element_blank(),
+    plot.title = element_text(face = "bold", color = "#0f172a"),
+    plot.subtitle = element_text(color = "#64748b", margin = margin(b = 15)),
+    axis.text.y = element_text(face = "bold", color = "#334155")
+  )
+```
+
+## Detailed Conference Breakdown
+
+The table below measures conference strength across five key dimensions: total national qualifiers, tournament team points, average points per wrestler, overall match win rate, All-Americans (Top 8 finishers), and National Champions.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+rows_html <- paste(
+  sprintf(
+    '<tr><td><strong>%s</strong></td><td>%s</td><td><span class="badge-weight">%s pts</span></td><td>%s</td><td>%s - %s</td><td><span class="badge-place">%s%%</span></td><td><span class="badge-gold">%s All-Americans</span></td><td><span class="badge-season">%s Champ%s</span></td></tr>',
+    conf_data$conference,
+    conf_data$qualifiers,
+    conf_data$total_points,
+    conf_data$avg_points,
+    conf_data$wins,
+    conf_data$losses,
+    conf_data$win_pct,
+    conf_data$all_americans,
+    conf_data$champions,
+    ifelse(conf_data$champions == 1, "", "s")
+  ),
+  collapse = ""
+)
+
+HTML(paste0(
+  '<div class="table-wrapper">',
+  '<table id="conferenceTable" class="table table-hover">',
+  '<thead><tr><th>Conference</th><th>Qualifiers</th><th>Total Points</th><th>Avg Pts/Wrestler</th><th>Record (W-L)</th><th>Win %</th><th>All-Americans</th><th>Champions</th></tr></thead>',
+  '<tbody>', rows_html, '</tbody>',
+  '</table>',
+  '</div>',
+  '<script>',
+  'function makeTableSortable(tableId) {',
+  '  const table = document.getElementById(tableId);',
+  '  if (!table) return;',
+  '  const headers = table.querySelectorAll("thead th");',
+  '  headers.forEach((th, colIdx) => {',
+  '    th.style.cursor = "pointer";',
+  '    th.title = "Click to sort";',
+  '    th.setAttribute("data-title", th.textContent.trim());',
+  '    th.textContent = th.getAttribute("data-title") + " ↕";',
+  '    let asc = true;',
+  '    th.addEventListener("click", () => {',
+  '      const tbody = table.querySelector("tbody");',
+  '      const rows = Array.from(tbody.querySelectorAll("tr"));',
+  '      rows.sort((a, b) => {',
+  '        const valA = a.children[colIdx].textContent.trim();',
+  '        const valB = b.children[colIdx].textContent.trim();',
+  '        const numA = parseFloat(valA);',
+  '        const numB = parseFloat(valB);',
+  '        if (!isNaN(numA) && !isNaN(numB)) {',
+  '          return asc ? numA - numB : numB - numA;',
+  '        }',
+  '        return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);',
+  '      });',
+  '      rows.forEach(r => tbody.appendChild(r));',
+  '      headers.forEach(h => {',
+  '        h.textContent = h.getAttribute("data-title") + " ↕";',
+  '      });',
+  '      th.textContent = th.getAttribute("data-title") + (asc ? " ▲" : " ▼");',
+  '      asc = !asc;',
+  '    });',
+  '  });',
+  '}',
+  'makeTableSortable("conferenceTable");',
+  '</script>'
+))
+```

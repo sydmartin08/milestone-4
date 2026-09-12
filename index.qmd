@@ -1,10 +1,14 @@
 ---
-title: "NAIA Womens Wrestling"
+title: "NAIA Women's Wrestling"
 ---
 
-![](naia_logo.png)
-
-## Wrestlers by Weight Class
+::: {.hero-banner}
+::: {.hero-content}
+# NAIA Women's Wrestling
+Explore championship results, national placers, and team rosters across the NAIA.
+:::
+<img src="naia_logo.png" alt="NAIA Logo" class="hero-logo-img">
+:::
 
 ```{r}
 #| echo: false
@@ -18,52 +22,182 @@ library(htmltools)
 athletes <- read_csv("data/athletes.csv", show_col_types = FALSE) |>
   arrange(weight_class, desc(points_scored), name)
 
-# Get unique weight classes for the dropdown options
-weight_classes <- sort(unique(athletes$weight_class))
+# Helper function for clean place badges (highlight only podium, simplify others)
+get_place_badge <- function(place) {
+  case_when(
+    place == "1st" ~ '<span class="badge-gold">🥇 1st</span>',
+    place == "2nd" ~ '<span class="badge-silver">🥈 2nd</span>',
+    place == "3rd" ~ '<span class="badge-bronze">🥉 3rd</span>',
+    place %in% c("4th", "5th", "6th", "7th", "8th") ~ sprintf('<span class="badge-place">%s</span>', place),
+    TRUE ~ '<span style="color: #94a3b8; font-weight: bold;">—</span>'
+  )
+}
 
-options_html <- paste(
+# Unique options
+weight_classes <- sort(unique(athletes$weight_class))
+seasons <- sort(unique(athletes$season), decreasing = TRUE)
+num_schools <- length(unique(athletes$team))
+
+weight_options_html <- paste(
   sprintf('<option value="%s">%s lbs</option>', weight_classes, weight_classes),
   collapse = ""
 )
 
+season_options_html <- paste(
+  sprintf('<option value="%s">%s</option>', seasons, seasons),
+  collapse = ""
+)
+
 rows_html <- paste(
-  sprintf('<tr data-wc="%s"><td>%s</td><td>%s</td><td>%s lbs</td><td>%s</td></tr>',
-          athletes$weight_class, athletes$name, athletes$team, athletes$weight_class, athletes$points_scored),
+  sprintf('<tr data-wc="%s" data-season="%s"><td style="font-weight: 600;">%s</td><td style="color: #334155;">%s</td><td>%s lbs</td><td>%s</td><td style="text-align: center; font-weight: 500;">%s</td><td style="text-align: right; font-weight: 600; color: #1e3a8a;">%s</td><td style="text-align: center; color: #64748b;">%s</td></tr>',
+          athletes$weight_class, athletes$season, athletes$name, athletes$team, athletes$weight_class, get_place_badge(athletes$place), athletes$record, athletes$points_scored, athletes$season),
   collapse = ""
 )
 
 HTML(paste0(
-  '<div style="margin: 1.5rem 0;">',
-  '<label for="weightClassSelect" style="font-weight: bold; margin-bottom: 0.5rem; display: block;">Select a Weight Class:</label>',
-  '<select id="weightClassSelect" class="form-select" style="max-width: 260px; font-size: 1rem; padding: 0.4rem;" onchange="filterWrestlers(this.value)">',
-  '<option value="all">All Weight Classes</option>',
-  options_html,
-  '</select>',
-  '<div id="wrestlerCount" style="margin-top: 0.5rem; font-style: italic; color: #555;">Showing all ', nrow(athletes), ' wrestlers</div>',
+  '<div class="stats-grid">',
+  '  <div class="stat-card"><div class="stat-number">', nrow(athletes), '</div><div class="stat-label">Total Wrestlers</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', num_schools, '</div><div class="stat-label">Programs Represented</div></div>',
+  '  <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">Weight Classes</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', length(seasons), '</div><div class="stat-label">Championship Seasons</div></div>',
   '</div>',
-  '<table id="wrestlerTable" class="table table-striped table-hover" style="width: 100%; margin-top: 1rem;">',
-  '<thead><tr><th>Wrestler</th><th>Team</th><th>Weight Class</th><th>Points Scored</th></tr></thead>',
+  '<div class="filter-card">',
+  '  <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;">',
+  '    <div style="flex: 1; min-width: 220px;">',
+  '      <label for="wrestlerSearch">Search Wrestler or School</label>',
+  '      <input type="text" id="wrestlerSearch" class="form-control" placeholder="Type a name or school..." oninput="resetPageAndFilter()" style="padding: 0.45rem;">',
+  '    </div>',
+  '    <div>',
+  '      <label for="weightClassSelect">Weight Class</label>',
+  '      <select id="weightClassSelect" class="form-select" style="min-width: 180px; padding: 0.45rem;" onchange="resetPageAndFilter()">',
+  '        <option value="all">All Weights</option>',
+  weight_options_html,
+  '      </select>',
+  '    </div>',
+  '    <div>',
+  '      <label for="seasonSelect">Season</label>',
+  '      <select id="seasonSelect" class="form-select" style="min-width: 130px; padding: 0.45rem;" onchange="resetPageAndFilter()">',
+  '        <option value="all">All Seasons</option>',
+  season_options_html,
+  '      </select>',
+  '    </div>',
+  '  </div>',
+  '  <div id="wrestlerCount" style="margin-top: 0.75rem; font-weight: 500; font-size: 0.875rem; color: #475569;">Showing all wrestlers</div>',
+  '</div>',
+  '<div class="table-wrapper">',
+  '<table id="wrestlerTable" class="table table-hover">',
+  '<thead><tr><th>Wrestler</th><th>Team</th><th>Weight</th><th>Place</th><th style="text-align: center;">Record</th><th style="text-align: right;">Points</th><th style="text-align: center;">Season</th></tr></thead>',
   '<tbody>', rows_html, '</tbody>',
   '</table>',
+  '<div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: #f8fafc; border-top: 1px solid #e2e8f0;">',
+  '  <button id="prevBtn" class="btn btn-sm btn-outline-secondary" onclick="changePage(-1)" style="border-radius: 6px; padding: 0.3rem 0.8rem;">← Previous</button>',
+  '  <span id="pageInfo" style="font-size: 0.875rem; font-weight: 600; color: #475569;">Page 1</span>',
+  '  <button id="nextBtn" class="btn btn-sm btn-outline-secondary" onclick="changePage(1)" style="border-radius: 6px; padding: 0.3rem 0.8rem;">Next →</button>',
+  '</div>',
+  '</div>',
   '<script>',
-  'function filterWrestlers(selectedWeight) {',
-  '  const rows = document.querySelectorAll("#wrestlerTable tbody tr");',
-  '  let count = 0;',
-  '  rows.forEach(row => {',
-  '    if (selectedWeight === "all" || row.getAttribute("data-wc") === selectedWeight) {',
-  '      row.style.display = "";',
-  '      count++;',
-  '    } else {',
-  '      row.style.display = "none";',
-  '    }',
+  'let currentPage = 1;',
+  'const pageSize = 20;',
+  'let matchingRows = [];',
+  '',
+  'function resetPageAndFilter() {',
+  '  currentPage = 1;',
+  '  filterWrestlers();',
+  '}',
+  '',
+  'function filterWrestlers() {',
+  '  const selectedWeight = document.getElementById("weightClassSelect").value;',
+  '  const selectedSeason = document.getElementById("seasonSelect").value;',
+  '  const search = (document.getElementById("wrestlerSearch").value || "").toLowerCase().trim();',
+  '  const allRows = Array.from(document.querySelectorAll("#wrestlerTable tbody tr"));',
+  '  ',
+  '  matchingRows = allRows.filter(row => {',
+  '    const matchWeight = (selectedWeight === "all" || row.getAttribute("data-wc") === selectedWeight);',
+  '    const matchSeason = (selectedSeason === "all" || row.getAttribute("data-season") === selectedSeason);',
+  '    const matchSearch = (!search || row.textContent.toLowerCase().includes(search));',
+  '    return matchWeight && matchSeason && matchSearch;',
   '  });',
+  '  ',
+  '  allRows.forEach(r => r.style.display = "none");',
+  '  ',
+  '  const totalPages = Math.max(1, Math.ceil(matchingRows.length / pageSize));',
+  '  if (currentPage > totalPages) currentPage = totalPages;',
+  '  ',
+  '  const start = (currentPage - 1) * pageSize;',
+  '  const end = start + pageSize;',
+  '  matchingRows.slice(start, end).forEach(r => r.style.display = "");',
+  '  ',
   '  const countEl = document.getElementById("wrestlerCount");',
   '  if (countEl) {',
-  '    countEl.textContent = (selectedWeight === "all") ?',
-  '      ("Showing all " + count + " wrestlers") :',
-  '      ("Showing " + count + " wrestlers in " + selectedWeight + " lbs");',
+  '    countEl.textContent = "Showing " + matchingRows.length + " wrestlers (" + (matchingRows.length ? (start + 1) : 0) + "–" + Math.min(end, matchingRows.length) + ")";',
   '  }',
+  '  const pageInfo = document.getElementById("pageInfo");',
+  '  if (pageInfo) {',
+  '    pageInfo.textContent = "Page " + currentPage + " of " + totalPages;',
+  '  }',
+  '  const prevBtn = document.getElementById("prevBtn");',
+  '  const nextBtn = document.getElementById("nextBtn");',
+  '  if (prevBtn) prevBtn.disabled = (currentPage <= 1);',
+  '  if (nextBtn) nextBtn.disabled = (currentPage >= totalPages);',
   '}',
+  '',
+  'function changePage(delta) {',
+  '  currentPage += delta;',
+  '  const totalPages = Math.max(1, Math.ceil(matchingRows.length / pageSize));',
+  '  if (currentPage < 1) currentPage = 1;',
+  '  if (currentPage > totalPages) currentPage = totalPages;',
+  '  const allRows = Array.from(document.querySelectorAll("#wrestlerTable tbody tr"));',
+  '  allRows.forEach(r => r.style.display = "none");',
+  '  const start = (currentPage - 1) * pageSize;',
+  '  const end = start + pageSize;',
+  '  matchingRows.slice(start, end).forEach(r => r.style.display = "");',
+  '  const countEl = document.getElementById("wrestlerCount");',
+  '  if (countEl) {',
+  '    countEl.textContent = "Showing " + matchingRows.length + " wrestlers (" + (start + 1) + "–" + Math.min(end, matchingRows.length) + ")";',
+  '  }',
+  '  const pageInfo = document.getElementById("pageInfo");',
+  '  if (pageInfo) pageInfo.textContent = "Page " + currentPage + " of " + totalPages;',
+  '  const prevBtn = document.getElementById("prevBtn");',
+  '  const nextBtn = document.getElementById("nextBtn");',
+  '  if (prevBtn) prevBtn.disabled = (currentPage <= 1);',
+  '  if (nextBtn) nextBtn.disabled = (currentPage >= totalPages);',
+  '}',
+  '',
+  'function makeTableSortable(tableId) {',
+  '  const table = document.getElementById(tableId);',
+  '  if (!table) return;',
+  '  const headers = table.querySelectorAll("thead th");',
+  '  headers.forEach((th, colIdx) => {',
+  '    th.style.cursor = "pointer";',
+  '    th.title = "Click to sort";',
+  '    th.setAttribute("data-title", th.textContent.trim());',
+  '    th.textContent = th.getAttribute("data-title") + " ↕";',
+  '    let asc = true;',
+  '    th.addEventListener("click", () => {',
+  '      const tbody = table.querySelector("tbody");',
+  '      const rows = Array.from(tbody.querySelectorAll("tr"));',
+  '      rows.sort((a, b) => {',
+  '        const valA = a.children[colIdx].textContent.trim();',
+  '        const valB = b.children[colIdx].textContent.trim();',
+  '        const numA = parseFloat(valA);',
+  '        const numB = parseFloat(valB);',
+  '        if (!isNaN(numA) && !isNaN(numB)) {',
+  '          return asc ? numA - numB : numB - numA;',
+  '        }',
+  '        return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);',
+  '      });',
+  '      rows.forEach(r => tbody.appendChild(r));',
+  '      headers.forEach(h => {',
+  '        h.textContent = h.getAttribute("data-title") + " ↕";',
+  '      });',
+  '      th.textContent = th.getAttribute("data-title") + (asc ? " ▲" : " ▼");',
+  '      asc = !asc;',
+  '      filterWrestlers();',
+  '    });',
+  '  });',
+  '}',
+  'makeTableSortable("wrestlerTable");',
+  'resetPageAndFilter();',
   '</script>'
 ))
 ```

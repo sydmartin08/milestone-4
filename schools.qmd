@@ -1,0 +1,168 @@
+---
+title: "Schools & Rosters"
+---
+
+::: {.panel-tabset}
+
+## School Rosters
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(htmltools)
+
+# Read athlete data and sort by team, weight class, points
+athletes <- read_csv("data/athletes.csv", show_col_types = FALSE) |>
+  arrange(team, weight_class, desc(points_scored), name)
+
+# Helper function for place badges
+get_place_badge <- function(place) {
+  case_when(
+    place == "1st" ~ '<span class="badge-gold">🥇 1st Place</span>',
+    place == "2nd" ~ '<span class="badge-silver">🥈 2nd Place</span>',
+    place == "3rd" ~ '<span class="badge-bronze">🥉 3rd Place</span>',
+    place %in% c("4th", "5th", "6th", "7th", "8th") ~ sprintf('<span class="badge-place">%s Place</span>', place),
+    TRUE ~ '<span class="badge-dnp">Did not place</span>'
+  )
+}
+
+# Unique schools and seasons with rosters
+schools <- sort(unique(athletes$team))
+seasons <- sort(unique(athletes$season), decreasing = TRUE)
+
+school_options_html <- paste(
+  sprintf('<option value="%s">%s</option>', schools, schools),
+  collapse = ""
+)
+
+season_options_html <- paste(
+  sprintf('<option value="%s">%s</option>', seasons, seasons),
+  collapse = ""
+)
+
+rows_html <- paste(
+  sprintf('<tr data-team="%s" data-season="%s"><td><strong>%s</strong></td><td>%s</td><td><span class="badge-weight">%s lbs</span></td><td>%s</td><td><strong>%s</strong></td><td>%s</td><td><span class="badge-season">%s</span></td></tr>',
+          athletes$team, athletes$season, athletes$name, athletes$team, athletes$weight_class, get_place_badge(athletes$place), athletes$record, athletes$points_scored, athletes$season),
+  collapse = ""
+)
+
+HTML(paste0(
+  '<div class="filter-card">',
+  '  <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: flex-end;">',
+  '    <div>',
+  '      <label for="schoolSelect">Select a School</label>',
+  '      <select id="schoolSelect" class="form-select" style="min-width: 280px; padding: 0.45rem;" onchange="filterSchoolRoster()">',
+  '        <option value="all">All Schools (', length(schools), ' Programs)</option>',
+  school_options_html,
+  '      </select>',
+  '    </div>',
+  '    <div>',
+  '      <label for="seasonSelect">Championship Season</label>',
+  '      <select id="seasonSelect" class="form-select" style="min-width: 170px; padding: 0.45rem;" onchange="filterSchoolRoster()">',
+  '        <option value="all">All Seasons</option>',
+  season_options_html,
+  '      </select>',
+  '    </div>',
+  '  </div>',
+  '  <div id="schoolRosterCount" style="margin-top: 0.75rem; font-weight: 500; font-size: 0.9rem; color: #475569;">Showing all ', nrow(athletes), ' wrestlers</div>',
+  '</div>',
+  '<div class="table-wrapper">',
+  '<table id="schoolRosterTable" class="table table-hover">',
+  '<thead><tr><th>Wrestler</th><th>School</th><th>Weight Class</th><th>Place</th><th>Record (W-L)</th><th>Points Scored</th><th>Season</th></tr></thead>',
+  '<tbody>', rows_html, '</tbody>',
+  '</table>',
+  '</div>',
+  '<script>',
+  'function filterSchoolRoster() {',
+  '  const selectedTeam = document.getElementById("schoolSelect").value;',
+  '  const selectedSeason = document.getElementById("seasonSelect").value;',
+  '  const rows = document.querySelectorAll("#schoolRosterTable tbody tr");',
+  '  let count = 0;',
+  '  rows.forEach(row => {',
+  '    const matchTeam = (selectedTeam === "all" || row.getAttribute("data-team") === selectedTeam);',
+  '    const matchSeason = (selectedSeason === "all" || row.getAttribute("data-season") === selectedSeason);',
+  '    if (matchTeam && matchSeason) {',
+  '      row.style.display = "";',
+  '      count++;',
+  '    } else {',
+  '      row.style.display = "none";',
+  '    }',
+  '  });',
+  '  const countEl = document.getElementById("schoolRosterCount");',
+  '  if (countEl) {',
+  '    countEl.textContent = (selectedTeam === "all") ?',
+  '      ("Showing all " + count + " wrestlers") :',
+  '      ("Showing " + count + " wrestlers for " + selectedTeam);',
+  '  }',
+  '}',
+  'function makeTableSortable(tableId) {',
+  '  const table = document.getElementById(tableId);',
+  '  if (!table) return;',
+  '  const headers = table.querySelectorAll("thead th");',
+  '  headers.forEach((th, colIdx) => {',
+  '    th.style.cursor = "pointer";',
+  '    th.title = "Click to sort";',
+  '    th.setAttribute("data-title", th.textContent.trim());',
+  '    th.textContent = th.getAttribute("data-title") + " ↕";',
+  '    let asc = true;',
+  '    th.addEventListener("click", () => {',
+  '      const tbody = table.querySelector("tbody");',
+  '      const rows = Array.from(tbody.querySelectorAll("tr"));',
+  '      rows.sort((a, b) => {',
+  '        const valA = a.children[colIdx].textContent.trim();',
+  '        const valB = b.children[colIdx].textContent.trim();',
+  '        const numA = parseFloat(valA);',
+  '        const numB = parseFloat(valB);',
+  '        if (!isNaN(numA) && !isNaN(numB)) {',
+  '          return asc ? numA - numB : numB - numA;',
+  '        }',
+  '        return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);',
+  '      });',
+  '      rows.forEach(r => tbody.appendChild(r));',
+  '      headers.forEach(h => {',
+  '        h.textContent = h.getAttribute("data-title") + " ↕";',
+  '      });',
+  '      th.textContent = th.getAttribute("data-title") + (asc ? " ▲" : " ▼");',
+  '      asc = !asc;',
+  '    });',
+  '  });',
+  '}',
+  'makeTableSortable("schoolRosterTable");',
+  '</script>'
+))
+```
+
+## All NAIA Schools
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+programs <- read_csv("data/naia_women_programs.csv", show_col_types = FALSE) |>
+  arrange(school)
+
+HTML(paste0(
+  '<p style="color: #475569; margin: 1rem 0; font-weight: 500;">Showing all ', nrow(programs), ' NAIA institutions sponsoring varsity women\'s wrestling programs.</p>',
+  '<div class="table-wrapper">',
+  '<table id="allSchoolsTable" class="table table-hover">',
+  '<thead><tr><th>School</th><th>City</th><th>State</th><th>Conference</th></tr></thead>',
+  '<tbody>',
+  paste(
+    sprintf('<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td><td><span class="badge-weight">%s</span></td></tr>',
+            programs$school, programs$city, programs$state, programs$conference),
+    collapse = ""
+  ),
+  '</tbody>',
+  '</table>',
+  '</div>',
+  '<script>',
+  'makeTableSortable("allSchoolsTable");',
+  '</script>'
+))
+```
+
+:::

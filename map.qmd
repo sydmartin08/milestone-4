@@ -1,0 +1,85 @@
+---
+title: "USA Program Map"
+---
+
+::: {.hero-banner}
+::: {.hero-content}
+# NAIA Programs Across the USA
+Explore the geographic distribution of all NAIA varsity women's wrestling programs. Click any pin to view campus details and conference affiliation.
+:::
+:::
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(leaflet)
+library(htmltools)
+
+# Load programs data with coordinates
+programs <- read_csv("data/naia_women_programs.csv", show_col_types = FALSE) |>
+  filter(!is.na(latitude) & !is.na(longitude))
+
+# Define distinct athletic colors for each conference
+conferences <- sort(unique(programs$conference))
+conf_colors <- c(
+  "Cascade Collegiate Conference" = "#2563eb",             # Blue
+  "Great Plains Athletic Conference" = "#dc2626",          # Red
+  "Heart of America Athletic Conference" = "#059669",      # Green
+  "Kansas Collegiate Athletic Conference" = "#d97706",     # Amber
+  "Mid-South Conference" = "#7c3aed",                      # Purple
+  "Sooner Athletic Conference" = "#0891b2"                 # Cyan
+)
+
+pal <- colorFactor(
+  palette = unname(conf_colors[conferences]),
+  domain = conferences
+)
+
+# HTML popups for clickable pins
+popups <- paste0(
+  "<div style='font-family: Inter, sans-serif; min-width: 210px; padding: 4px;'>",
+  "<h4 style='margin: 0 0 6px 0; font-size: 1.05rem; color: #1e3a8a; font-weight: 700;'>", programs$school, "</h4>",
+  "<div style='font-size: 0.85rem; color: #475569; margin-bottom: 4px;'>",
+  "📍 <strong>Location:</strong> ", programs$city, ", ", programs$state,
+  "</div>",
+  "<div style='font-size: 0.85rem; color: #475569; margin-bottom: 4px;'>",
+  "🏆 <strong>Conference:</strong> ", programs$conference,
+  "</div>",
+  "<div style='margin-top: 8px; padding-top: 6px; border-top: 1px solid #e2e8f0; font-size: 0.8rem; color: #0284c7; font-weight: 600;'>",
+  "NAIA Varsity Sponsoring Program",
+  "</div>",
+  "</div>"
+)
+
+# Create the Leaflet map
+leaflet(programs, width = "100%", height = "650px", options = leafletOptions(minZoom = 3, maxZoom = 12)) |>
+  addProviderTiles(providers$CartoDB.Positron) |>
+  setView(lng = -96.5, lat = 39.5, zoom = 4) |>
+  addCircleMarkers(
+    lng = ~longitude,
+    lat = ~latitude,
+    color = "#ffffff",
+    fillColor = ~pal(conference),
+    radius = 9,
+    weight = 2,
+    opacity = 1,
+    fillOpacity = 0.9,
+    popup = popups,
+    label = ~paste0(school, " (", city, ", ", state, ")"),
+    labelOptions = labelOptions(
+      style = list("font-family" = "Inter, sans-serif", "font-weight" = "500", "padding" = "4px 8px"),
+      textsize = "13px",
+      direction = "auto"
+    )
+  ) |>
+  addLegend(
+    position = "bottomright",
+    pal = pal,
+    values = ~conference,
+    title = "Conference",
+    opacity = 0.9
+  )
+```

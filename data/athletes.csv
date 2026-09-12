@@ -1,187 +1,314 @@
-name,team,weight_class,points_scored
-"Mcbryde, Zaynah",Life,138,24.5
-"Isaac, Savannah",Life,207,24.0
-"Mcbryde, Latifah",Life,160,23.0
-"Mcbryde, Jamilah",Life,145,22.5
-"Shotwell, Salyna",Life,117,22.0
-"Falcon, Anaya",Life,110,18.0
-"Mottley, Olivia",Life,131,15.0
-"Savidge, Sarah",Life,131,14.0
-"Busa, Reka",Life,180,12.0
-"Martinez, Ariana",Life,124,10.0
-"Hernandez, Katherine",Life,103,4.0
-"Krejsa, Anna",Life,124,3.0
-"Sandoval, Judy",Grand View,103,21.0
-"Colon, Mayangelie",Grand View,117,19.5
-"Campbell, Catharine",Grand View,124,19.0
-"Brown, Olivia",Grand View,207,17.5
-"Nitta, Tristan",Grand View,110,14.5
-"Davis, Maya",Grand View,124,11.5
-"Cruz, Lita",Grand View,110,6.0
-"Porcelli, Bella",Grand View,207,6.0
-"Warren, Krista",Grand View,145,4.0
-"Campbell, Cailin",Grand View,117,3.5
-"Moore, Devyn",Grand View,103,0.0
-"Spurgeon, Emmalee",Grand View,160,0.0
-"Miranda, Shammilka",Cumberlands,117,23.0
-"Gomez, Katie",Cumberlands,124,20.5
-"Fisher, Micah",Cumberlands,160,20.0
-"Casteneda, Angelina",Cumberlands,103,14.0
-"Ming, Alivia",Cumberlands,145,12.0
-"Bernabe, Maquoia",Cumberlands,207,11.0
-"Preciado-Meza, Saiheron",Cumberlands,180,6.0
-"King, Dutchess",Cumberlands,103,3.5
-"Porter, Mary Jane",Cumberlands,131,3.0
-"Duenas, Naomi",Cumberlands,207,2.5
-"Anderson, Presley",Cumberlands,124,1.0
-"Suto, Annabelle",Cumberlands,131,0.0
-"Kolawole, Esther",William Penn,145,26.0
-"Ogunsanya, Christianah",William Penn,117,23.0
-"Vanderwood, Joanna",William Penn,124,20.0
-"Hawley, Isabelle",William Penn,138,12.5
-"Lopez, America",William Penn,180,12.5
-"Patton, Devin",William Penn,131,9.5
-"Bostelman, Kendall",William Penn,138,5.5
-"Wolf, Alexa",William Penn,160,3.0
-"Steinkamp, Catherine",William Penn,124,2.0
-"Atkins, Olivia",William Penn,103,0.0
-"Zapata, Lillian",William Penn,103,0.0
-"Abdijanovic, Naida",William Penn,145,0.0
-"Mota-pettis, Xochitl",Missouri Valley,131,22.5
-"Corbett, Kelani",Missouri Valley,180,21.0
-"Aumua, Sevreign",Missouri Valley,145,19.0
-"De La Garza, Serenity",Missouri Valley,138,16.5
-"Immaeva, Jasmina",Missouri Valley,124,13.0
-"Holland, Hailey",Missouri Valley,110,5.0
-"Whetzal, Ashley",Missouri Valley,131,4.0
-"Acosta, Aniseta",Missouri Valley,145,2.5
-"Pineda, Sarah",Missouri Valley,110,0.0
-"Baeza, Isla",Missouri Valley,124,0.0
-"Hikiji, Erin",Providence,103,25.0
-"Estrella-Beauchamp, Waipuilani",Providence,138,19.5
-"Morales, Paige",Providence,110,18.5
-"Han, Esther",Providence,145,5.5
-"Dodge, Aspen",Providence,145,4.0
-"Randles, Alyssa",Providence,124,3.5
-"Shota, Kayla",Providence,110,2.5
-"Sutton, Hailey",Providence,160,2.5
-"Respicio, Paige",Providence,131,2.0
-"Rees, Kailey",Providence,138,2.0
-"Bocanegra, Isabella",Providence,103,0.0
-"Frank, Alicia",Providence,117,0.0
-"Moreno, Carolina",Southern Oregon,131,17.0
-"Howard, Jasmine",Southern Oregon,117,13.5
-"Hingano, Kathryn",Southern Oregon,207,12.5
-"Baertlein, Emma",Southern Oregon,110,11.5
-"Gradillas-Flores, Lillian",Southern Oregon,180,11.5
-"Welch, Malia",Southern Oregon,124,6.0
-"Miguel-Lapham, Quilaztli",Southern Oregon,160,5.5
-"Dennis, Bailey",Southern Oregon,180,2.0
-"Kurtz, Marissa",Southern Oregon,117,0.0
-"Annis, Kaylee",Southern Oregon,124,0.0
-"Wieber, Holland",Southern Oregon,145,0.0
-"Lekas, Ashley",Texas Wesleyan,180,26.0
-"Barragan, Samantha",Texas Wesleyan,138,19.0
-"Yauger, Aubrey",Texas Wesleyan,145,13.0
-"Fournier, Camille",Texas Wesleyan,117,11.0
-"Khamjoi, Taydem",Texas Wesleyan,160,4.5
-"Fonseca, Abigail",Texas Wesleyan,207,0.0
-"Rodriguez, Cristelle",Doane,124,27.0
-"Sotomayor, Bridgette",Doane,145,15.0
-"Vang, Karina",Doane,103,12.0
-"Barber, Aspen",Doane,160,8.5
-"Belk, Yazmin",Doane,180,3.0
-"Romero, Hailey",Doane,207,3.0
-"Palimo, Ashlee",Doane,131,2.0
-"Breeden, Jaden",Doane,110,0.0
-"Breeden, Julia",Doane,117,0.0
-"Peterson, Mora",Doane,117,0.0
-"Ciha, Aevri",Doane,145,0.0
-"Benn, Lamia",Doane,160,0.0
-"Young, Makayla",Indiana Tech,103,16.5
-"Dempewolf, Riley",Indiana Tech,207,16.0
-"Soares, Tehani",Indiana Tech,110,14.5
-"Kaplan, Rose",Indiana Tech,124,12.0
-"Hernandez, Andrea",Indiana Tech,131,7.5
-"Mcnulty, Catherine",Indiana Tech,180,3.5
-"Doering, Grace",Indiana Tech,180,2.5
-"Hancher, Allison",Indiana Tech,110,0.0
-"Seitzinger, Hannah",Indiana Tech,131,0.0
-"Weidl, Darby",Ottawa,160,21.0
-"Jackson, Hannah",Ottawa,207,18.0
-"Sebesta, Abigail",Ottawa,160,11.5
-"Swift, Livia",Ottawa,138,5.5
-"Arrington, Siara",Ottawa,180,3.0
-"Davis, Kaylee",Ottawa,180,3.0
-"Fink, Aynsley",Ottawa,110,2.5
-"Hand, Peyton",Ottawa,124,2.5
-"Leonard, Kena",Ottawa,207,1.0
-"Martin, Kendall",Ottawa,117,0.0
-"Truex, Emma",Ottawa,131,0.0
-"Vergara, Liliana",Campbellsville,180,14.0
-"Galumette, Icart",Campbellsville,117,8.0
-"Staebler, Brianna",Campbellsville,207,5.5
-"Perez, Gabriella",Campbellsville,138,4.0
-"Tait, Kylee",Campbellsville,160,3.0
-"Messerly, Olivia",Campbellsville,131,2.5
-"Ortiz, Cameron",Campbellsville,131,2.5
-"Messerly, Addison",Campbellsville,138,2.5
-"Adekuoroye, Mercy",Wayland Baptist,131,16.5
-"Suarez, Jordan",Wayland Baptist,138,16.0
-"Sanchez, Leilani",Wayland Baptist,207,3.0
-"Dominguez, Malarie",Wayland Baptist,103,1.0
-"Barnett, Tess",Wayland Baptist,124,0.5
-"Casel, Mohagany",Wayland Baptist,160,0.0
-"Miller, Alexis",Oklahoma City,103,22.0
-"Abramson, Sofia",Oklahoma City,103,6.5
-"Posada, Natalia",Oklahoma City,138,4.5
-"Campbell, Destiny",Oklahoma City,131,3.0
-"Garcia, Iby",Oklahoma City,110,0.0
-"White, Bryce",Oklahoma City,131,0.0
-"Munoz, Makayla",Oklahoma City,145,0.0
-"Lowe, Corin",Oklahoma City,160,0.0
-"Murphey, Ella",Oklahoma City,180,0.0
-"Jelacic, Stefana",Lourdes,110,23.0
-"Phillips, Alysse",Lourdes,207,9.5
-"Borrero, Flor Parker",Evergreen State,160,23.5
-"Tallman, Nizhoni",Evergreen State,110,6.5
-"Taylor, Ellabelle",Evergreen State,124,2.0
-"Adekoye, Jumoke",Dickinson State,131,25.0
-"Gerhardt, Jenna",Dickinson State,110,3.0
-"Whaley, Larhae",Dickinson State,117,2.5
-"Hubby, Kiley",Dickinson State,160,0.5
-"Page, India",Lindsey Wilson,180,18.5
-"Campbell, Kori",Lindsey Wilson,138,4.0
-"Payton, Callie",Lindsey Wilson,117,2.5
-"Thomas, Reagan",Lindsey Wilson,110,2.0
-"Campos, Josselinne",Lindsey Wilson,145,2.0
-"Costa, Hayeni",Lindsey Wilson,207,2.0
-"Adeduntan, Rodiat",Lindsey Wilson,110,0.0
-"Bridenstine, Sydney",Lindsey Wilson,124,0.0
-"Ritchie, Lexi",Lindsey Wilson,145,0.0
-"Gallaway, Reagen",Hastings,138,16.0
-"Kaz, Larissa",Hastings,131,12.5
-"Hoeflich, Lisa",Hastings,145,1.0
-"Wood, Tabitha",Hastings,138,0.0
-"Stice, Emma",Hastings,145,0.0
-"Deeds, Isabella",Hastings,160,0.0
-"Patterson, Marissa",Hastings,180,0.0
-"Rickley, Taylor",Hastings,207,0.0
-"Avila, Jannell",Baker,180,17.5
-"Heath, Katherine",Baker,117,11.0
-"Robledo, Kylie",Baker,124,0.0
-"Martin, Jade",Baker,138,0.0
-"Wardlow, Nevaeh",Baker,180,0.0
-"Wieber, Liv",Eastern Oregon,145,21.5
-"Retano, Irma",Eastern Oregon,117,2.5
-"Avelino, Nia",Eastern Oregon,110,0.5
-"Flores Roque, Nayeli",Eastern Oregon,103,0.0
-"Walter, Telsarina",Eastern Oregon,110,0.0
-"Beck, Kadence",Eastern Oregon,124,0.0
-"Jacquez, Alexsys",Saint Mary,110,13.5
-"Jacquez, Eyvori",Saint Mary,103,3.0
-"Boday, Araya",Saint Mary,138,0.0
-"Frounfelter, Amelia",Saint Mary,160,0.0
-"Hatfield, Alexis",Avila,103,16.0
-"Redmond, Nicole",Avila,131,0.0
-"Riedinger, Jaclyn",Avila,138,0.0
+name,team,weight_class,place,record,points_scored,season
+Kayla McNatt,Arizona Christian,110,5th,3-2,14.0,2026
+Haley Ward,Avila,207,2nd,4-1,21.5,2026
+Kylie Robledo,Baker,110,4th,5-2,14.5,2026
+Chloe Herrick,Baker,117,Did not place,2-2,6.0,2026
+Aileya Sath,Baker,131,Did not place,0-2,0.0,2026
+Hailee Crosland,Baker,160,Did not place,1-2,3.0,2026
+Johanna Carrasco,Baker,180,Did not place,0-2,0.0,2026
+Margaret Jordan,Baker,180,Did not place,2-2,3.5,2026
+Madeleine Stone,Baker,207,Did not place,0-2,0.0,2026
+Lakota Rogers,Bismarck State,117,Did not place,0-2,0.0,2026
+Rei Ogden,Bismarck State,124,4th,4-2,15.5,2026
+Alexis Schneider,Bismarck State,131,7th,4-2,10.0,2026
+Makennah Craft,Campbellsville,103,3rd,5-1,17.0,2026
+Addison Messerly,Campbellsville,124,Did not place,1-2,2.5,2026
+Olivia Messerly,Campbellsville,131,Did not place,1-2,1.0,2026
+Gabriella Perez,Campbellsville,145,Did not place,1-2,2.0,2026
+Kylee Tait,Campbellsville,160,Did not place,0-2,0.0,2026
+Zoey Mzeru,Central Methodist,103,Did not place,0-2,0.0,2026
+Yusneiry Agrazal,Central Methodist,117,Did not place,0-2,0.0,2026
+Berlin Kiddoo,Central Methodist,124,Did not place,1-2,2.5,2026
+Emily Neumann,Central Methodist,138,Did not place,0-2,0.0,2026
+Allyssa Johnson,Central Methodist,160,Did not place,1-2,2.0,2026
+Kaitlin Castro,Cumberlands,124,Did not place,1-2,4.0,2026
+Mary Jane Porter,Cumberlands,131,Did not place,1-2,2.5,2026
+Ruth Jimenez,Cumberlands,138,Did not place,2-2,1.5,2026
+Genesis Gilmore,Cumberlands,145,Did not place,1-2,2.0,2026
+Alyvia Ming,Cumberlands,145,Did not place,0-2,0.0,2026
+Sierra Mefford,Cumberlands,160,Did not place,2-2,1.5,2026
+Micah Fisher-Miller,Cumberlands,160,7th,4-2,13.5,2026
+Saiheron Preciado-Meza,Cumberlands,180,7th,3-2,10.0,2026
+Naomi Duenas,Cumberlands,207,Did not place,1-2,4.0,2026
+Destiny Marquez,Cumberlands,207,Did not place,0-2,0.0,2026
+Myriam Riley,Dickinson State,110,Did not place,1-2,0.5,2026
+Jenna Gerhardt,Dickinson State,110,Did not place,1-2,2.0,2026
+Mikayla Jardine,Dickinson State,117,Did not place,0-2,0.0,2026
+Jazmine Turner,Dickinson State,124,Did not place,1-2,3.0,2026
+Jumoke Adekoye,Dickinson State,131,1st,5-0,26.0,2026
+Karina Vang,Doane,103,Did not place,0-2,0.0,2026
+Kimberly Navarette,Doane,103,Did not place,0-2,0.0,2026
+Angelica Vicente Gonzalez,Doane,117,8th,3-3,8.5,2026
+Cristelle Rodriguez,Doane,124,1st,4-0,26.0,2026
+Ashlee Palimo`o,Doane,131,Did not place,0-2,0.0,2026
+Bridgette Sotomayor,Doane,145,Did not place,0-2,0.0,2026
+Yazmin Belk,Doane,180,Did not place,0-2,0.0,2026
+Jessica Rodriguez,Doane,207,Did not place,1-2,3.0,2026
+Gloria Diaz,Eastern Oregon,117,Did not place,0-2,0.0,2026
+Lexie Garza,Eastern Oregon,131,Did not place,0-2,0.0,2026
+Makenna Duran,Eastern Oregon,131,Did not place,0-2,0.0,2026
+Veil Foreman,Eastern Oregon,145,Did not place,1-2,2.5,2026
+Kiona Michel,Eastern Oregon,207,Did not place,1-2,2.5,2026
+Nizhoni Tallman,Evergreen State,110,Did not place,0-2,0.0,2026
+Ellabelle Taylor,Evergreen State,124,Did not place,0-2,0.0,2026
+Haley Le,Evergreen State,138,5th,4-2,16.0,2026
+Shannon Workinger,Evergreen State,160,2nd,3-1,17.5,2026
+Kaylynn Martin,Friends,110,Did not place,0-2,0.0,2026
+Alexis Means,Friends,145,Did not place,1-2,3.0,2026
+Bailee Nelson,Friends,180,Did not place,0-2,0.0,2026
+Jes`Onia Barefield,Georgetown,124,Did not place,0-2,0.0,2026
+Isabelle Apple,Grand View,103,8th,3-3,11.0,2026
+Lita Cruz,Grand View,103,5th,3-2,12.0,2026
+Tristan Nitta,Grand View,110,3rd,6-1,25.0,2026
+Eliana Martinez,Grand View,110,Did not place,2-2,5.5,2026
+Cailin Campbell,Grand View,117,4th,4-2,19.0,2026
+Mayangelie Colon,Grand View,117,Did not place,2-2,4.5,2026
+Maya Davis,Grand View,124,Did not place,3-2,6.0,2026
+Catherine Campbell,Grand View,124,7th,5-2,13.0,2026
+Madison Diaz,Grand View,145,5th,5-2,12.0,2026
+Nicole Olson,Grand View,160,Did not place,0-2,0.0,2026
+Andjela Prijovic,Grand View,180,2nd,4-1,21.0,2026
+Selena Mares,Grand View,207,5th,4-2,18.0,2026
+Chloe Brewis,Hastings,110,8th,4-3,10.5,2026
+Raelynn O`Connor,Hastings,110,Did not place,0-2,0.0,2026
+Larissa Kaz,Hastings,131,8th,2-3,7.0,2026
+Lisa Hoeflich,Hastings,138,Did not place,0-2,0.0,2026
+Reagen Gallaway,Hastings,138,7th,3-2,10.0,2026
+Emma Stice,Hastings,145,Did not place,0-2,0.0,2026
+Jayla Ford,Hastings,160,Did not place,0-2,0.0,2026
+Alexis Llamas,Hastings,207,Did not place,0-2,0.0,2026
+Taylor Rickley,Hastings,207,Did not place,0-2,0.0,2026
+Zoey Haney,Indiana Tech,103,2nd,3-1,19.5,2026
+Makayla Young,Indiana Tech,103,Did not place,2-2,3.0,2026
+Emma Jones,Indiana Tech,110,Did not place,1-2,4.0,2026
+Makenize Smith,Indiana Tech,110,Did not place,1-2,1.0,2026
+Rose Kaplan,Indiana Tech,124,2nd,4-1,22.0,2026
+Lola Barkby,Indiana Tech,124,8th,3-3,8.5,2026
+Andrea Hernandez,Indiana Tech,131,Did not place,0-2,0.0,2026
+Kinnley Smith,Indiana Tech,138,Did not place,2-2,1.0,2026
+Hayden Newberg,Indiana Tech,145,7th,4-2,11.0,2026
+Bo Geibe,Indiana Tech,160,5th,3-2,11.5,2026
+Diana Gonzalez,Life,110,Did not place,1-2,1.0,2026
+Salyna Shotwell,Life,117,2nd,4-1,24.0,2026
+Anna Krejsa,Life,124,Did not place,2-2,5.0,2026
+Sarah Savidge,Life,131,4th,4-2,16.0,2026
+Olivia Mottley,Life,131,2nd,4-1,19.0,2026
+Zaynah McBryde,Life,138,2nd,4-1,22.0,2026
+Christina Jaen,Life,138,Did not place,2-2,5.5,2026
+Jamilah McBryde,Life,145,1st,4-0,23.0,2026
+Amelia Fawcett,Life,145,Did not place,1-2,3.0,2026
+Latifah McBryde,Life,160,3rd,5-1,20.5,2026
+Reka Busa,Life,180,3rd,4-1,19.0,2026
+Madeline Welch,Life,207,6th,3-3,11.0,2026
+Reagan Thomas,Lindsey Wilson,110,Did not place,2-2,3.0,2026
+Grace Lashinsky,Lindsey Wilson,117,5th,5-2,17.0,2026
+Callie Payton,Lindsey Wilson,117,Did not place,1-2,2.0,2026
+Kamilah Brooks,Lindsey Wilson,124,5th,4-2,12.0,2026
+Jeila Ramos,Lindsey Wilson,131,6th,3-3,14.5,2026
+Lexi Ritchie,Lindsey Wilson,138,Did not place,0-2,0.0,2026
+Brielle Bibla,Lindsey Wilson,138,Did not place,0-2,0.0,2026
+Kori Campbell,Lindsey Wilson,145,3rd,4-1,17.0,2026
+Katelyn Lewis,Lindsey Wilson,180,Did not place,1-2,3.0,2026
+Hayeni Costa,Lindsey Wilson,207,8th,3-3,6.5,2026
+Cheyenne Cruce,Lindsey Wilson,207,Did not place,1-2,2.0,2026
+Taylor Hood,Midland,117,Did not place,0-2,0.0,2026
+Maci Avila,Midland,138,4th,4-2,15.5,2026
+Ja`Nya Banks,Midland,160,Did not place,0-2,0.0,2026
+De`yton Young,Missouri Baptist,110,Did not place,0-2,0.0,2026
+Zoe Fries,Missouri Baptist,138,Did not place,1-2,2.5,2026
+Maggie Ortmann,Missouri Baptist,145,8th,3-3,8.5,2026
+Kenlee Fish,Missouri Baptist,180,Did not place,0-2,0.0,2026
+Raquel Garcia,Missouri Valley,110,Did not place,0-2,0.0,2026
+Zao Estrada,Missouri Valley,117,3rd,4-1,19.5,2026
+Sarah Pineda,Missouri Valley,117,Did not place,0-2,0.0,2026
+Isla Baeza,Missouri Valley,124,Did not place,0-2,0.0,2026
+Jasmina Immaeva,Missouri Valley,124,Did not place,1-2,3.0,2026
+Serenity De La Garza,Missouri Valley,138,Did not place,1-2,3.0,2026
+Sarina Bertram,Missouri Valley,145,Did not place,1-2,3.5,2026
+Brooke-Lynn Rush,Missouri Valley,145,6th,4-3,11.5,2026
+Maria Slaughter,Missouri Valley,160,Did not place,1-2,3.0,2026
+Autumn Perez,Missouri Valley,180,8th,3-3,11.0,2026
+Morgan Repasky,Montreat,103,Did not place,0-2,0.0,2026
+Daniela Espinal,Montreat,124,Did not place,0-2,0.0,2026
+Alexis Miller,Oklahoma City,103,6th,2-3,13.0,2026
+Avery Ashley,Oklahoma City,110,2nd,3-1,20.0,2026
+Bryce White,Oklahoma City,131,Did not place,0-2,0.0,2026
+Natalia Posada,Oklahoma City,138,Did not place,0-2,0.0,2026
+Corin Lowe,Oklahoma City,145,Did not place,0-2,0.0,2026
+Makayla Munoz,Oklahoma City,160,Did not place,1-2,3.0,2026
+Aynsley Fink,Ottawa,103,7th,3-2,9.5,2026
+Addison Saporito,Ottawa,117,Did not place,1-2,2.0,2026
+Sigrun Metzger,Ottawa,117,Did not place,2-2,4.5,2026
+Aileen Lester,Ottawa,138,6th,2-3,9.0,2026
+Darby Weidl,Ottawa,160,8th,3-3,8.5,2026
+Justice Thomas,Ottawa,160,Did not place,0-2,0.0,2026
+Hannah Jackson,Ottawa,180,6th,3-3,9.0,2026
+Siara Arrington,Ottawa,180,5th,5-2,12.0,2026
+Kena Leonard,Ottawa,207,Did not place,1-2,2.0,2026
+Kylee Lindsley,Ottawa,207,7th,4-2,13.5,2026
+Erin Hikiji,Providence,103,1st,5-0,24.5,2026
+Isabella Bocanegra,Providence,103,Did not place,0-2,0.0,2026
+Paige Morales,Providence,110,6th,2-3,9.0,2026
+Kayla Shota,Providence,110,Did not place,2-2,4.5,2026
+Joely Slyter,Providence,117,7th,3-2,10.0,2026
+Alyssa Randles,Providence,124,6th,3-3,12.0,2026
+Waipuilani Estrella-Beauchamp,Providence,131,3rd,5-1,22.5,2026
+Esther Han,Providence,138,Did not place,2-2,4.5,2026
+Elise Twait,Providence,145,Did not place,1-2,1.0,2026
+Aspen Dodge,Providence,160,Did not place,1-2,4.0,2026
+Hailey Sutton,Providence,160,6th,3-3,9.0,2026
+Kassidy Sigda,Providence,180,Did not place,0-2,0.0,2026
+Alexandra Evans,Rio Grande,103,Did not place,0-2,0.0,2026
+Julia Snyder,Rochester Christian,110,Did not place,1-2,3.0,2026
+Alexsys Jacquez,Saint Mary,103,4th,4-2,17.0,2026
+Destiny Jones,Saint Mary,103,Did not place,1-2,3.0,2026
+Skylur Lewis,Saint Mary,138,8th,2-3,9.5,2026
+Liana Ferreira,Southern Oregon,103,Did not place,2-2,5.0,2026
+Kaylee Annis,Southern Oregon,124,Did not place,1-2,0.5,2026
+Myia Weiler,Southern Oregon,124,Did not place,0-2,0.0,2026
+Jade Morales,Southern Oregon,131,Did not place,1-2,0.5,2026
+Makayla Correa,Southern Oregon,138,Did not place,1-2,3.0,2026
+Holland Wieber,Southern Oregon,145,4th,4-2,14.5,2026
+Vida Boskovic,Southern Oregon,160,4th,6-2,20.5,2026
+Quilaztli Miguel-Lapham,Southern Oregon,160,Did not place,0-2,0.0,2026
+Kathryn Hingano,Southern Oregon,180,4th,4-2,18.5,2026
+Lillian Gradillas-Flores,Southern Oregon,207,1st,4-0,25.5,2026
+Gracie Elliott,Texas Wesleyan,110,Did not place,0-2,0.0,2026
+Carolina Rios,Texas Wesleyan,117,6th,3-3,13.0,2026
+Elizabeth Duvall,Texas Wesleyan,131,Did not place,2-2,3.5,2026
+Samantha Barragan,Texas Wesleyan,138,3rd,5-1,23.0,2026
+Carla Campos,Texas Wesleyan,207,4th,4-2,15.5,2026
+Mackenzie Gilbert,Waldorf,103,Did not place,0-2,0.0,2026
+Niah Smith,Waldorf,145,Did not place,1-2,1.0,2026
+Skyler Bruno,Waldorf,207,Did not place,0-2,0.0,2026
+Calli Connally,Wayland Baptist,103,Did not place,3-2,7.0,2026
+Mariah Dillard,Wayland Baptist,117,Did not place,0-2,0.0,2026
+Tess Barnett,Wayland Baptist,124,Did not place,0-2,0.0,2026
+Madison Pena,Wayland Baptist,131,Did not place,1-2,2.5,2026
+Jordan Suarez,Wayland Baptist,145,2nd,4-1,23.0,2026
+Mercy Adekuoroye,Wayland Baptist,160,1st,4-0,23.5,2026
+Mohagany Casel,Wayland Baptist,160,Did not place,3-2,2.0,2026
+Ambre Chevreau,Wayland Baptist,180,Did not place,1-2,3.5,2026
+Payton Sholander,Wayland Baptist,180,Did not place,1-2,2.5,2026
+Faith Wooley,Wayland Baptist,207,Did not place,2-2,5.0,2026
+Leilani Sanchez,Wayland Baptist,207,3rd,6-1,23.5,2026
+Berlyn Davis,Westcliff,160,Did not place,1-2,2.5,2026
+Fernanda Canedo,Westcliff,207,Did not place,0-2,0.0,2026
+Mia Palumbo,William Penn,110,1st,5-0,28.0,2026
+Avy Perez,William Penn,110,7th,4-2,10.0,2026
+Christianah Ogunsanya,William Penn,117,1st,4-0,24.5,2026
+Vicky Baez-Dilone,William Penn,124,3rd,5-1,22.0,2026
+Tati Paragas,William Penn,124,Did not place,1-2,2.0,2026
+Kendall Bostelman,William Penn,131,5th,4-2,14.5,2026
+Bronwyn Brenneman,William Penn,131,Did not place,2-2,3.0,2026
+Esther Kolawole,William Penn,138,1st,4-0,26.0,2026
+Naida Abdijanovic,William Penn,145,Did not place,0-2,0.0,2026
+Piper Fowler,William Penn,180,1st,4-0,28.0,2026
+Diara Pomares,William Penn,180,Did not place,1-2,1.0,2026
+Phoebe Burt,William Penn,207,Did not place,1-2,1.0,2026
+Teani Medeiros-Maielua,William Woods,138,Did not place,1-2,2.5,2026
+Abby Piper,William Woods,180,Did not place,0-2,0.0,2026
+Jill High,York,131,Did not place,1-2,3.0,2026
+Alexis Hatfield,Avila,103,5th,6-2,16.0,2025
+Nicole Redmond,Avila,131,Did not place,0-2,0.0,2025
+Jaclyn Riedinger,Avila,138,Did not place,0-2,0.0,2025
+Katherine Heath,Baker,117,7th,4-2,11.0,2025
+Kylie Robledo,Baker,124,Did not place,0-2,0.0,2025
+Jade Martin,Baker,138,Did not place,0-2,0.0,2025
+Jannell Avila,Baker,180,3rd,4-1,17.5,2025
+Nevaeh Wardlow,Baker,180,Did not place,0-2,0.0,2025
+Jamesa Robinson,Brewton-Parker,117,Did not place,1-2,3.0,2025
+Icart Galumette,Campbellsville,117,8th,3-3,8.0,2025
+Cameron Ortiz,Campbellsville,131,Did not place,1-2,2.5,2025
+Olivia Messerly,Campbellsville,131,Did not place,2-2,2.5,2025
+Gabriella Perez,Campbellsville,138,Did not place,2-2,4.0,2025
+Addison Messerly,Campbellsville,138,Did not place,1-2,2.5,2025
+Kylee Tait,Campbellsville,160,Did not place,1-2,3.0,2025
+Liliana Vergara,Campbellsville,180,5th,3-2,14.0,2025
+Brianna Staebler,Campbellsville,207,Did not place,2-2,5.5,2025
+Victoria Nunez,Central Methodist,117,Did not place,1-2,2.5,2025
+Lilly Gough,Central Methodist,138,Did not place,1-2,1.0,2025
+Dutchess King,Cumberlands,103,Did not place,1-2,3.5,2025
+Angelina Casteneda,Cumberlands,103,6th,3-3,14.0,2025
+Shammilka Miranda,Cumberlands,117,3rd,6-1,23.0,2025
+Katie Gomez,Cumberlands,124,2nd,4-1,20.5,2025
+Presley Anderson,Cumberlands,124,Did not place,1-2,1.0,2025
+Mary Jane Porter,Cumberlands,131,Did not place,1-2,3.0,2025
+Annabelle Suto,Cumberlands,131,Did not place,0-2,0.0,2025
+Alivia Ming,Cumberlands,145,7th,4-2,12.0,2025
+Micah Fisher,Cumberlands,160,4th,4-2,20.0,2025
+Saiheron Preciado-Meza,Cumberlands,180,Did not place,2-2,6.0,2025
+Maquoia Bernabe,Cumberlands,207,5th,4-2,11.0,2025
+Naomi Duenas,Cumberlands,207,Did not place,1-2,2.5,2025
+Keera Lacock,Dakota Wesleyan,131,Did not place,0-2,0.0,2025
+Jenna Gerhardt,Dickinson State,110,Did not place,2-2,3.0,2025
+Larhae Whaley,Dickinson State,117,Did not place,1-2,2.5,2025
+Jumoke Adekoye,Dickinson State,131,1st,5-0,25.0,2025
+Kiley Hubby,Dickinson State,160,Did not place,1-2,0.5,2025
+Karina Vang,Doane,103,7th,4-2,12.0,2025
+Jaden Breeden,Doane,110,Did not place,0-2,0.0,2025
+Mora Peterson,Doane,117,Did not place,0-2,0.0,2025
+Julia Breeden,Doane,117,Did not place,0-2,0.0,2025
+Cristelle Rodriguez,Doane,124,1st,5-0,27.0,2025
+Ashlee Palimo,Doane,131,Did not place,2-2,2.0,2025
+Aevri Ciha,Doane,145,Did not place,0-2,0.0,2025
+Bridgette Sotomayor,Doane,145,5th,5-2,15.0,2025
+Aspen Barber,Doane,160,7th,3-2,8.5,2025
+Lamia Benn,Doane,160,Did not place,0-2,0.0,2025
+Yazmin Belk,Doane,180,Did not place,1-2,3.0,2025
+Hailey Romero,Doane,207,Did not place,1-2,3.0,2025
+Nayeli Flores Roque,Eastern Oregon,103,Did not place,0-2,0.0,2025
+Telsarina Walter,Eastern Oregon,110,Did not place,0-2,0.0,2025
+Nia Avelino,Eastern Oregon,110,Did not place,1-2,0.5,2025
+Irma Retano,Eastern Oregon,117,Did not place,1-2,2.5,2025
+Kadence Beck,Eastern Oregon,124,Did not place,0-2,0.0,2025
+Liv Wieber,Eastern Oregon,145,3rd,5-1,21.5,2025
+Nizhoni Tallman,Evergreen State,110,8th,3-3,6.5,2025
+Ellabelle Taylor,Evergreen State,124,Did not place,2-2,2.0,2025
+Flor Parker Borrero,Evergreen State,160,3rd,5-1,23.5,2025
+Gianna Moreno,Friends,138,Did not place,0-2,0.0,2025
+(Forfeit) Bailee Nelson,Friends,180,Did not place,0-2,0.0,2025
+Judy Sandoval,Grand View,103,3rd,4-1,21.0,2025
+Devyn Moore,Grand View,103,Did not place,0-2,0.0,2025
+Lita Cruz,Grand View,110,Did not place,2-2,6.0,2025
+Tristan Nitta,Grand View,110,7th,4-2,14.5,2025
+Cailin Campbell,Grand View,117,Did not place,1-2,3.5,2025
+Mayangelie Colon,Grand View,117,4th,4-2,19.5,2025
+Catharine Campbell,Grand View,124,4th,5-2,19.0,2025
+Maya Davis,Grand View,124,7th,3-2,11.5,2025
+Krista Warren,Grand View,145,Did not place,1-2,4.0,2025
+Emmalee Spurgeon,Grand View,160,Did not place,0-2,0.0,2025
+Olivia Brown,Grand View,207,3rd,5-1,17.5,2025
+Bella Porcelli,Grand View,207,Did not place,2-2,6.0,2025
+Larissa Kaz,Hastings,131,8th,4-3,12.5,2025
+Reagen Gallaway,Hastings,138,4th,3-2,16.0,2025
+Tabitha Wood,Hastings,138,Did not place,0-2,0.0,2025
+Emma Stice,Hastings,145,Did not place,0-2,0.0,2025
+Lisa Hoeflich,Hastings,145,Did not place,1-2,1.0,2025
+Isabella Deeds,Hastings,160,Did not place,0-2,0.0,2025
+Marissa Patterson,Hastings,180,Did not place,0-2,0.0,2025
+Taylor Rickley,Hastings,207,Did not place,0-2,0.0,2025
+Makayla Young,Indiana Tech,103,4th,3-2,16.5,2025
+Tehani Soares,Indiana Tech,110,4th,4-2,14.5,2025
+Allison Hancher,Indiana Tech,110,Did not place,0-2,0.0,2025
+Rose Kaplan,Indiana Tech,124,6th,4-3,12.0,2025
+Andrea Hernandez,Indiana Tech,131,Did not place,3-2,7.5,2025
+Hannah Seitzinger,Indiana Tech,131,Did not place,0-2,0.0,2025
+Catherine Mcnulty,Indiana Tech,180,Did not place,2-2,3.5,2025
+Grace Doering,Indiana Tech,180,Did not place,1-2,2.5,2025
+Riley Dempewolf,Indiana Tech,207,2nd,3-1,16.0,2025
+Ann Meiman,Jamestown,145,Did not place,1-2,2.5,2025
+Allyssa Johnson,Jamestown,160,6th,2-3,12.5,2025
+Grace Todhunter,Jamestown,207,Did not place,0-2,0.0,2025
+Katherine Hernandez,Life,103,Did not place,2-2,4.0,2025
+Anaya Falcon,Life,110,2nd,4-1,18.0,2025
+Salyna Shotwell,Life,117,2nd,3-1,22.0,2025
+Anna Krejsa,Life,124,Did not place,1-2,3.0,2025
+Ariana Martinez,Life,124,8th,3-3,10.0,2025
+Sarah Savidge,Life,131,6th,4-3,14.0,2025
+Olivia Mottley,Life,131,5th,5-2,15.0,2025
+Zaynah Mcbryde,Life,138,1st,4-0,24.5,2025
+Jamilah Mcbryde,Life,145,2nd,4-1,22.5,2025
+Latifah Mcbryde,Life,160,1st,4-0,23.0,2025
+Reka Busa,Life,180,7th,3-2,12.0,2025
+Savannah Isaac,Life,207,1st,4-0,24.0,2025

@@ -1,1 +1,260 @@
-/* css styles */
+/* Modern Athletic Styling for NAIA Women's Wrestling Site */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+}
+
+/* Navbar polish */
+.navbar {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+  font-weight: 500;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+  color: white;
+  border-radius: 14px;
+  padding: 2.25rem 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hero-content h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.hero-content p {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin-bottom: 0;
+  max-width: 600px;
+}
+
+.hero-logo-img {
+  max-height: 90px;
+  width: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  background: white;
+  padding: 8px 14px;
+  border-radius: 10px;
+}
+
+/* Stat Cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stat-number {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
+}
+
+/* Filters Card */
+.filter-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-bottom: 1.5rem;
+}
+
+.filter-card label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #334155;
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.filter-card select.form-select {
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.filter-card select.form-select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Table Container & Table */
+.table-wrapper {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+table.table {
+  margin-bottom: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+
+table.table thead th {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0.85rem 1rem;
+  border: none;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+table.table thead th:hover {
+  background-color: #1d4ed8;
+}
+
+table.table tbody td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+}
+
+table.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+table.table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+/* Status / Place Badges */
+.badge-gold {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.badge-silver {
+  background-color: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.badge-bronze {
+  background-color: #ffedd5;
+  color: #9a3412;
+  border: 1px solid #fed7aa;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.badge-place {
+  background-color: #e0f2fe;
+  color: #0369a1;
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.badge-dnp {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.badge-season {
+  background-color: #ede9fe;
+  color: #6b21a8;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.badge-weight {
+  background-color: #f1f5f9;
+  color: #475569;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+/* Tabs styling */
+.nav-tabs .nav-link {
+  font-weight: 600;
+  color: #64748b;
+  border-radius: 8px 8px 0 0;
+  padding: 0.75rem 1.25rem;
+}
+
+.nav-tabs .nav-link.active {
+  color: #1e3a8a;
+  border-bottom-color: #ffffff;
+}

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>NAIA Womens Wrestling – website</title>
+<title>NAIA Women’s Wrestling</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">website</span>
+    <span class="navbar-title">NAIA Women’s Wrestling</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -98,6 +98,18 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./schools.html"> 
+<span class="menu-text">Schools &amp; Rosters</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./conferences.html"> 
+<span class="menu-text">Conferences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./map.html"> 
+<span class="menu-text">Map</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html"> 
@@ -114,21 +126,15 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#wrestlers-by-weight-class" id="toc-wrestlers-by-weight-class" class="nav-link active" data-scroll-target="#wrestlers-by-weight-class">Wrestlers by Weight Class</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">NAIA Womens Wrestling</h1>
+<h1 class="title">NAIA Women’s Wrestling</h1>
 </div>
 
 
@@ -145,1146 +151,2853 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><img src="naia_logo.png" class="img-fluid"></p>
-<section id="wrestlers-by-weight-class" class="level2">
-<h2 class="anchored" data-anchor-id="wrestlers-by-weight-class">Wrestlers by Weight Class</h2>
+<div class="hero-banner">
+<section id="naia-womens-wrestling" class="level1 hero-content">
+<h1>NAIA Women’s Wrestling</h1>
+<p>Explore championship results, national placers, and team rosters across the NAIA.</p>
+</section>
+<p><img src="naia_logo.png" alt="NAIA Logo" class="hero-logo-img"></p>
+</div>
 <div class="cell">
 <div class="cell-output-display no-overflow-x">
-<div style="margin: 1.5rem 0;"><label for="weightClassSelect" style="font-weight: bold; margin-bottom: 0.5rem; display: block;">Select a Weight Class:</label><select id="weightClassSelect" class="form-select" style="max-width: 260px; font-size: 1rem; padding: 0.4rem;" onchange="filterWrestlers(this.value)"><option value="all">All Weight Classes</option><option value="103">103 lbs</option><option value="110">110 lbs</option><option value="117">117 lbs</option><option value="124">124 lbs</option><option value="131">131 lbs</option><option value="138">138 lbs</option><option value="145">145 lbs</option><option value="160">160 lbs</option><option value="180">180 lbs</option><option value="207">207 lbs</option></select><div id="wrestlerCount" style="margin-top: 0.5rem; font-style: italic; color: #555;">Showing all 186 wrestlers</div></div>
-<table id="wrestlerTable" class="table table-striped table-hover caption-top table-sm small">
+<div class="stats-grid">  <div class="stat-card"><div class="stat-number">313</div><div class="stat-label">Total Wrestlers</div></div>  <div class="stat-card"><div class="stat-number">39</div><div class="stat-label">Programs Represented</div></div>  <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">Weight Classes</div></div>  <div class="stat-card"><div class="stat-number">2</div><div class="stat-label">Championship Seasons</div></div></div><div class="filter-card">  <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;">    <div style="flex: 1; min-width: 220px;">      <label for="wrestlerSearch">Search Wrestler or School</label>      <input type="text" id="wrestlerSearch" class="form-control" placeholder="Type a name or school..." oninput="resetPageAndFilter()" style="padding: 0.45rem;">    </div>    <div>      <label for="weightClassSelect">Weight Class</label>      <select id="weightClassSelect" class="form-select" style="min-width: 180px; padding: 0.45rem;" onchange="resetPageAndFilter()">        <option value="all">All Weights</option><option value="103">103 lbs</option><option value="110">110 lbs</option><option value="117">117 lbs</option><option value="124">124 lbs</option><option value="131">131 lbs</option><option value="138">138 lbs</option><option value="145">145 lbs</option><option value="160">160 lbs</option><option value="180">180 lbs</option><option value="207">207 lbs</option>      </select>    </div>    <div>      <label for="seasonSelect">Season</label>      <select id="seasonSelect" class="form-select" style="min-width: 130px; padding: 0.45rem;" onchange="resetPageAndFilter()">        <option value="all">All Seasons</option><option value="2026">2026</option><option value="2025">2025</option>      </select>    </div>  </div>  <div id="wrestlerCount" style="margin-top: 0.75rem; font-weight: 500; font-size: 0.875rem; color: #475569;">Showing all wrestlers</div></div><div class="table-wrapper">
+<table id="wrestlerTable" class="table table-hover caption-top table-sm table-striped small">
 <thead>
 <tr class="header">
 <th data-quarto-table-cell-role="th">Wrestler</th>
 <th data-quarto-table-cell-role="th">Team</th>
-<th data-quarto-table-cell-role="th">Weight Class</th>
-<th data-quarto-table-cell-role="th">Points Scored</th>
+<th data-quarto-table-cell-role="th">Weight</th>
+<th data-quarto-table-cell-role="th">Place</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Record</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Points</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Season</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd" data-wc="103">
-<td>Hikiji, Erin</td>
-<td>Providence</td>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Erin Hikiji</td>
+<td style="color: #334155">Providence</td>
 <td>103 lbs</td>
-<td>25</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">5-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">24.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>Miller, Alexis</td>
-<td>Oklahoma City</td>
+<tr class="even" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Judy Sandoval</td>
+<td style="color: #334155">Grand View</td>
 <td>103 lbs</td>
-<td>22</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">21</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Sandoval, Judy</td>
-<td>Grand View</td>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Zoey Haney</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>103 lbs</td>
-<td>21</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">3-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">19.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>Young, Makayla</td>
-<td>Indiana Tech</td>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Alexsys Jacquez</td>
+<td style="color: #334155">Saint Mary</td>
 <td>103 lbs</td>
-<td>16.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">17</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Hatfield, Alexis</td>
-<td>Avila</td>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Makennah Craft</td>
+<td style="color: #334155">Campbellsville</td>
 <td>103 lbs</td>
-<td>16</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">17</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>Casteneda, Angelina</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Makayla Young</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>103 lbs</td>
-<td>14</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">16.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Vang, Karina</td>
-<td>Doane</td>
+<tr class="odd" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Alexis Hatfield</td>
+<td style="color: #334155">Avila</td>
 <td>103 lbs</td>
-<td>12</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">6-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">16</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>Abramson, Sofia</td>
-<td>Oklahoma City</td>
+<tr class="even" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Angelina Casteneda</td>
+<td style="color: #334155">Cumberlands</td>
 <td>103 lbs</td>
-<td>6.5</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Hernandez, Katherine</td>
-<td>Life</td>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Alexis Miller</td>
+<td style="color: #334155">Oklahoma City</td>
 <td>103 lbs</td>
-<td>4</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">2-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">13</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>King, Dutchess</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Karina Vang</td>
+<td style="color: #334155">Doane</td>
 <td>103 lbs</td>
-<td>3.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Jacquez, Eyvori</td>
-<td>Saint Mary</td>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Lita Cruz</td>
+<td style="color: #334155">Grand View</td>
 <td>103 lbs</td>
-<td>3</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>Dominguez, Malarie</td>
-<td>Wayland Baptist</td>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Isabelle Apple</td>
+<td style="color: #334155">Grand View</td>
 <td>103 lbs</td>
-<td>1</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Atkins, Olivia</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Aynsley Fink</td>
+<td style="color: #334155">Ottawa</td>
 <td>103 lbs</td>
-<td>0</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">9.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>Bocanegra, Isabella</td>
-<td>Providence</td>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Calli Connally</td>
+<td style="color: #334155">Wayland Baptist</td>
 <td>103 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">7</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Flores Roque, Nayeli</td>
-<td>Eastern Oregon</td>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Liana Ferreira</td>
+<td style="color: #334155">Southern Oregon</td>
 <td>103 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="103">
-<td>Moore, Devyn</td>
-<td>Grand View</td>
+<tr class="even" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Katherine Hernandez</td>
+<td style="color: #334155">Life</td>
 <td>103 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="103">
-<td>Zapata, Lillian</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Dutchess King</td>
+<td style="color: #334155">Cumberlands</td>
 <td>103 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Jelacic, Stefana</td>
-<td>Lourdes</td>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Destiny Jones</td>
+<td style="color: #334155">Saint Mary</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Makayla Young</td>
+<td style="color: #334155">Indiana Tech</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Alexandra Evans</td>
+<td style="color: #334155">Rio Grande</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Devyn Moore</td>
+<td style="color: #334155">Grand View</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Isabella Bocanegra</td>
+<td style="color: #334155">Providence</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Karina Vang</td>
+<td style="color: #334155">Doane</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Kimberly Navarette</td>
+<td style="color: #334155">Doane</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Mackenzie Gilbert</td>
+<td style="color: #334155">Waldorf</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Morgan Repasky</td>
+<td style="color: #334155">Montreat</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="103" data-season="2025">
+<td style="font-weight: 600">Nayeli Flores Roque</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="103" data-season="2026">
+<td style="font-weight: 600">Zoey Mzeru</td>
+<td style="color: #334155">Central Methodist</td>
+<td>103 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Mia Palumbo</td>
+<td style="color: #334155">William Penn</td>
 <td>110 lbs</td>
-<td>23</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">5-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">28</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Morales, Paige</td>
-<td>Providence</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Tristan Nitta</td>
+<td style="color: #334155">Grand View</td>
 <td>110 lbs</td>
-<td>18.5</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">6-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">25</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Falcon, Anaya</td>
-<td>Life</td>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Avery Ashley</td>
+<td style="color: #334155">Oklahoma City</td>
 <td>110 lbs</td>
-<td>18</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">3-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">20</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Nitta, Tristan</td>
-<td>Grand View</td>
+<tr class="even" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Anaya Falcon</td>
+<td style="color: #334155">Life</td>
 <td>110 lbs</td>
-<td>14.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">18</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Soares, Tehani</td>
-<td>Indiana Tech</td>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Kylie Robledo</td>
+<td style="color: #334155">Baker</td>
 <td>110 lbs</td>
-<td>14.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Jacquez, Alexsys</td>
-<td>Saint Mary</td>
+<tr class="even" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Tehani Soares</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>110 lbs</td>
-<td>13.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Baertlein, Emma</td>
-<td>Southern Oregon</td>
+<tr class="odd" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Tristan Nitta</td>
+<td style="color: #334155">Grand View</td>
 <td>110 lbs</td>
-<td>11.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Tallman, Nizhoni</td>
-<td>Evergreen State</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Kayla McNatt</td>
+<td style="color: #334155">Arizona Christian</td>
 <td>110 lbs</td>
-<td>6.5</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Cruz, Lita</td>
-<td>Grand View</td>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Chloe Brewis</td>
+<td style="color: #334155">Hastings</td>
 <td>110 lbs</td>
-<td>6</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">4-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">10.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Holland, Hailey</td>
-<td>Missouri Valley</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Avy Perez</td>
+<td style="color: #334155">William Penn</td>
 <td>110 lbs</td>
-<td>5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">10</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Gerhardt, Jenna</td>
-<td>Dickinson State</td>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Paige Morales</td>
+<td style="color: #334155">Providence</td>
 <td>110 lbs</td>
-<td>3</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">2-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">9</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Fink, Aynsley</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Nizhoni Tallman</td>
+<td style="color: #334155">Evergreen State</td>
 <td>110 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">6.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Shota, Kayla</td>
-<td>Providence</td>
+<tr class="odd" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Lita Cruz</td>
+<td style="color: #334155">Grand View</td>
 <td>110 lbs</td>
-<td>2.5</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">6</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Thomas, Reagan</td>
-<td>Lindsey Wilson</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Eliana Martinez</td>
+<td style="color: #334155">Grand View</td>
 <td>110 lbs</td>
-<td>2</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">5.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Avelino, Nia</td>
-<td>Eastern Oregon</td>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Kayla Shota</td>
+<td style="color: #334155">Providence</td>
 <td>110 lbs</td>
-<td>0.5</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Adeduntan, Rodiat</td>
-<td>Lindsey Wilson</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Emma Jones</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>110 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Breeden, Jaden</td>
-<td>Doane</td>
+<tr class="odd" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Jenna Gerhardt</td>
+<td style="color: #334155">Dickinson State</td>
 <td>110 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Garcia, Iby</td>
-<td>Oklahoma City</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Julia Snyder</td>
+<td style="color: #334155">Rochester Christian</td>
 <td>110 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Hancher, Allison</td>
-<td>Indiana Tech</td>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Reagan Thomas</td>
+<td style="color: #334155">Lindsey Wilson</td>
 <td>110 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="110">
-<td>Pineda, Sarah</td>
-<td>Missouri Valley</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Jenna Gerhardt</td>
+<td style="color: #334155">Dickinson State</td>
 <td>110 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="110">
-<td>Walter, Telsarina</td>
-<td>Eastern Oregon</td>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Diana Gonzalez</td>
+<td style="color: #334155">Life</td>
 <td>110 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Miranda, Shammilka</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Makenize Smith</td>
+<td style="color: #334155">Indiana Tech</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Myriam Riley</td>
+<td style="color: #334155">Dickinson State</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Nia Avelino</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Allison Hancher</td>
+<td style="color: #334155">Indiana Tech</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">De`yton Young</td>
+<td style="color: #334155">Missouri Baptist</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Gracie Elliott</td>
+<td style="color: #334155">Texas Wesleyan</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Jaden Breeden</td>
+<td style="color: #334155">Doane</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Kaylynn Martin</td>
+<td style="color: #334155">Friends</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Nizhoni Tallman</td>
+<td style="color: #334155">Evergreen State</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Raelynn O`Connor</td>
+<td style="color: #334155">Hastings</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="110" data-season="2026">
+<td style="font-weight: 600">Raquel Garcia</td>
+<td style="color: #334155">Missouri Valley</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="110" data-season="2025">
+<td style="font-weight: 600">Telsarina Walter</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>110 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Christianah Ogunsanya</td>
+<td style="color: #334155">William Penn</td>
 <td>117 lbs</td>
-<td>23</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">24.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Ogunsanya, Christianah</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Salyna Shotwell</td>
+<td style="color: #334155">Life</td>
 <td>117 lbs</td>
-<td>23</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">24</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Shotwell, Salyna</td>
-<td>Life</td>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Shammilka Miranda</td>
+<td style="color: #334155">Cumberlands</td>
 <td>117 lbs</td>
-<td>22</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">6-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Colon, Mayangelie</td>
-<td>Grand View</td>
+<tr class="odd" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Salyna Shotwell</td>
+<td style="color: #334155">Life</td>
 <td>117 lbs</td>
-<td>19.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">3-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">22</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Howard, Jasmine</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Mayangelie Colon</td>
+<td style="color: #334155">Grand View</td>
 <td>117 lbs</td>
-<td>13.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">19.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Fournier, Camille</td>
-<td>Texas Wesleyan</td>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Zao Estrada</td>
+<td style="color: #334155">Missouri Valley</td>
 <td>117 lbs</td>
-<td>11</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">19.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Heath, Katherine</td>
-<td>Baker</td>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Cailin Campbell</td>
+<td style="color: #334155">Grand View</td>
 <td>117 lbs</td>
-<td>11</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">19</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Galumette, Icart</td>
-<td>Campbellsville</td>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Grace Lashinsky</td>
+<td style="color: #334155">Lindsey Wilson</td>
 <td>117 lbs</td>
-<td>8</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">17</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Campbell, Cailin</td>
-<td>Grand View</td>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Carolina Rios</td>
+<td style="color: #334155">Texas Wesleyan</td>
 <td>117 lbs</td>
-<td>3.5</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">13</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Payton, Callie</td>
-<td>Lindsey Wilson</td>
+<tr class="odd" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Katherine Heath</td>
+<td style="color: #334155">Baker</td>
 <td>117 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Retano, Irma</td>
-<td>Eastern Oregon</td>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Joely Slyter</td>
+<td style="color: #334155">Providence</td>
 <td>117 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">10</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Whaley, Larhae</td>
-<td>Dickinson State</td>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Angelica Vicente Gonzalez</td>
+<td style="color: #334155">Doane</td>
 <td>117 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">8.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Breeden, Julia</td>
-<td>Doane</td>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Icart Galumette</td>
+<td style="color: #334155">Campbellsville</td>
 <td>117 lbs</td>
-<td>0</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">8</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Frank, Alicia</td>
-<td>Providence</td>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Chloe Herrick</td>
+<td style="color: #334155">Baker</td>
 <td>117 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">6</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Kurtz, Marissa</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Mayangelie Colon</td>
+<td style="color: #334155">Grand View</td>
 <td>117 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="117">
-<td>Martin, Kendall</td>
-<td>Ottawa</td>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Sigrun Metzger</td>
+<td style="color: #334155">Ottawa</td>
 <td>117 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="117">
-<td>Peterson, Mora</td>
-<td>Doane</td>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Cailin Campbell</td>
+<td style="color: #334155">Grand View</td>
 <td>117 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Rodriguez, Cristelle</td>
-<td>Doane</td>
+<tr class="odd" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Jamesa Robinson</td>
+<td style="color: #334155">Brewton-Parker</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Irma Retano</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Larhae Whaley</td>
+<td style="color: #334155">Dickinson State</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Victoria Nunez</td>
+<td style="color: #334155">Central Methodist</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Addison Saporito</td>
+<td style="color: #334155">Ottawa</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Callie Payton</td>
+<td style="color: #334155">Lindsey Wilson</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Gloria Diaz</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Julia Breeden</td>
+<td style="color: #334155">Doane</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Lakota Rogers</td>
+<td style="color: #334155">Bismarck State</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Mariah Dillard</td>
+<td style="color: #334155">Wayland Baptist</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Mikayla Jardine</td>
+<td style="color: #334155">Dickinson State</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2025">
+<td style="font-weight: 600">Mora Peterson</td>
+<td style="color: #334155">Doane</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Sarah Pineda</td>
+<td style="color: #334155">Missouri Valley</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Taylor Hood</td>
+<td style="color: #334155">Midland</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="117" data-season="2026">
+<td style="font-weight: 600">Yusneiry Agrazal</td>
+<td style="color: #334155">Central Methodist</td>
+<td>117 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Cristelle Rodriguez</td>
+<td style="color: #334155">Doane</td>
 <td>124 lbs</td>
-<td>27</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">5-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">27</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Gomez, Katie</td>
-<td>Cumberlands</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Cristelle Rodriguez</td>
+<td style="color: #334155">Doane</td>
 <td>124 lbs</td>
-<td>20.5</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">26</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Vanderwood, Joanna</td>
-<td>William Penn</td>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Rose Kaplan</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>124 lbs</td>
-<td>20</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">22</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Campbell, Catharine</td>
-<td>Grand View</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Vicky Baez-Dilone</td>
+<td style="color: #334155">William Penn</td>
 <td>124 lbs</td>
-<td>19</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">22</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Immaeva, Jasmina</td>
-<td>Missouri Valley</td>
+<tr class="even" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Katie Gomez</td>
+<td style="color: #334155">Cumberlands</td>
 <td>124 lbs</td>
-<td>13</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">20.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Kaplan, Rose</td>
-<td>Indiana Tech</td>
+<tr class="odd" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Catharine Campbell</td>
+<td style="color: #334155">Grand View</td>
 <td>124 lbs</td>
-<td>12</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">19</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Davis, Maya</td>
-<td>Grand View</td>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Rei Ogden</td>
+<td style="color: #334155">Bismarck State</td>
 <td>124 lbs</td>
-<td>11.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">15.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Martinez, Ariana</td>
-<td>Life</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Catherine Campbell</td>
+<td style="color: #334155">Grand View</td>
 <td>124 lbs</td>
-<td>10</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">13</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Welch, Malia</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Alyssa Randles</td>
+<td style="color: #334155">Providence</td>
 <td>124 lbs</td>
-<td>6</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Randles, Alyssa</td>
-<td>Providence</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Kamilah Brooks</td>
+<td style="color: #334155">Lindsey Wilson</td>
 <td>124 lbs</td>
-<td>3.5</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Krejsa, Anna</td>
-<td>Life</td>
+<tr class="even" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Rose Kaplan</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>124 lbs</td>
-<td>3</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">4-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Hand, Peyton</td>
-<td>Ottawa</td>
+<tr class="odd" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Maya Davis</td>
+<td style="color: #334155">Grand View</td>
 <td>124 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Steinkamp, Catherine</td>
-<td>William Penn</td>
+<tr class="even" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Ariana Martinez</td>
+<td style="color: #334155">Life</td>
 <td>124 lbs</td>
-<td>2</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">10</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Taylor, Ellabelle</td>
-<td>Evergreen State</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Lola Barkby</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>124 lbs</td>
-<td>2</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">8.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Anderson, Presley</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Maya Davis</td>
+<td style="color: #334155">Grand View</td>
 <td>124 lbs</td>
-<td>1</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">6</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Barnett, Tess</td>
-<td>Wayland Baptist</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Anna Krejsa</td>
+<td style="color: #334155">Life</td>
 <td>124 lbs</td>
-<td>0.5</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Annis, Kaylee</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Kaitlin Castro</td>
+<td style="color: #334155">Cumberlands</td>
 <td>124 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Baeza, Isla</td>
-<td>Missouri Valley</td>
+<tr class="odd" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Anna Krejsa</td>
+<td style="color: #334155">Life</td>
 <td>124 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Beck, Kadence</td>
-<td>Eastern Oregon</td>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Jasmina Immaeva</td>
+<td style="color: #334155">Missouri Valley</td>
 <td>124 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="124">
-<td>Bridenstine, Sydney</td>
-<td>Lindsey Wilson</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Jazmine Turner</td>
+<td style="color: #334155">Dickinson State</td>
 <td>124 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="124">
-<td>Robledo, Kylie</td>
-<td>Baker</td>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Addison Messerly</td>
+<td style="color: #334155">Campbellsville</td>
 <td>124 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Adekoye, Jumoke</td>
-<td>Dickinson State</td>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Berlin Kiddoo</td>
+<td style="color: #334155">Central Methodist</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Ellabelle Taylor</td>
+<td style="color: #334155">Evergreen State</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Tati Paragas</td>
+<td style="color: #334155">William Penn</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Presley Anderson</td>
+<td style="color: #334155">Cumberlands</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Kaylee Annis</td>
+<td style="color: #334155">Southern Oregon</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Daniela Espinal</td>
+<td style="color: #334155">Montreat</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Ellabelle Taylor</td>
+<td style="color: #334155">Evergreen State</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Isla Baeza</td>
+<td style="color: #334155">Missouri Valley</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Jes`Onia Barefield</td>
+<td style="color: #334155">Georgetown</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Kadence Beck</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="124" data-season="2025">
+<td style="font-weight: 600">Kylie Robledo</td>
+<td style="color: #334155">Baker</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Myia Weiler</td>
+<td style="color: #334155">Southern Oregon</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="124" data-season="2026">
+<td style="font-weight: 600">Tess Barnett</td>
+<td style="color: #334155">Wayland Baptist</td>
+<td>124 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Jumoke Adekoye</td>
+<td style="color: #334155">Dickinson State</td>
 <td>131 lbs</td>
-<td>25</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">5-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">26</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Mota-pettis, Xochitl</td>
-<td>Missouri Valley</td>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Jumoke Adekoye</td>
+<td style="color: #334155">Dickinson State</td>
 <td>131 lbs</td>
-<td>22.5</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">5-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">25</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Moreno, Carolina</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Waipuilani Estrella-Beauchamp</td>
+<td style="color: #334155">Providence</td>
 <td>131 lbs</td>
-<td>17</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">22.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Adekuoroye, Mercy</td>
-<td>Wayland Baptist</td>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Olivia Mottley</td>
+<td style="color: #334155">Life</td>
 <td>131 lbs</td>
-<td>16.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">19</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Mottley, Olivia</td>
-<td>Life</td>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Sarah Savidge</td>
+<td style="color: #334155">Life</td>
 <td>131 lbs</td>
-<td>15</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">16</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Savidge, Sarah</td>
-<td>Life</td>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Olivia Mottley</td>
+<td style="color: #334155">Life</td>
 <td>131 lbs</td>
-<td>14</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">15</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Kaz, Larissa</td>
-<td>Hastings</td>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Jeila Ramos</td>
+<td style="color: #334155">Lindsey Wilson</td>
 <td>131 lbs</td>
-<td>12.5</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Patton, Devin</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Kendall Bostelman</td>
+<td style="color: #334155">William Penn</td>
 <td>131 lbs</td>
-<td>9.5</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Hernandez, Andrea</td>
-<td>Indiana Tech</td>
+<tr class="even" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Sarah Savidge</td>
+<td style="color: #334155">Life</td>
 <td>131 lbs</td>
-<td>7.5</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">4-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Whetzal, Ashley</td>
-<td>Missouri Valley</td>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Larissa Kaz</td>
+<td style="color: #334155">Hastings</td>
 <td>131 lbs</td>
-<td>4</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">4-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Campbell, Destiny</td>
-<td>Oklahoma City</td>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Alexis Schneider</td>
+<td style="color: #334155">Bismarck State</td>
 <td>131 lbs</td>
-<td>3</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">10</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Porter, Mary Jane</td>
-<td>Cumberlands</td>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Andrea Hernandez</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>131 lbs</td>
-<td>3</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">7.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Messerly, Olivia</td>
-<td>Campbellsville</td>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Larissa Kaz</td>
+<td style="color: #334155">Hastings</td>
 <td>131 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">2-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">7</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Ortiz, Cameron</td>
-<td>Campbellsville</td>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Elizabeth Duvall</td>
+<td style="color: #334155">Texas Wesleyan</td>
 <td>131 lbs</td>
-<td>2.5</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Palimo, Ashlee</td>
-<td>Doane</td>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Bronwyn Brenneman</td>
+<td style="color: #334155">William Penn</td>
 <td>131 lbs</td>
-<td>2</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Respicio, Paige</td>
-<td>Providence</td>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Jill High</td>
+<td style="color: #334155">York</td>
 <td>131 lbs</td>
-<td>2</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Redmond, Nicole</td>
-<td>Avila</td>
+<tr class="even" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Mary Jane Porter</td>
+<td style="color: #334155">Cumberlands</td>
 <td>131 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Seitzinger, Hannah</td>
-<td>Indiana Tech</td>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Cameron Ortiz</td>
+<td style="color: #334155">Campbellsville</td>
 <td>131 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>Suto, Annabelle</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Madison Pena</td>
+<td style="color: #334155">Wayland Baptist</td>
 <td>131 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="131">
-<td>Truex, Emma</td>
-<td>Ottawa</td>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Mary Jane Porter</td>
+<td style="color: #334155">Cumberlands</td>
 <td>131 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="131">
-<td>White, Bryce</td>
-<td>Oklahoma City</td>
+<tr class="even" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Olivia Messerly</td>
+<td style="color: #334155">Campbellsville</td>
 <td>131 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Mcbryde, Zaynah</td>
-<td>Life</td>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Ashlee Palimo</td>
+<td style="color: #334155">Doane</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Olivia Messerly</td>
+<td style="color: #334155">Campbellsville</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Jade Morales</td>
+<td style="color: #334155">Southern Oregon</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Aileya Sath</td>
+<td style="color: #334155">Baker</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Andrea Hernandez</td>
+<td style="color: #334155">Indiana Tech</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Annabelle Suto</td>
+<td style="color: #334155">Cumberlands</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Ashlee Palimo`o</td>
+<td style="color: #334155">Doane</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Bryce White</td>
+<td style="color: #334155">Oklahoma City</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Hannah Seitzinger</td>
+<td style="color: #334155">Indiana Tech</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Keera Lacock</td>
+<td style="color: #334155">Dakota Wesleyan</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Lexie Garza</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="131" data-season="2026">
+<td style="font-weight: 600">Makenna Duran</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="131" data-season="2025">
+<td style="font-weight: 600">Nicole Redmond</td>
+<td style="color: #334155">Avila</td>
+<td>131 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Esther Kolawole</td>
+<td style="color: #334155">William Penn</td>
 <td>138 lbs</td>
-<td>24.5</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">26</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Estrella-Beauchamp, Waipuilani</td>
-<td>Providence</td>
+<tr class="odd" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Zaynah Mcbryde</td>
+<td style="color: #334155">Life</td>
 <td>138 lbs</td>
-<td>19.5</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">24.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Barragan, Samantha</td>
-<td>Texas Wesleyan</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Samantha Barragan</td>
+<td style="color: #334155">Texas Wesleyan</td>
 <td>138 lbs</td>
-<td>19</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>De La Garza, Serenity</td>
-<td>Missouri Valley</td>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Zaynah McBryde</td>
+<td style="color: #334155">Life</td>
 <td>138 lbs</td>
-<td>16.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">22</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Gallaway, Reagen</td>
-<td>Hastings</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Haley Le</td>
+<td style="color: #334155">Evergreen State</td>
 <td>138 lbs</td>
-<td>16</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">16</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Suarez, Jordan</td>
-<td>Wayland Baptist</td>
+<tr class="odd" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Reagen Gallaway</td>
+<td style="color: #334155">Hastings</td>
 <td>138 lbs</td>
-<td>16</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">16</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Hawley, Isabelle</td>
-<td>William Penn</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Maci Avila</td>
+<td style="color: #334155">Midland</td>
 <td>138 lbs</td>
-<td>12.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">15.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Bostelman, Kendall</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Reagen Gallaway</td>
+<td style="color: #334155">Hastings</td>
 <td>138 lbs</td>
-<td>5.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">10</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Swift, Livia</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Skylur Lewis</td>
+<td style="color: #334155">Saint Mary</td>
 <td>138 lbs</td>
-<td>5.5</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">2-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">9.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Posada, Natalia</td>
-<td>Oklahoma City</td>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Aileen Lester</td>
+<td style="color: #334155">Ottawa</td>
 <td>138 lbs</td>
-<td>4.5</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">2-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">9</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Campbell, Kori</td>
-<td>Lindsey Wilson</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Christina Jaen</td>
+<td style="color: #334155">Life</td>
 <td>138 lbs</td>
-<td>4</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">5.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Perez, Gabriella</td>
-<td>Campbellsville</td>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Esther Han</td>
+<td style="color: #334155">Providence</td>
 <td>138 lbs</td>
-<td>4</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Messerly, Addison</td>
-<td>Campbellsville</td>
+<tr class="even" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Gabriella Perez</td>
+<td style="color: #334155">Campbellsville</td>
 <td>138 lbs</td>
-<td>2.5</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Rees, Kailey</td>
-<td>Providence</td>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Makayla Correa</td>
+<td style="color: #334155">Southern Oregon</td>
 <td>138 lbs</td>
-<td>2</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Boday, Araya</td>
-<td>Saint Mary</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Serenity De La Garza</td>
+<td style="color: #334155">Missouri Valley</td>
 <td>138 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Martin, Jade</td>
-<td>Baker</td>
+<tr class="odd" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Addison Messerly</td>
+<td style="color: #334155">Campbellsville</td>
 <td>138 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="138">
-<td>Riedinger, Jaclyn</td>
-<td>Avila</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Teani Medeiros-Maielua</td>
+<td style="color: #334155">William Woods</td>
 <td>138 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="138">
-<td>Wood, Tabitha</td>
-<td>Hastings</td>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Zoe Fries</td>
+<td style="color: #334155">Missouri Baptist</td>
 <td>138 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Kolawole, Esther</td>
-<td>William Penn</td>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Ruth Jimenez</td>
+<td style="color: #334155">Cumberlands</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Kinnley Smith</td>
+<td style="color: #334155">Indiana Tech</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Lilly Gough</td>
+<td style="color: #334155">Central Methodist</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Brielle Bibla</td>
+<td style="color: #334155">Lindsey Wilson</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Emily Neumann</td>
+<td style="color: #334155">Central Methodist</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Gianna Moreno</td>
+<td style="color: #334155">Friends</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Jaclyn Riedinger</td>
+<td style="color: #334155">Avila</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Jade Martin</td>
+<td style="color: #334155">Baker</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Lexi Ritchie</td>
+<td style="color: #334155">Lindsey Wilson</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Lisa Hoeflich</td>
+<td style="color: #334155">Hastings</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="138" data-season="2026">
+<td style="font-weight: 600">Natalia Posada</td>
+<td style="color: #334155">Oklahoma City</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="138" data-season="2025">
+<td style="font-weight: 600">Tabitha Wood</td>
+<td style="color: #334155">Hastings</td>
+<td>138 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Jamilah McBryde</td>
+<td style="color: #334155">Life</td>
 <td>145 lbs</td>
-<td>26</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Mcbryde, Jamilah</td>
-<td>Life</td>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Jordan Suarez</td>
+<td style="color: #334155">Wayland Baptist</td>
 <td>145 lbs</td>
-<td>22.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Wieber, Liv</td>
-<td>Eastern Oregon</td>
+<tr class="even" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Jamilah Mcbryde</td>
+<td style="color: #334155">Life</td>
 <td>145 lbs</td>
-<td>21.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">22.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Aumua, Sevreign</td>
-<td>Missouri Valley</td>
+<tr class="odd" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Liv Wieber</td>
+<td style="color: #334155">Eastern Oregon</td>
 <td>145 lbs</td>
-<td>19</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">21.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Sotomayor, Bridgette</td>
-<td>Doane</td>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Kori Campbell</td>
+<td style="color: #334155">Lindsey Wilson</td>
 <td>145 lbs</td>
-<td>15</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">17</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Yauger, Aubrey</td>
-<td>Texas Wesleyan</td>
+<tr class="odd" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Bridgette Sotomayor</td>
+<td style="color: #334155">Doane</td>
 <td>145 lbs</td>
-<td>13</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">15</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Ming, Alivia</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Holland Wieber</td>
+<td style="color: #334155">Southern Oregon</td>
 <td>145 lbs</td>
-<td>12</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Han, Esther</td>
-<td>Providence</td>
+<tr class="odd" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Alivia Ming</td>
+<td style="color: #334155">Cumberlands</td>
 <td>145 lbs</td>
-<td>5.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Dodge, Aspen</td>
-<td>Providence</td>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Madison Diaz</td>
+<td style="color: #334155">Grand View</td>
 <td>145 lbs</td>
-<td>4</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Warren, Krista</td>
-<td>Grand View</td>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Brooke-Lynn Rush</td>
+<td style="color: #334155">Missouri Valley</td>
 <td>145 lbs</td>
-<td>4</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">4-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Acosta, Aniseta</td>
-<td>Missouri Valley</td>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Hayden Newberg</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>145 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Campos, Josselinne</td>
-<td>Lindsey Wilson</td>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Maggie Ortmann</td>
+<td style="color: #334155">Missouri Baptist</td>
 <td>145 lbs</td>
-<td>2</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">8.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Hoeflich, Lisa</td>
-<td>Hastings</td>
+<tr class="even" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Krista Warren</td>
+<td style="color: #334155">Grand View</td>
 <td>145 lbs</td>
-<td>1</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Abdijanovic, Naida</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Sarina Bertram</td>
+<td style="color: #334155">Missouri Valley</td>
 <td>145 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Ciha, Aevri</td>
-<td>Doane</td>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Alexis Means</td>
+<td style="color: #334155">Friends</td>
 <td>145 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Munoz, Makayla</td>
-<td>Oklahoma City</td>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Amelia Fawcett</td>
+<td style="color: #334155">Life</td>
 <td>145 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Ritchie, Lexi</td>
-<td>Lindsey Wilson</td>
+<tr class="even" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Ann Meiman</td>
+<td style="color: #334155">Jamestown</td>
 <td>145 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="145">
-<td>Stice, Emma</td>
-<td>Hastings</td>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Veil Foreman</td>
+<td style="color: #334155">Eastern Oregon</td>
 <td>145 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="145">
-<td>Wieber, Holland</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Gabriella Perez</td>
+<td style="color: #334155">Campbellsville</td>
 <td>145 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Borrero, Flor Parker</td>
-<td>Evergreen State</td>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Genesis Gilmore</td>
+<td style="color: #334155">Cumberlands</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Elise Twait</td>
+<td style="color: #334155">Providence</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Lisa Hoeflich</td>
+<td style="color: #334155">Hastings</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Niah Smith</td>
+<td style="color: #334155">Waldorf</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Aevri Ciha</td>
+<td style="color: #334155">Doane</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Alyvia Ming</td>
+<td style="color: #334155">Cumberlands</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Bridgette Sotomayor</td>
+<td style="color: #334155">Doane</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Corin Lowe</td>
+<td style="color: #334155">Oklahoma City</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Emma Stice</td>
+<td style="color: #334155">Hastings</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="145" data-season="2025">
+<td style="font-weight: 600">Emma Stice</td>
+<td style="color: #334155">Hastings</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="145" data-season="2026">
+<td style="font-weight: 600">Naida Abdijanovic</td>
+<td style="color: #334155">William Penn</td>
+<td>145 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Flor Parker Borrero</td>
+<td style="color: #334155">Evergreen State</td>
 <td>160 lbs</td>
-<td>23.5</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Mcbryde, Latifah</td>
-<td>Life</td>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Mercy Adekuoroye</td>
+<td style="color: #334155">Wayland Baptist</td>
 <td>160 lbs</td>
-<td>23</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Weidl, Darby</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Latifah Mcbryde</td>
+<td style="color: #334155">Life</td>
 <td>160 lbs</td>
-<td>21</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Fisher, Micah</td>
-<td>Cumberlands</td>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Latifah McBryde</td>
+<td style="color: #334155">Life</td>
 <td>160 lbs</td>
-<td>20</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">20.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Sebesta, Abigail</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Vida Boskovic</td>
+<td style="color: #334155">Southern Oregon</td>
 <td>160 lbs</td>
-<td>11.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">6-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">20.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Barber, Aspen</td>
-<td>Doane</td>
+<tr class="odd" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Micah Fisher</td>
+<td style="color: #334155">Cumberlands</td>
 <td>160 lbs</td>
-<td>8.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">20</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Miguel-Lapham, Quilaztli</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Shannon Workinger</td>
+<td style="color: #334155">Evergreen State</td>
 <td>160 lbs</td>
-<td>5.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">3-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">17.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Khamjoi, Taydem</td>
-<td>Texas Wesleyan</td>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Micah Fisher-Miller</td>
+<td style="color: #334155">Cumberlands</td>
 <td>160 lbs</td>
-<td>4.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">13.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Tait, Kylee</td>
-<td>Campbellsville</td>
+<tr class="even" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Allyssa Johnson</td>
+<td style="color: #334155">Jamestown</td>
 <td>160 lbs</td>
-<td>3</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">2-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Wolf, Alexa</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Bo Geibe</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>160 lbs</td>
-<td>3</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Sutton, Hailey</td>
-<td>Providence</td>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Hailey Sutton</td>
+<td style="color: #334155">Providence</td>
 <td>160 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">9</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Hubby, Kiley</td>
-<td>Dickinson State</td>
+<tr class="odd" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Aspen Barber</td>
+<td style="color: #334155">Doane</td>
 <td>160 lbs</td>
-<td>0.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">8.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Benn, Lamia</td>
-<td>Doane</td>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Darby Weidl</td>
+<td style="color: #334155">Ottawa</td>
 <td>160 lbs</td>
-<td>0</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">8.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Casel, Mohagany</td>
-<td>Wayland Baptist</td>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Aspen Dodge</td>
+<td style="color: #334155">Providence</td>
 <td>160 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Deeds, Isabella</td>
-<td>Hastings</td>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Hailee Crosland</td>
+<td style="color: #334155">Baker</td>
 <td>160 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Frounfelter, Amelia</td>
-<td>Saint Mary</td>
+<tr class="odd" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Kylee Tait</td>
+<td style="color: #334155">Campbellsville</td>
 <td>160 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="160">
-<td>Lowe, Corin</td>
-<td>Oklahoma City</td>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Makayla Munoz</td>
+<td style="color: #334155">Oklahoma City</td>
 <td>160 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="160">
-<td>Spurgeon, Emmalee</td>
-<td>Grand View</td>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Maria Slaughter</td>
+<td style="color: #334155">Missouri Valley</td>
 <td>160 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Lekas, Ashley</td>
-<td>Texas Wesleyan</td>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Berlyn Davis</td>
+<td style="color: #334155">Westcliff</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Allyssa Johnson</td>
+<td style="color: #334155">Central Methodist</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Mohagany Casel</td>
+<td style="color: #334155">Wayland Baptist</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Sierra Mefford</td>
+<td style="color: #334155">Cumberlands</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Kiley Hubby</td>
+<td style="color: #334155">Dickinson State</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Emmalee Spurgeon</td>
+<td style="color: #334155">Grand View</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Isabella Deeds</td>
+<td style="color: #334155">Hastings</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Ja`Nya Banks</td>
+<td style="color: #334155">Midland</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Jayla Ford</td>
+<td style="color: #334155">Hastings</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Justice Thomas</td>
+<td style="color: #334155">Ottawa</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Kylee Tait</td>
+<td style="color: #334155">Campbellsville</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="160" data-season="2025">
+<td style="font-weight: 600">Lamia Benn</td>
+<td style="color: #334155">Doane</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Nicole Olson</td>
+<td style="color: #334155">Grand View</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="160" data-season="2026">
+<td style="font-weight: 600">Quilaztli Miguel-Lapham</td>
+<td style="color: #334155">Southern Oregon</td>
+<td>160 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Piper Fowler</td>
+<td style="color: #334155">William Penn</td>
 <td>180 lbs</td>
-<td>26</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">28</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Corbett, Kelani</td>
-<td>Missouri Valley</td>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Andjela Prijovic</td>
+<td style="color: #334155">Grand View</td>
 <td>180 lbs</td>
-<td>21</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">21</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Page, India</td>
-<td>Lindsey Wilson</td>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Reka Busa</td>
+<td style="color: #334155">Life</td>
 <td>180 lbs</td>
-<td>18.5</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">19</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Avila, Jannell</td>
-<td>Baker</td>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Kathryn Hingano</td>
+<td style="color: #334155">Southern Oregon</td>
 <td>180 lbs</td>
-<td>17.5</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">18.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Vergara, Liliana</td>
-<td>Campbellsville</td>
+<tr class="even" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Jannell Avila</td>
+<td style="color: #334155">Baker</td>
 <td>180 lbs</td>
-<td>14</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">17.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Lopez, America</td>
-<td>William Penn</td>
+<tr class="odd" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Liliana Vergara</td>
+<td style="color: #334155">Campbellsville</td>
 <td>180 lbs</td>
-<td>12.5</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">14</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Busa, Reka</td>
-<td>Life</td>
+<tr class="even" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Reka Busa</td>
+<td style="color: #334155">Life</td>
 <td>180 lbs</td>
-<td>12</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Gradillas-Flores, Lillian</td>
-<td>Southern Oregon</td>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Siara Arrington</td>
+<td style="color: #334155">Ottawa</td>
 <td>180 lbs</td>
-<td>11.5</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">5-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">12</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Preciado-Meza, Saiheron</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Autumn Perez</td>
+<td style="color: #334155">Missouri Valley</td>
 <td>180 lbs</td>
-<td>6</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Mcnulty, Catherine</td>
-<td>Indiana Tech</td>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Saiheron Preciado-Meza</td>
+<td style="color: #334155">Cumberlands</td>
 <td>180 lbs</td>
-<td>3.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">3-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">10</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Arrington, Siara</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Hannah Jackson</td>
+<td style="color: #334155">Ottawa</td>
 <td>180 lbs</td>
-<td>3</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">9</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Belk, Yazmin</td>
-<td>Doane</td>
+<tr class="odd" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Saiheron Preciado-Meza</td>
+<td style="color: #334155">Cumberlands</td>
 <td>180 lbs</td>
-<td>3</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">6</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Davis, Kaylee</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Ambre Chevreau</td>
+<td style="color: #334155">Wayland Baptist</td>
 <td>180 lbs</td>
-<td>3</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Doering, Grace</td>
-<td>Indiana Tech</td>
+<tr class="odd" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Catherine Mcnulty</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>180 lbs</td>
-<td>2.5</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Dennis, Bailey</td>
-<td>Southern Oregon</td>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Margaret Jordan</td>
+<td style="color: #334155">Baker</td>
 <td>180 lbs</td>
-<td>2</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Murphey, Ella</td>
-<td>Oklahoma City</td>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Katelyn Lewis</td>
+<td style="color: #334155">Lindsey Wilson</td>
 <td>180 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="180">
-<td>Patterson, Marissa</td>
-<td>Hastings</td>
+<tr class="even" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Yazmin Belk</td>
+<td style="color: #334155">Doane</td>
 <td>180 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="180">
-<td>Wardlow, Nevaeh</td>
-<td>Baker</td>
+<tr class="odd" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Grace Doering</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>180 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Isaac, Savannah</td>
-<td>Life</td>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Payton Sholander</td>
+<td style="color: #334155">Wayland Baptist</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Diara Pomares</td>
+<td style="color: #334155">William Penn</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="180" data-season="2025">
+<td style="font-weight: 600">(Forfeit) Bailee Nelson</td>
+<td style="color: #334155">Friends</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Abby Piper</td>
+<td style="color: #334155">William Woods</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Bailee Nelson</td>
+<td style="color: #334155">Friends</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Johanna Carrasco</td>
+<td style="color: #334155">Baker</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Kassidy Sigda</td>
+<td style="color: #334155">Providence</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Kenlee Fish</td>
+<td style="color: #334155">Missouri Baptist</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Marissa Patterson</td>
+<td style="color: #334155">Hastings</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="180" data-season="2025">
+<td style="font-weight: 600">Nevaeh Wardlow</td>
+<td style="color: #334155">Baker</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="180" data-season="2026">
+<td style="font-weight: 600">Yazmin Belk</td>
+<td style="color: #334155">Doane</td>
+<td>180 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Lillian Gradillas-Flores</td>
+<td style="color: #334155">Southern Oregon</td>
 <td>207 lbs</td>
-<td>24</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">25.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Jackson, Hannah</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Savannah Isaac</td>
+<td style="color: #334155">Life</td>
 <td>207 lbs</td>
-<td>18</td>
+<td><span class="badge-gold">🥇 1st</span></td>
+<td style="text-align: center; font-weight: 500;">4-0</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">24</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Brown, Olivia</td>
-<td>Grand View</td>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Leilani Sanchez</td>
+<td style="color: #334155">Wayland Baptist</td>
 <td>207 lbs</td>
-<td>17.5</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">6-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">23.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Dempewolf, Riley</td>
-<td>Indiana Tech</td>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Haley Ward</td>
+<td style="color: #334155">Avila</td>
 <td>207 lbs</td>
-<td>16</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">4-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">21.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Hingano, Kathryn</td>
-<td>Southern Oregon</td>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Selena Mares</td>
+<td style="color: #334155">Grand View</td>
 <td>207 lbs</td>
-<td>12.5</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">18</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Bernabe, Maquoia</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Olivia Brown</td>
+<td style="color: #334155">Grand View</td>
 <td>207 lbs</td>
-<td>11</td>
+<td><span class="badge-bronze">🥉 3rd</span></td>
+<td style="text-align: center; font-weight: 500;">5-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">17.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Phillips, Alysse</td>
-<td>Lourdes</td>
+<tr class="odd" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Riley Dempewolf</td>
+<td style="color: #334155">Indiana Tech</td>
 <td>207 lbs</td>
-<td>9.5</td>
+<td><span class="badge-silver">🥈 2nd</span></td>
+<td style="text-align: center; font-weight: 500;">3-1</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">16</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Porcelli, Bella</td>
-<td>Grand View</td>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Carla Campos</td>
+<td style="color: #334155">Texas Wesleyan</td>
 <td>207 lbs</td>
-<td>6</td>
+<td><span class="badge-place">4th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">15.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Staebler, Brianna</td>
-<td>Campbellsville</td>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Kylee Lindsley</td>
+<td style="color: #334155">Ottawa</td>
 <td>207 lbs</td>
-<td>5.5</td>
+<td><span class="badge-place">7th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">13.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Romero, Hailey</td>
-<td>Doane</td>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Madeline Welch</td>
+<td style="color: #334155">Life</td>
 <td>207 lbs</td>
-<td>3</td>
+<td><span class="badge-place">6th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Sanchez, Leilani</td>
-<td>Wayland Baptist</td>
+<tr class="odd" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Maquoia Bernabe</td>
+<td style="color: #334155">Cumberlands</td>
 <td>207 lbs</td>
-<td>3</td>
+<td><span class="badge-place">5th</span></td>
+<td style="text-align: center; font-weight: 500;">4-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">11</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Duenas, Naomi</td>
-<td>Cumberlands</td>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Hayeni Costa</td>
+<td style="color: #334155">Lindsey Wilson</td>
 <td>207 lbs</td>
-<td>2.5</td>
+<td><span class="badge-place">8th</span></td>
+<td style="text-align: center; font-weight: 500;">3-3</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">6.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Costa, Hayeni</td>
-<td>Lindsey Wilson</td>
+<tr class="odd" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Bella Porcelli</td>
+<td style="color: #334155">Grand View</td>
 <td>207 lbs</td>
-<td>2</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">6</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Leonard, Kena</td>
-<td>Ottawa</td>
+<tr class="even" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Brianna Staebler</td>
+<td style="color: #334155">Campbellsville</td>
 <td>207 lbs</td>
-<td>1</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">5.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
-<tr class="odd" data-wc="207">
-<td>Fonseca, Abigail</td>
-<td>Texas Wesleyan</td>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Faith Wooley</td>
+<td style="color: #334155">Wayland Baptist</td>
 <td>207 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">2-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
 </tr>
-<tr class="even" data-wc="207">
-<td>Rickley, Taylor</td>
-<td>Hastings</td>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Naomi Duenas</td>
+<td style="color: #334155">Cumberlands</td>
 <td>207 lbs</td>
-<td>0</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">4</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Hailey Romero</td>
+<td style="color: #334155">Doane</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Jessica Rodriguez</td>
+<td style="color: #334155">Doane</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">3</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Kiona Michel</td>
+<td style="color: #334155">Eastern Oregon</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Naomi Duenas</td>
+<td style="color: #334155">Cumberlands</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2.5</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Cheyenne Cruce</td>
+<td style="color: #334155">Lindsey Wilson</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Kena Leonard</td>
+<td style="color: #334155">Ottawa</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">2</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Phoebe Burt</td>
+<td style="color: #334155">William Penn</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">1-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">1</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Alexis Llamas</td>
+<td style="color: #334155">Hastings</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Destiny Marquez</td>
+<td style="color: #334155">Cumberlands</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Fernanda Canedo</td>
+<td style="color: #334155">Westcliff</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Grace Todhunter</td>
+<td style="color: #334155">Jamestown</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
+</tr>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Madeleine Stone</td>
+<td style="color: #334155">Baker</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Skyler Bruno</td>
+<td style="color: #334155">Waldorf</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="even" data-wc="207" data-season="2026">
+<td style="font-weight: 600">Taylor Rickley</td>
+<td style="color: #334155">Hastings</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2026</td>
+</tr>
+<tr class="odd" data-wc="207" data-season="2025">
+<td style="font-weight: 600">Taylor Rickley</td>
+<td style="color: #334155">Hastings</td>
+<td>207 lbs</td>
+<td><span style="color: #94a3b8; font-weight: bold;">—</span></td>
+<td style="text-align: center; font-weight: 500;">0-2</td>
+<td style="text-align: right; font-weight: 600; color: #1e3a8a;">0</td>
+<td style="text-align: center; color: #64748b;">2025</td>
 </tr>
 </tbody>
 </table>
-<script>function filterWrestlers(selectedWeight) {  const rows = document.querySelectorAll("#wrestlerTable tbody tr");  let count = 0;  rows.forEach(row => {    if (selectedWeight === "all" || row.getAttribute("data-wc") === selectedWeight) {      row.style.display = "";      count++;    } else {      row.style.display = "none";    }  });  const countEl = document.getElementById("wrestlerCount");  if (countEl) {    countEl.textContent = (selectedWeight === "all") ?      ("Showing all " + count + " wrestlers") :      ("Showing " + count + " wrestlers in " + selectedWeight + " lbs");  }}</script>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: #f8fafc; border-top: 1px solid #e2e8f0;">  <button id="prevBtn" class="btn btn-sm btn-outline-secondary" onclick="changePage(-1)" style="border-radius: 6px; padding: 0.3rem 0.8rem;">← Previous</button>  <span id="pageInfo" style="font-size: 0.875rem; font-weight: 600; color: #475569;">Page 1</span>  <button id="nextBtn" class="btn btn-sm btn-outline-secondary" onclick="changePage(1)" style="border-radius: 6px; padding: 0.3rem 0.8rem;">Next →</button></div></div><script>let currentPage = 1;const pageSize = 20;let matchingRows = [];function resetPageAndFilter() {  currentPage = 1;  filterWrestlers();}function filterWrestlers() {  const selectedWeight = document.getElementById("weightClassSelect").value;  const selectedSeason = document.getElementById("seasonSelect").value;  const search = (document.getElementById("wrestlerSearch").value || "").toLowerCase().trim();  const allRows = Array.from(document.querySelectorAll("#wrestlerTable tbody tr"));    matchingRows = allRows.filter(row => {    const matchWeight = (selectedWeight === "all" || row.getAttribute("data-wc") === selectedWeight);    const matchSeason = (selectedSeason === "all" || row.getAttribute("data-season") === selectedSeason);    const matchSearch = (!search || row.textContent.toLowerCase().includes(search));    return matchWeight && matchSeason && matchSearch;  });    allRows.forEach(r => r.style.display = "none");    const totalPages = Math.max(1, Math.ceil(matchingRows.length / pageSize));  if (currentPage > totalPages) currentPage = totalPages;    const start = (currentPage - 1) * pageSize;  const end = start + pageSize;  matchingRows.slice(start, end).forEach(r => r.style.display = "");    const countEl = document.getElementById("wrestlerCount");  if (countEl) {    countEl.textContent = "Showing " + matchingRows.length + " wrestlers (" + (matchingRows.length ? (start + 1) : 0) + "–" + Math.min(end, matchingRows.length) + ")";  }  const pageInfo = document.getElementById("pageInfo");  if (pageInfo) {    pageInfo.textContent = "Page " + currentPage + " of " + totalPages;  }  const prevBtn = document.getElementById("prevBtn");  const nextBtn = document.getElementById("nextBtn");  if (prevBtn) prevBtn.disabled = (currentPage <= 1);  if (nextBtn) nextBtn.disabled = (currentPage >= totalPages);}function changePage(delta) {  currentPage += delta;  const totalPages = Math.max(1, Math.ceil(matchingRows.length / pageSize));  if (currentPage < 1) currentPage = 1;  if (currentPage > totalPages) currentPage = totalPages;  const allRows = Array.from(document.querySelectorAll("#wrestlerTable tbody tr"));  allRows.forEach(r => r.style.display = "none");  const start = (currentPage - 1) * pageSize;  const end = start + pageSize;  matchingRows.slice(start, end).forEach(r => r.style.display = "");  const countEl = document.getElementById("wrestlerCount");  if (countEl) {    countEl.textContent = "Showing " + matchingRows.length + " wrestlers (" + (start + 1) + "–" + Math.min(end, matchingRows.length) + ")";  }  const pageInfo = document.getElementById("pageInfo");  if (pageInfo) pageInfo.textContent = "Page " + currentPage + " of " + totalPages;  const prevBtn = document.getElementById("prevBtn");  const nextBtn = document.getElementById("nextBtn");  if (prevBtn) prevBtn.disabled = (currentPage <= 1);  if (nextBtn) nextBtn.disabled = (currentPage >= totalPages);}function makeTableSortable(tableId) {  const table = document.getElementById(tableId);  if (!table) return;  const headers = table.querySelectorAll("thead th");  headers.forEach((th, colIdx) => {    th.style.cursor = "pointer";    th.title = "Click to sort";    th.setAttribute("data-title", th.textContent.trim());    th.textContent = th.getAttribute("data-title") + " ↕";    let asc = true;    th.addEventListener("click", () => {      const tbody = table.querySelector("tbody");      const rows = Array.from(tbody.querySelectorAll("tr"));      rows.sort((a, b) => {        const valA = a.children[colIdx].textContent.trim();        const valB = b.children[colIdx].textContent.trim();        const numA = parseFloat(valA);        const numB = parseFloat(valB);        if (!isNaN(numA) && !isNaN(numB)) {          return asc ? numA - numB : numB - numA;        }        return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);      });      rows.forEach(r => tbody.appendChild(r));      headers.forEach(h => {        h.textContent = h.getAttribute("data-title") + " ↕";      });      th.textContent = th.getAttribute("data-title") + (asc ? " ▲" : " ▼");      asc = !asc;      filterWrestlers();    });  });}makeTableSortable("wrestlerTable");resetPageAndFilter();</script>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1360,7 +3073,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/sydmartin08\.github\.io\/milestone-4\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

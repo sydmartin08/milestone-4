@@ -1,0 +1,387 @@
+---
+title: "Match Results"
+---
+
+::: {.hero-banner}
+::: {.hero-content}
+# Match Results & History
+Search and review every match wrestled by individual student-athletes across NAIA championship events, including the victory reason (pin, points, forfeit, or tech fall) and score details.
+:::
+<img src="naia_logo.png" alt="NAIA Logo" class="hero-logo-img">
+:::
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+library(tidyverse)
+library(htmltools)
+
+# Read raw match results and filter empty placeholder rows
+matches_raw <- read_csv("data/match_results.csv", show_col_types = FALSE) |>
+  filter(!is.na(winner) & !is.na(loser))
+
+# Helper to categorize win/loss reason cleanly
+categorize_reason <- function(win_type) {
+  case_when(
+    win_type == "fall" ~ "Pin (Fall)",
+    win_type == "decision" ~ "Points (Decision)",
+    win_type == "tech fall" ~ "Tech Fall",
+    win_type == "forfeit" ~ "Forfeit",
+    win_type == "injury default" ~ "Injury Default",
+    win_type == "disqualification" ~ "Disqualification",
+    win_type == "no contest" ~ "No Contest",
+    TRUE ~ "Other"
+  )
+}
+
+# Clean score and time details
+clean_score_details <- function(score, win_type) {
+  case_when(
+    is.na(score) | score == "" ~ "—",
+    score == "FF" ~ "Forfeit (FF)",
+    TRUE ~ score
+  )
+}
+
+# Extract matches from both winner's and loser's perspectives
+wins <- matches_raw |>
+  transmute(
+    wrestler = winner,
+    school = coalesce(winner_team, "Unknown"),
+    result = "Win",
+    reason = categorize_reason(win_type),
+    score_time = clean_score_details(score_details, win_type),
+    opponent = loser,
+    opponent_school = coalesce(loser_team, "Unknown"),
+    weight_class,
+    round,
+    event_name
+  )
+
+losses <- matches_raw |>
+  transmute(
+    wrestler = loser,
+    school = coalesce(loser_team, "Unknown"),
+    result = "Loss",
+    reason = categorize_reason(win_type),
+    score_time = clean_score_details(score_details, win_type),
+    opponent = winner,
+    opponent_school = coalesce(winner_team, "Unknown"),
+    weight_class,
+    round,
+    event_name
+  )
+
+# Combine into one comprehensive dataset sorted by wrestler name and event
+wrestler_matches <- bind_rows(wins, losses) |>
+  arrange(wrestler, event_name, round)
+
+# Unique values for dropdown filters
+events <- sort(unique(wrestler_matches$event_name))
+weights <- sort(unique(wrestler_matches$weight_class))
+reasons <- sort(unique(wrestler_matches$reason))
+total_wrestlers <- length(unique(wrestler_matches$wrestler))
+total_matches <- nrow(matches_raw)
+
+# Count wins by reason for top stat cards
+pin_count <- sum(matches_raw$win_type == "fall", na.rm = TRUE)
+decision_count <- sum(matches_raw$win_type == "decision", na.rm = TRUE)
+tf_count <- sum(matches_raw$win_type == "tech fall", na.rm = TRUE)
+forfeit_count <- sum(matches_raw$win_type == "forfeit", na.rm = TRUE)
+
+event_options_html <- paste(
+  sprintf('<option value="%s">%s</option>', events, events),
+  collapse = ""
+)
+
+weight_options_html <- paste(
+  sprintf('<option value="%s">%s</option>', weights, weights),
+  collapse = ""
+)
+
+reason_options_html <- paste(
+  sprintf('<option value="%s">%s</option>', reasons, reasons),
+  collapse = ""
+)
+
+# Helper function for result badges
+get_result_badge <- function(res) {
+  ifelse(
+    res == "Win",
+    '<span class="badge-win">✓ Win</span>',
+    '<span class="badge-loss">✗ Loss</span>'
+  )
+}
+
+# Helper function for reason badges
+get_reason_badge <- function(reason) {
+  case_when(
+    reason == "Pin (Fall)" ~ '<span class="badge-reason badge-pin">📌 Pin (Fall)</span>',
+    reason == "Points (Decision)" ~ '<span class="badge-reason badge-decision">🎯 Points (Dec)</span>',
+    reason == "Tech Fall" ~ '<span class="badge-reason badge-tf">⚡ Tech Fall</span>',
+    reason == "Forfeit" ~ '<span class="badge-reason badge-forfeit">🏳️ Forfeit</span>',
+    reason == "Injury Default" ~ '<span class="badge-reason badge-inj">🩹 Injury Def.</span>',
+    reason == "Disqualification" ~ '<span class="badge-reason badge-dq">🚫 DQ</span>',
+    TRUE ~ sprintf('<span class="badge-reason badge-other">%s</span>', reason)
+  )
+}
+
+# Generate table rows
+rows_html <- paste(
+  sprintf(
+    '<tr data-wrestler="%s" data-school="%s" data-opponent="%s" data-event="%s" data-weight="%s" data-result="%s" data-reason="%s">
+      <td style="font-weight: 700; color: #1e3a8a;">%s</td>
+      <td style="color: #475569;">%s</td>
+      <td style="text-align: center;">%s</td>
+      <td style="text-align: center;">%s</td>
+      <td style="font-weight: 600; color: #0f172a; font-family: monospace; font-size: 0.95rem;">%s</td>
+      <td style="font-weight: 600; color: #0f172a;">%s</td>
+      <td style="color: #64748b; font-size: 0.9rem;">%s</td>
+      <td><span class="badge-weight">%s</span></td>
+      <td style="font-size: 0.88rem; font-weight: 500;">%s</td>
+      <td style="font-size: 0.82rem; color: #64748b;">%s</td>
+    </tr>',
+    tolower(wrestler_matches$wrestler),
+    tolower(wrestler_matches$school),
+    tolower(wrestler_matches$opponent),
+    wrestler_matches$event_name,
+    wrestler_matches$weight_class,
+    wrestler_matches$result,
+    wrestler_matches$reason,
+    wrestler_matches$wrestler,
+    wrestler_matches$school,
+    get_result_badge(wrestler_matches$result),
+    get_reason_badge(wrestler_matches$reason),
+    wrestler_matches$score_time,
+    wrestler_matches$opponent,
+    wrestler_matches$opponent_school,
+    wrestler_matches$weight_class,
+    wrestler_matches$round,
+    wrestler_matches$event_name
+  ),
+  collapse = ""
+)
+
+HTML(paste0(
+  '<style>
+  .badge-win {
+    background-color: #dcfce7;
+    color: #166534;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    display: inline-block;
+  }
+  .badge-loss {
+    background-color: #fee2e2;
+    color: #991b1b;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    display: inline-block;
+  }
+  .badge-reason {
+    display: inline-block;
+    padding: 0.2rem 0.55rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .badge-pin {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+  }
+  .badge-decision {
+    background-color: #eff6ff;
+    color: #1e40af;
+    border: 1px solid #bfdbfe;
+  }
+  .badge-tf {
+    background-color: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+  }
+  .badge-forfeit {
+    background-color: #f5f3ff;
+    color: #6b21a8;
+    border: 1px solid #ddd6fe;
+  }
+  .badge-inj {
+    background-color: #fffbeb;
+    color: #92400e;
+    border: 1px solid #fde68a;
+  }
+  .badge-dq, .badge-other {
+    background-color: #f8fafc;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+  }
+  </style>',
+  '<div class="stats-grid">',
+  '  <div class="stat-card"><div class="stat-number">', total_matches, '</div><div class="stat-label">Total Bouts</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', pin_count, '</div><div class="stat-label">Pins (Falls)</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', decision_count, '</div><div class="stat-label">Point Decisions</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', tf_count, '</div><div class="stat-label">Tech Falls</div></div>',
+  '  <div class="stat-card"><div class="stat-number">', forfeit_count, '</div><div class="stat-label">Forfeits</div></div>',
+  '</div>',
+  '<div class="filter-card">',
+  '  <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-end;">',
+  '    <div style="flex: 2; min-width: 220px;">',
+  '      <label for="matchSearch">Search Wrestler, Opponent, or School</label>',
+  '      <input type="text" id="matchSearch" class="form-control" placeholder="Search by name or school..." oninput="filterMatches()" style="padding: 0.45rem;">',
+  '    </div>',
+  '    <div style="min-width: 160px;">',
+  '      <label for="reasonSelect">Reason / Method</label>',
+  '      <select id="reasonSelect" class="form-select" style="padding: 0.45rem;" onchange="filterMatches()">',
+  '        <option value="all">All Reasons</option>',
+  reason_options_html,
+  '      </select>',
+  '    </div>',
+  '    <div style="min-width: 120px;">',
+  '      <label for="resultSelect">Result</label>',
+  '      <select id="resultSelect" class="form-select" style="padding: 0.45rem;" onchange="filterMatches()">',
+  '        <option value="all">All Results</option>',
+  '        <option value="Win">Wins Only</option>',
+  '        <option value="Loss">Losses Only</option>',
+  '      </select>',
+  '    </div>',
+  '    <div style="flex: 1; min-width: 170px;">',
+  '      <label for="eventSelect">Tournament</label>',
+  '      <select id="eventSelect" class="form-select" style="padding: 0.45rem;" onchange="filterMatches()">',
+  '        <option value="all">All Tournaments</option>',
+  event_options_html,
+  '      </select>',
+  '    </div>',
+  '    <div style="min-width: 130px;">',
+  '      <label for="weightSelect">Weight Class</label>',
+  '      <select id="weightSelect" class="form-select" style="padding: 0.45rem;" onchange="filterMatches()">',
+  '        <option value="all">All Weights</option>',
+  weight_options_html,
+  '      </select>',
+  '    </div>',
+  '  </div>',
+  '  <div id="matchCount" style="margin-top: 0.75rem; font-weight: 500; font-size: 0.875rem; color: #475569;">Showing all matches</div>',
+  '</div>',
+  '<div class="table-wrapper">',
+  '<table id="matchesTable" class="table table-hover">',
+  '<thead>',
+  '  <tr>',
+  '    <th>Wrestler</th>',
+  '    <th>School</th>',
+  '    <th style="text-align: center;">Result</th>',
+  '    <th style="text-align: center;">Reason (Method)</th>',
+  '    <th>Score / Time</th>',
+  '    <th>Opponent</th>',
+  '    <th>Opponent School</th>',
+  '    <th>Weight</th>',
+  '    <th>Round</th>',
+  '    <th>Tournament</th>',
+  '  </tr>',
+  '</thead>',
+  '<tbody>', rows_html, '</tbody>',
+  '</table>',
+  '<div style="display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1.25rem; background: #f8fafc; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 0.5rem;">',
+  '  <button id="prevMatchBtn" class="btn btn-sm btn-outline-secondary" onclick="changeMatchPage(-1)" style="border-radius: 6px; padding: 0.3rem 0.8rem;">← Previous</button>',
+  '  <span id="matchPageInfo" style="font-size: 0.875rem; font-weight: 600; color: #475569;">Page 1</span>',
+  '  <button id="nextMatchBtn" class="btn btn-sm btn-outline-secondary" onclick="changeMatchPage(1)" style="border-radius: 6px; padding: 0.3rem 0.8rem;">Next →</button>',
+  '</div>',
+  '</div>',
+  '<script>',
+  'let currentMatchPage = 1;',
+  'const matchPageSize = 25;',
+  'let filteredRows = [];',
+  '',
+  'function renderMatchPage() {',
+  '  const totalPages = Math.max(1, Math.ceil(filteredRows.length / matchPageSize));',
+  '  if (currentMatchPage > totalPages) currentMatchPage = totalPages;',
+  '  if (currentMatchPage < 1) currentMatchPage = 1;',
+  '  const allRows = Array.from(document.querySelectorAll("#matchesTable tbody tr"));',
+  '  allRows.forEach(r => r.style.display = "none");',
+  '  const start = (currentMatchPage - 1) * matchPageSize;',
+  '  const end = Math.min(start + matchPageSize, filteredRows.length);',
+  '  for (let i = start; i < end; i++) {',
+  '    filteredRows[i].style.display = "";',
+  '  }',
+  '  const countEl = document.getElementById("matchCount");',
+  '  if (countEl) {',
+  '    if (filteredRows.length === 0) {',
+  '      countEl.textContent = "No matches found";',
+  '    } else {',
+  '      countEl.textContent = "Showing " + (start + 1) + "–" + end + " of " + filteredRows.length + " match records";',
+  '    }',
+  '  }',
+  '  const pageInfo = document.getElementById("matchPageInfo");',
+  '  if (pageInfo) pageInfo.textContent = "Page " + currentMatchPage + " of " + totalPages;',
+  '  const prevBtn = document.getElementById("prevMatchBtn");',
+  '  const nextBtn = document.getElementById("nextMatchBtn");',
+  '  if (prevBtn) prevBtn.disabled = (currentMatchPage <= 1);',
+  '  if (nextBtn) nextBtn.disabled = (currentMatchPage >= totalPages);',
+  '}',
+  '',
+  'function filterMatches() {',
+  '  const search = (document.getElementById("matchSearch").value || "").toLowerCase().trim();',
+  '  const selectedEvent = document.getElementById("eventSelect").value;',
+  '  const selectedWeight = document.getElementById("weightSelect").value;',
+  '  const selectedResult = document.getElementById("resultSelect").value;',
+  '  const selectedReason = document.getElementById("reasonSelect").value;',
+  '  const allRows = Array.from(document.querySelectorAll("#matchesTable tbody tr"));',
+  '  filteredRows = allRows.filter(row => {',
+  '    const matchEvent = (selectedEvent === "all" || row.getAttribute("data-event") === selectedEvent);',
+  '    const matchWeight = (selectedWeight === "all" || row.getAttribute("data-weight") === selectedWeight);',
+  '    const matchResult = (selectedResult === "all" || row.getAttribute("data-result") === selectedResult);',
+  '    const matchReason = (selectedReason === "all" || row.getAttribute("data-reason") === selectedReason);',
+  '    const wrestlerText = row.getAttribute("data-wrestler") || "";',
+  '    const oppText = row.getAttribute("data-opponent") || "";',
+  '    const schoolText = row.getAttribute("data-school") || "";',
+  '    const matchSearch = (!search || wrestlerText.includes(search) || oppText.includes(search) || schoolText.includes(search));',
+  '    return matchEvent && matchWeight && matchResult && matchReason && matchSearch;',
+  '  });',
+  '  currentMatchPage = 1;',
+  '  renderMatchPage();',
+  '}',
+  '',
+  'function changeMatchPage(delta) {',
+  '  currentMatchPage += delta;',
+  '  renderMatchPage();',
+  '  const tableEl = document.getElementById("matchesTable");',
+  '  if (tableEl) tableEl.scrollIntoView({ behavior: "smooth", block: "start" });',
+  '}',
+  '',
+  'function makeTableSortable(tableId) {',
+  '  const table = document.getElementById(tableId);',
+  '  if (!table) return;',
+  '  const headers = table.querySelectorAll("thead th");',
+  '  headers.forEach((th, colIdx) => {',
+  '    th.style.cursor = "pointer";',
+  '    th.title = "Click to sort";',
+  '    th.setAttribute("data-title", th.textContent.trim());',
+  '    th.textContent = th.getAttribute("data-title") + " ↕";',
+  '    let asc = true;',
+  '    th.addEventListener("click", () => {',
+  '      const tbody = table.querySelector("tbody");',
+  '      const rows = Array.from(tbody.querySelectorAll("tr"));',
+  '      rows.sort((a, b) => {',
+  '        const valA = a.children[colIdx].textContent.trim();',
+  '        const valB = b.children[colIdx].textContent.trim();',
+  '        return asc ? valA.localeCompare(valB) : valB.localeCompare(valA);',
+  '      });',
+  '      rows.forEach(r => tbody.appendChild(r));',
+  '      headers.forEach(h => h.textContent = h.getAttribute("data-title") + " ↕");',
+  '      th.textContent = th.getAttribute("data-title") + (asc ? " ▲" : " ▼");',
+  '      asc = !asc;',
+  '      renderMatchPage();',
+  '    });',
+  '  });',
+  '}',
+  '',
+  'makeTableSortable("matchesTable");',
+  'filterMatches();',
+  '</script>'
+))
+```

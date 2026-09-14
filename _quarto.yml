@@ -13,6 +13,8 @@ website:
         text: Conferences
       - href: map.qmd
         text: Map
+      - href: matches.qmd
+        text: Matches
       - about.qmd
 
 format:
